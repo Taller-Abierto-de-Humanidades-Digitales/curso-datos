@@ -29,7 +29,7 @@ La creación de nuestro primer cuaderno en Google Colab es muy sencilla.
 
 Primero, vamos al siguiente enlace: [https://colab.research.google.com/](https://colab.research.google.com/). Si no has ingresado a la cuenta de Google podrás usar la aplicación, pero no podrás guardar los cambios. Por ello es importante que ingreses a la cuenta de Google desde el botón Acceder. Si ya habías ingresado a tu cuenta de Google es posible que simplemente te aparezca una pantalla como la siguiente:
 
-```{image} _static/imgs/crear-carpeta/colab_ini.png
+```{image} ../_static/imgs/crear-carpeta/colab_ini.png
 :width: 800px
 :align: center
 ```
@@ -38,14 +38,14 @@ El siguiente paso consiste en crear un nuevo cuaderno de Google Colab. Para ello
 
 Se abrirá una ventana con el nuevo cuaderno:
 
-```{image} _static/imgs/crear-carpeta/nuevo_cuaderno.png
+```{image} ../_static/imgs/crear-carpeta/nuevo_cuaderno.png
 :width: 800px
 :align: center
 ```
 
 Para finalizar, solamente nos resta cambiar el título del cuaderno a nuestra elección.
 
-```{image} _static/imgs/crear-carpeta/cambiar_nombre.gif
+```{image} ../_static/imgs/crear-carpeta/cambiar_nombre.gif
 :width: 800px
 :align: center
 ```

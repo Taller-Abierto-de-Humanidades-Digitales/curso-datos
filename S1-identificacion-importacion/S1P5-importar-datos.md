@@ -25,14 +25,14 @@ Como ejemplo, voy a utilizar los [casos nacionales de COVID-19 registrados diari
 
 Descargo el archivo CSV en un directorio de mi computadora. Posteriormente lo subo a mi directorio de datos de Google Drive:
 
-``` {image} _static/imgs/fuente-datos/subir_a_drive.gif
+``` {image} ../_static/imgs/fuente-datos/subir_a_drive.gif
 :width: 800px
 :align: center
 ```
 
 Volvemos a nuestro cuaderno de Google Colab. Me aseguro de haber activado Google Drive en mi Google Colab y busco el directorio en el cual está mi archivo. En mi caso: `'/content/drive/MyDrive/Colab Notebooks/curso_datos/casos_nacionales_covid-19_2022_semestre1.csv'`
 
-```{image} _static/imgs/fuente-datos/ruta_archivo.png
+```{image} ../_static/imgs/fuente-datos/ruta_archivo.png
 :width: 800px
 :align: center
 ```

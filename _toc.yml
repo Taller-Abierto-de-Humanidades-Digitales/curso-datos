@@ -6,12 +6,12 @@ root: intro
 parts:
   - caption: Selecciona e importa una fuente de datos
     chapters:
-    - file: crear-cuaderno
-    - file: seleccionar-fuente-datos
+    - file: S1-identificacion-importacion/S1P1-crear-cuaderno
+    - file: S1-identificacion-importacion/S1P2-seleccionar-fuente-datos
       sections:
-      - file: fuentes-datos
-      - file: selecciona-datos
-    - file: importar-datos
+      - file: S1-identificacion-importacion/S1P3-fuentes-datos
+      - file: S1-identificacion-importacion/S1P4-selecciona-datos
+    - file: S1-identificacion-importacion/S1P5-importar-datos
       sections:
-      - file: actividad-importar-datos
-    - file: sintesis-s1
+      - file: S1-identificacion-importacion/S1P6-actividad-importar-datos
+    - file: S1-identificacion-importacion/S1P7-sintesis

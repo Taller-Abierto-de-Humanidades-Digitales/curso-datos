@@ -21,7 +21,7 @@ En nuestro curso utilizaremos datos abiertos. De una manera muy sintética, los 
 
 La siguiente infografía es un resumen muy sencillo de lo que representan los datos abiertos:
 
-``` {image} _static/imgs/fuente-datos/datos-abiertos-1.png
+``` {image} ../_static/imgs/fuente-datos/datos-abiertos-1.png
 :width: 800px
 :align: center
 ```
