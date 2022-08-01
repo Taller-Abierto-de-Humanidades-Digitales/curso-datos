@@ -3,5 +3,14 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: crear-cuaderno
+parts:
+  - caption: Selecciona e importa una fuente de datos
+    chapters:
+    - file: crear-cuaderno
+    - file: seleccionar-fuente-datos
+      sections:
+      - file: fuentes-datos
+      - file: selecciona-datos
+    - file: importar-datos
+      sections:
+      - file: actividad-importar-datos
