@@ -20,6 +20,16 @@
 # 
 # Los contenidos del curso (texto, código, datos, videos...) los encontrarás en este "libro".
 # 
+# ### Navegar en el cuaderno del curso
+# 
+# Para navegar por este libro de contenidos, solamente debes tener en cuenta que en la columna de la izquierda encontrarás los temas de cada semana, capítulos y subcapítulos del curso.
+# 
+# En la columna derecha, encontrarás un índice de los contenidos de la página que estés consultando.
+# 
+# En la parte inferior de cada página encontrarás un botón para continuar o retroceder de página.
+# 
+# Al finalizar cada tema, encontrarás un resumen de las habilidades adquiridas durante la semana. Es una buena idea revisar este resumen para conocer los temas en los cuáles centrarse durante la semana.
+# 
 # ## Actividades del curso
 # 
 # Cada sección contiene una serie de actividades que te ayudarán a construir progresivamente tu proyecto:
