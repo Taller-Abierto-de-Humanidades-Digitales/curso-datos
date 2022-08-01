@@ -14,3 +14,4 @@ parts:
     - file: importar-datos
       sections:
       - file: actividad-importar-datos
+    - file: sintesis-s1

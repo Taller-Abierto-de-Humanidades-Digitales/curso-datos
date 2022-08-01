@@ -56,7 +56,7 @@ Para poder seguir este curso cómodamente, tenemos que familiarizarnos con algun
 
 ### Celdas
 
-Las celdas son las partes de nuestro cuaderno que nos permiten escribir código o texto. El texto lo utilizamos para escribir comentarios, explicar los pasos que estamos ejecutando, etc. Es muy similar a lo que presentamos en esta página (que de hecho, está hecha en [JupyterBook](https://jupyterbook.org/en/stable/intro.html)). Las celdad de código permiten escribir y ejecutar código. En nuestro caso, usaremos el lenguaje de programación [^Python].
+Las celdas son las partes de nuestro cuaderno que nos permiten escribir código o texto. El texto lo utilizamos para escribir comentarios, explicar los pasos que estamos ejecutando, etc. Es muy similar a lo que presentamos en esta página (que de hecho, está hecha en [JupyterBook](https://jupyterbook.org/en/stable/intro.html)). Las celdad de código permiten escribir y ejecutar código. En nuestro caso, usaremos el lenguaje de programación Python [^Python].
 
 Veámos rápidamente su funcionamiento a través del siguiente video:
 

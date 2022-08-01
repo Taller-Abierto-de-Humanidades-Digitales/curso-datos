@@ -7,7 +7,7 @@
 # 
 # El requisito fundamental para culminar exitosamente este curso es que tengas la curiosidad suficiente como para experimentar y aprender de los errores que se van a ir presentando en el curso.
 # 
-# En este curso usaremos un conjunto de datos particular, con el cual podrás realizar una visualización. Pero, es imposible que ese conjunto de datos sea de interés para todos. Por esa razón, el proyecto final de este curso consistirá en la elaboración de una visualización realizada con un conjunto de datos que sea de tu interés. 
+# En este curso usaremos un conjunto de datos particular, con el cual podrás realizar una visualización. Pero, es imposible que ese conjunto de datos sea de interés para todos. Por esa razón, el proyecto final de este curso consistirá en la elaboración de una visualización realizada con un conjunto de datos que sea de tu interés.
 # 
 # ## Estructura del curso
 # 
@@ -31,7 +31,6 @@
 # 5. Visualizarás los datos en una gráfica o tabla aprovechando la librería Plotly.
 # 6. Compartirás tu visualización.
 # 
-# 
 # ## Proyecto final
 # 
 # El proyecto final lo presentarás en forma de un cuaderno de Google Colab que hayas realizado donde:
@@ -46,6 +45,24 @@
 # 
 # * Realizar todas las actividades propuestas en cada sección (50% de la calificación).
 # * Compartir el cuaderno de Google Colab con el proyecto final y aprobar la evaluación de pares (50% de la calificación).
+# 
+# En la siguiente tabla encontrarás de manera detallada la fórmula de calificación:
+# 
+# | Índice | Nombre de la actividad                            | Tipo de actividad | Porcentaje de valoración |
+# |--------|---------------------------------------------------|-------------------|--------------------------|
+# |  S1A1  | Google Colab                                      |        Foro       |             3 %          |
+# |  S1A2  | Tu fuente de datos                                |        Foro       |             4 %          |
+# |  S1A3  | Importar datos a Google Colab                     |        Foro       |             4 %          |
+# |  S2A1  | Describe la fuente de datos                       |        Foro       |             3 %          |
+# |  S2A2  | ¿Qué podrás hacer con tu fuente de datos?         |        Foro       |             3 %          |
+# |  S2A2  | Limpieza de datos                                 |        Foro       |             4 %          |
+# |  S2A3  | Avance de tu proyecto                             |        Foro       |             3 %          |
+# |  S3A1  | Manipulación de datos                             |        Foro       |             4 %          |
+# |  S3A3  | Normalización y transformación                    |        Foro       |             4 %          |
+# |  S4A1  | ¿Qué visualización vas a utilizar para tus datos? |        Foro       |             3 %          |
+# |  S4A2  | ¡Tu visualización!                                |        Foro       |             5 %          |
+# |  S4A3  | Proyecto final: Tu visualización                  |       Taller      |            60 %          |
+# |        |                                                   |                   |            100 %         |
 # 
 # **La asistencia a las sesiones presenciales no es obligatoria y no incide en la calificación.** Sin embargo, es recomendable que te asistas a las sesiones presenciales para que puedas compartir tu trabajo y resolver dudas puntuales.
 # 

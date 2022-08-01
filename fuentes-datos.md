@@ -17,7 +17,9 @@ kernelspec:
 
 ¿Dónde podemos encontrar fuentes de datos? Realiza el ejercicio simple de hacer una búsqueda del término "datos abiertos" en Google u otro buscador. Cada resultado tendrá sus particularidades, pero en general verás que los primeros resultados serán "[Datos abiertos de México](https://datos.gob.mx/)" y "[Datos abiertos de Ciudad de México](https://datos.cdmx.gob.mx/)". Posteriormente encontraremos resultados de otros países o de instituciones específicas como el [Conacyt](https://www.siicyt.gob.mx/index.php/estadisticas/bases-de-datos-abiertas) o el [INEGI](https://www.inegi.org.mx/datosabiertos/).
 
-En cada uno de estos repositorios encontraremos buscadores y colecciones que nos ayudarán a identificar los datos que han sido publicados.
+En cada uno de estos repositorios encontraremos buscadores y colecciones que nos ayudarán a identificar los datos que han sido publicados:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QD580z4RvOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Tipos de archivos
 
