@@ -11,6 +11,8 @@ execute:
   execute_notebooks: force
   allow_errors: true
   timeout: 200
+  exclude_patterns:
+    - 'S2P7*'
 
 # Define the name of the latex output file for PDF builds
 latex:

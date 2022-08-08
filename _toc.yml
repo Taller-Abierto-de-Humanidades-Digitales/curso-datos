@@ -24,7 +24,8 @@ parts:
       - file: S2-estructuras-preparacion/S2P4-dtypes
       - file: S2-estructuras-preparacion/S2P5-operaciones-datos
       - file: S2-estructuras-preparacion/S2P6-describe
-    - file: S2-estructuras-preparacion/S2P7-sintesis
+      - file: S2-estructuras-preparacion/S2P7-actividad-avance-proyecto
+    - file: S2-estructuras-preparacion/S2P8-sintesis
   - caption: Bibiografía
     chapters:
     - file: references

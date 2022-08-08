@@ -85,7 +85,7 @@ En este caso, podemos incluso narrar un poco nuestros datos, ya que encontramos 
 
 Como habrás notado, todavía estamos en una fase muy descriptiva. Esto nos permite tener una perspectiva de lo que podemos obtener de nuestro conjunto de datos, lo que nos facilitará la tarea de planear qué transformaciones requeriremos en nuestros datos para poderlos visualizar correctamente.
 
-## Actividad 
+## Actividad
 
 Usando el método `describe()` analiza los datos que seleccionaste y responde en el [foro](https://formaciondocente.bunam.unam.mx:8091/moodle/fdocente/mod/forum/view.php?id=645) lo siguiente:
 
