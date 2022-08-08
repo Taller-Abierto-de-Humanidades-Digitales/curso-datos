@@ -61,7 +61,10 @@ Vemos que los datos están claramente detallados en el tipo de dato de cada colu
 
 ```{code-cell} ipython
 :tags: ["remove-cell"]
-covid_nacional = pd.read_csv('../data/casos_nacionales_covid-19_2022_semestre1.csv')
+try:
+  covid_nacional = pd.read_csv('../data/casos_nacionales_covid-19_2022_semestre1.csv')
+except FileNotFoundError:
+  covid_nacional = pd.read_csv('../datos/casos_nacionales_covid-19_2022_semestre1.csv')
 ```
 
 ```{code-cell} ipython
