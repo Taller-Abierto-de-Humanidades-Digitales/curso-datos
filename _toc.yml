@@ -15,3 +15,16 @@ parts:
       sections:
       - file: S1-identificacion-importacion/S1P6-actividad-importar-datos
     - file: S1-identificacion-importacion/S1P7-sintesis
+  - caption: Análisis de estructuras de datos y preparación
+    chapters:
+    - file: S2-estructuras-preparacion/S2P1-introduccion
+    - file: S2-estructuras-preparacion/S2P2-como-describir
+      sections:
+      - file: S2-estructuras-preparacion/S2P3-tipos-datos
+      - file: S2-estructuras-preparacion/S2P4-dtypes
+      - file: S2-estructuras-preparacion/S2P5-operaciones-datos
+      - file: S2-estructuras-preparacion/S2P6-describe
+    - file: S2-estructuras-preparacion/S2P7-sintesis
+  - caption: Bibiografía
+    chapters:
+    - file: references

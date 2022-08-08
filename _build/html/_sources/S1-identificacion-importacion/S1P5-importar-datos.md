@@ -48,7 +48,7 @@ with open(datos, 'r') as f:
 data
 ```
 
-De esta manera hemos logrado incluir el archivo en nuestro cuaderno, pero será muy complejo manipularlo. Por esta razón, es preferible utilizar una librería que nos ayude a procesar estos datos. En nuestro caso, usaremos 'Pandas'
+De esta manera hemos logrado incluir el archivo en nuestro cuaderno, pero será muy complejo manipularlo. Por esta razón, es preferible utilizar una librería que nos ayude a procesar estos datos. En nuestro caso, usaremos 'Pandas' {cite}`mckinney_python_2018`.
 
 Para hacer que nuestro programa funcione, solamente debemos importar la librería:
 
