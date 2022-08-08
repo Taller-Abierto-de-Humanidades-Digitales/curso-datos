@@ -59,12 +59,12 @@ ejemplo1.dtypes
 
 Vemos que los datos están claramente detallados en el tipo de dato de cada columna. Ahora probemos el mismo método con la fuente de datos que usamos en la sección anterior:
 
-```{code-cell}
+```{code-cell} ipython
 :tags: ["remove-cell"]
-covid_nacional = pd.read_csv('../datos/casos_nacionales_covid-19_2022_semestre1.csv')
+covid_nacional = pd.read_csv('../data/casos_nacionales_covid-19_2022_semestre1.csv')
 ```
 
-```{code-cell}
+```{code-cell} ipython
 # modifiqué el nombre del dataframe a covid_nacional para mejor legibilidad
 covid_nacional.dtypes
 ```
