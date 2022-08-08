@@ -757,16 +757,72 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">6</span><span class="n">z</span><span class="o">/</span><span class="n">cjmzygfj49d6yzn_qgny7hgr0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_35630</span><span class="o">/</span><span class="mf">2458112778.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;covid_nacional&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.323501e+06</td>
+      <td>1.323501e+06</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>6.617510e+05</td>
+      <td>3.774596e+01</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.820620e+05</td>
+      <td>1.728453e+01</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000e+00</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.308760e+05</td>
+      <td>2.500000e+01</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>6.617510e+05</td>
+      <td>3.600000e+01</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.926260e+05</td>
+      <td>5.000000e+01</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.323501e+06</td>
+      <td>1.220000e+02</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Al igual que en nuestro dataframe de ejemplo, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> solamente selecciona los valores numéricos: <code class="docutils literal notranslate"><span class="pre">Unnamed:</span> <span class="pre">0</span></code> (que corresponde al índice de los datos) y <code class="docutils literal notranslate"><span class="pre">edad</span></code>. Veámos ahora qué información nos muestra cuando incluímos el parámetro <code class="docutils literal notranslate"><span class="pre">include='all'</span></code>.</p>
 <div class="cell docutils container">
@@ -776,15 +832,316 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">6</span><span class="n">z</span><span class="o">/</span><span class="n">cjmzygfj49d6yzn_qgny7hgr0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_35630</span><span class="o">/</span><span class="mf">123324223.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;covid_nacional&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.323501e+06</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>149707</td>
+      <td>149707</td>
+      <td>...</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1320040</td>
+      <td>1323501</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>NaN</td>
+      <td>1</td>
+      <td>1323501</td>
+      <td>2</td>
+      <td>12</td>
+      <td>32</td>
+      <td>2</td>
+      <td>33</td>
+      <td>23</td>
+      <td>1190</td>
+      <td>...</td>
+      <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>2</td>
+      <td>3</td>
+      <td>7</td>
+      <td>3</td>
+      <td>122</td>
+      <td>1</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>NaN</td>
+      <td>2022-06-26</td>
+      <td>0793b8</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>NEZAHUALCÓYOTL</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>NaN</td>
+      <td>1323501</td>
+      <td>1</td>
+      <td>1170267</td>
+      <td>793606</td>
+      <td>1314661</td>
+      <td>733991</td>
+      <td>1052272</td>
+      <td>133374</td>
+      <td>26282</td>
+      <td>...</td>
+      <td>848434</td>
+      <td>1152385</td>
+      <td>1152385</td>
+      <td>1204565</td>
+      <td>771647</td>
+      <td>792364</td>
+      <td>1305180</td>
+      <td>1304673</td>
+      <td>1320040</td>
+      <td>1297093</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>6.617510e+05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.820620e+05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000e+00</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>3.308760e+05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>6.617510e+05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.926260e+05</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.323501e+06</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>11 rows × 41 columns</p>
+</div></div></div>
 </div>
 <p>Como vemos es una tabla con todas las columnas de nuestro dataframe. Reliza una revisión rápida del resultado para que puedas observar algunos detalles del conjunto de datos que podrían ser útiles. Por ejemplo, es claro que en la columna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> es mayor la frecuencia de casos en mujeres (733,991 casos sobre 1’323,501). También, si vemos la columna <code class="docutils literal notranslate"><span class="pre">entidad_nac</span></code> vemos que de las 33 entidades nacionales incluidas, la mayor frecuencia (por mucho) está representada por casos de la Ciudad de México (1’052,272 del total de los casos).</p>
 <p>Para mejorar la legibilidad, podemos segmentar la descripción por unas cuantas columnas, por ejemplo:</p>
@@ -796,16 +1153,82 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">6</span><span class="n">z</span><span class="o">/</span><span class="n">cjmzygfj49d6yzn_qgny7hgr0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_35630</span><span class="o">/</span><span class="mf">986746972.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">covid_nacional</span><span class="p">[[</span><span class="s1">&#39;origen&#39;</span><span class="p">,</span> <span class="s1">&#39;sector&#39;</span><span class="p">,</span> <span class="s1">&#39;sexo&#39;</span><span class="p">,</span> <span class="s1">&#39;entidad_nac&#39;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>        <span class="s1">&#39;tipo_paciente&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_ingreso&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_sintomas&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_def&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;covid_nacional&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>tipo_paciente</th>
+      <th>fecha_ingreso</th>
+      <th>fecha_sintomas</th>
+      <th>fecha_def</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>1323501</td>
+      <td>3589</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>2</td>
+      <td>12</td>
+      <td>2</td>
+      <td>33</td>
+      <td>2</td>
+      <td>177</td>
+      <td>223</td>
+      <td>166</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>AMBULATORIO</td>
+      <td>2022-01-12</td>
+      <td>2022-01-10</td>
+      <td>2022-01-29</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>1170267</td>
+      <td>793606</td>
+      <td>733991</td>
+      <td>1052272</td>
+      <td>1297093</td>
+      <td>40197</td>
+      <td>46175</td>
+      <td>101</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>En este caso, podemos incluso narrar un poco nuestros datos, ya que encontramos que la mayoría de pacientes fueron ambulatorios, mujeres, de la Ciudad de México, que la mayor parte de reportes provienen de unidades por fuera de las USMER (Unidades de Salud Monitoras de Enfermedad Respiratoria Viral). También podemos afirmar que la mayoría de los reportes de síntomas se dieron el 10 de enero, la mayoría de ingresos el 12 de enero y la mayor cantidad de defunciones el 29 de enero.</p>
 <p>Como habrás notado, todavía estamos en una fase muy descriptiva. Esto nos permite tener una perspectiva de lo que podemos obtener de nuestro conjunto de datos, lo que nos facilitará la tarea de planear qué transformaciones requeriremos en nuestros datos para poderlos visualizar correctamente.</p>
