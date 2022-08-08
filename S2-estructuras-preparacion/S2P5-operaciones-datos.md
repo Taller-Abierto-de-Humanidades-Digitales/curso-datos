@@ -106,7 +106,7 @@ En términos de medidas de proporción, podemos aplicar las mismas operaciones q
 
 ## En síntesis
 
-Las escalas de medición son muy relevantes al momento de hacer nuestro análisis, en parte porque determinan el tipo de operaciones estadísticas que podemos realizar con los datos, y sobre todo porque nos permiten identificcar si esas operaciones son lógicas o no. Esto es algo que una librería como `Pandas` no puede realizar de manera automática, puesto que solamente puede saber si un dato pertenece a un tipo específico. En ese mismo sentido, tendremos en cuenta que hay operaciones que no representan la realidad aunque estadísticamente sean correctas.
+Las escalas de medición son muy relevantes al momento de hacer nuestro análisis, en parte porque determinan el tipo de operaciones estadísticas que podemos realizar con los datos, y sobre todo porque nos permiten identificcar si esas operaciones son lógicas o no. Esto es algo que una librería como `pandas` no puede realizar de manera automática, puesto que solamente puede saber si un dato pertenece a un tipo específico. En ese mismo sentido, tendremos en cuenta que hay operaciones que no representan la realidad aunque estadísticamente sean correctas.
 
 ## Para saber más
 
