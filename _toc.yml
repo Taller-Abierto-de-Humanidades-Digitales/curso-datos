@@ -26,6 +26,27 @@ parts:
       - file: S2-estructuras-preparacion/S2P6-describe
       - file: S2-estructuras-preparacion/S2P7-actividad-avance-proyecto
     - file: S2-estructuras-preparacion/S2P8-sintesis
+  - caption: Procesamiento de datos
+    chapters:
+    - file: S3-procesamiento/S3P1-introduccion
+    - file: S3-procesamiento/S3P2-manipulacion
+      sections:
+      - file: S3-procesamiento/S3P3-seleccion
+      - file: S3-procesamiento/S3P4-renombrar-columnas
+      - file: S3-procesamiento/S3P5-union-df
+    - file: S3-procesamiento/S3P6-limpieza
+      sections:
+      - file: S3-procesamiento/S3P7-segmentar
+      - file: S3-procesamiento/S3P8-dropna
+      - file: S3-procesamiento/S3P9-dropduplicates
+      - file: S3-procesamiento/S3P10-tonumeric
+      - file: S3-procesamiento/S3P11-todatetime
+    - file: S3-procesamiento/S3P11-transformar
+      sections:
+      - file: S3-procesamiento/S3P12-apply
+      - file: S3-procesamiento/S3P13-separar-valores
+      - file: S3-procesamiento/S3P14-georeferenciar
+    - file: S3-procesamiento/S3P15-sintesis
   - caption: Bibiografía
     chapters:
     - file: references
