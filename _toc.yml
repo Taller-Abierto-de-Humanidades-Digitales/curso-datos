@@ -33,6 +33,8 @@ parts:
       sections:
       - file: S3-procesamiento/S3P3-seleccion
       - file: S3-procesamiento/S3P4-renombrar-columnas
+      - file: S3-procesamiento/S3P5-union-df
+      - file: S3-procesamiento/S3P51-actividad1.md
   - caption: Bibiografía
     chapters:
     - file: references
