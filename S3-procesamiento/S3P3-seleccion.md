@@ -67,7 +67,7 @@ casos_mujeres_25_mexico
 
 Si observas con atención, notarás que lo que hicimos fue encadenar varias peticiones en una sola. Para ello nos servimos del operador `&` ('and') que es un operador lógico [^footnote1].
 
-O, los casos que corresponden a mujeres o migrantes. En este caso usaremos el operador `|`:
+O, los casos que corresponden a mujeres **o** migrantes. En este caso usaremos el operador `|`:
 
 ```{code-cell} ipython
 casos_mujeres_migrantes = df.loc[(df['sexo'] == 'MUJER') | (df['migrante'] == 'SI')]
@@ -75,12 +75,31 @@ print(f'total casos: {casos_mujeres_migrantes.shape[0]}')
 casos_mujeres_migrantes.head()
 ```
 
-Notarás que se regresa una cantidad diferente de filas dependiendo del condicional. Esto simplemente se debe a que estamos utilizando un operador lógico. Así, `pandas` selecciona la información según lo siguiente:
+Notarás que se regresa una cantidad diferente de filas dependiendo del condicional. Esto simplemente se debe a que estamos utilizando un operador lógico. Así, `pandas` selecciona la información según lo siguiente[^footnote2]:
 
 * busca (`loc`) las filas en la columna `sexo` que cumplen con la condición `'MUJER'` y con la condición `'SI'` en la columna `migrante`. Todas las filas que no cumplan con esa condición en ambas columnas serán descartadas.
 * busca las filas de la columnna `sexo` que cumplan con la condición `'MUJER'` o las filas de la columna `migrante` que cumplan con la condición `'SI'`. En este caso, solamente descarta las filas que no cumplan con una de las condiciones. Por esa razón nos devolverá todos los casos donde aparezca `'MUJER'` en la columna `sexo` y todos los casos donde aparezca `'SI'` en la columna `migrante`.
 
+## El método `.iloc`
+
+El método `.iloc` permite seleccionar filas y columnas por su índice. Por ejemplo, si quisiera seleccionar las tres primeras filas del conjunto de datos:
+
+```{code-cell} ipython
+tres_filas = covid_nacional.iloc[:3]
+tres_filas
+```
+
+Ahora, podríamos seleccionar las columnas 1 a 5 de las filas 1 a 3:
+
+```{code-cell} ipython
+filas_columnas = covid_nacional.iloc[:3, 1:5]
+filas_columnas
+```
+
+En información muy bien estructurada, este método permite acceder a información sin preocuparnos por el tipo de dato o la forma en la cual fue escrita la celda. En general, si la información es creada a través de un gestor de base de datos el método `.iloc` puede ser muy útil. Es además más rápido que el método `.loc`, puesto que no tiene que buscar coincidencias sino seleccionar información dentro de una matriz.
 
 ## Notas
 
 [^footnote1]: En Python el posible utilizar el operador lógico `and`, pero en `pandas` no es permitido. Si quieres profundizar sobre esto puedes consultar el artículo de [Àlex Escolà Nixon en Towards Data Science](https://towardsdatascience.com/bitwise-operators-and-chaining-comparisons-in-pandas-d3a559487525).
+
+[^footnote2]: En este curso no podemos profundizar en lógica y teoría de conjuntos, pero puedo recomendar el primer capítulo del libro de {cite}`juola_six_2017` para una introducción bastante comprensible de la lógica. Para la teoría de conjuntos, el capítulo de {cite}`flanders_gentle_2019` es una introducción sencilla y completa.
