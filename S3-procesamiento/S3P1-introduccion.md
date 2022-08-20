@@ -24,11 +24,6 @@ Saldemos desde ahora esa duda: la ciencia del análisis de datos es una discipli
 
 Oviamente no podremos abordar todas las técnicas necesarias para realizar una manipulación de datos, pero sí las necesarias para iniciar con la visualización de datos.
 
-## Contenidos de este módulo
-
-```{tableofcontents}
-```
-
 ## Notas
 
 [^footnote1]: Además del trabajo de {cite}`mckinney_python_2018`, un buen camino para empezar a profundizar en este tema es el libro de {cite}`mcgregor_practical_2022`.

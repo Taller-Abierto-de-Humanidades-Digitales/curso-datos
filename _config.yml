@@ -13,6 +13,7 @@ execute:
   timeout: 200
   exclude_patterns:
     - 'S2P7*'
+    - 'S3P17*'
 
 # Define the name of the latex output file for PDF builds
 latex:

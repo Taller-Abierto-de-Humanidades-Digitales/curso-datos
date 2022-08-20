@@ -34,7 +34,28 @@ parts:
       - file: S3-procesamiento/S3P3-seleccion
       - file: S3-procesamiento/S3P4-renombrar-columnas
       - file: S3-procesamiento/S3P5-union-df
-      - file: S3-procesamiento/S3P51-actividad1.md
+      - file: S3-procesamiento/S3P51-actividad1
+    - file: S3-procesamiento/S3P6-limpieza
+      sections:
+      - file: S3-procesamiento/S3P7-segmentar
+      - file: S3-procesamiento/S3P8-dropna
+      - file: S3-procesamiento/S3P9-dropduplicates
+      - file: S3-procesamiento/S3P10-tonumeric
+      - file: S3-procesamiento/S3P11-todatetime
+      - file: S3-procesamiento/S3P111-actividad2
+    - file: S3-procesamiento/S3P12-transformar
+      sections: 
+      - file: S3-procesamiento/S3P13-agrupar
+      - file: S3-procesamiento/S3P14-apply
+      - file: S3-procesamiento/S3P15-georeferenciar
+      - file: S3-procesamiento/S3P16-to_csv
+    - file: S3-procesamiento/S3P161-actividad3
+    - file: S3-procesamiento/S3P17-actividad-entrega
+  - caption: Visualización de datos
+    chapters:
+    - file: S4-visualizaciones-publicacion/S4P1-introduccion
+    - file: S4-visualizaciones-publicacion/S4P2-claves-visualizacion
+    - file: S4-visualizaciones-publicacion/S4P3-visualizacion-malformada
   - caption: Bibiografía
     chapters:
     - file: references
