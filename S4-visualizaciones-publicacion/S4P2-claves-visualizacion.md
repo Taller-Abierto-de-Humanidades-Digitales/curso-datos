@@ -117,7 +117,7 @@ porcentaje_pais.reset_index(drop=True, inplace=True)
 porcentaje_pais[:10]
 ```
 
-Ahora tenemos un escenario más preciso. Ya no sabemos solamente cuántos contagios tenemos por país de origen, sino tenemos un valor que representa cuál es el porcentaje de cada uno de estas nacionalidad en el conjunto general de extranjeros. Además, podemos contrastar entre aquellos que son migrantes y aquellos que simplemente están de visita, o que no lo especificaron. 
+Ahora tenemos un escenario más preciso. Ya no sabemos solamente cuántos contagios tenemos por país de origen, sino tenemos un valor que representa cuál es el porcentaje de cada uno de estas nacionalidad en el conjunto general de extranjeros. Además, podemos contrastar entre aquellos que son migrantes y aquellos que simplemente están de visita, o que no lo especificaron.
 
 En esta tabla tenemos el dato ordenado por migrantes y solamente incluye el top 10 de países de origen. Pero hay sutilezas que podríamos explorar con mayor detalle, por ejemplo, de cuáles países se contagiaron mayor cantidad de visitantes que de migrantes, cuál es el orden de nacionalidad no especificada, etc. Es aquí donde la visualización de datos puede ayudarnos a entender mejor estas relaciones.
 
@@ -125,6 +125,6 @@ En esta tabla tenemos el dato ordenado por migrantes y solamente incluye el top 
 
 Como verás, estas operaciones pueden ser más o menos complejas, dependiendo de los datos que tenemos disponibles y de lo que queremos hacer con ellos. Aunque estas líneas de código pueden ser ilegibles por momentos, es importante tener en cuenta que `pandas` es una herramienta muy poderosa que nos permite hacer análisis de datos de una manera muy sencilla.
 
-Te recomiendo que intentes replicar algunos de los ejemplos que hemos visto aquí y que te desafíes a hacer tus propios análisis de datos. 
+Te recomiendo que intentes replicar algunos de los ejemplos que hemos visto aquí y que te desafíes a hacer tus propios análisis de datos.
 
 ¡Adelante!

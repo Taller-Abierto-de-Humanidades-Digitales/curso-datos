@@ -49,7 +49,7 @@ ax.set_xticks(covid_acumulado.index[::30])
 plt.show()
 ```
 
-"Técnicamente", esta es una gráfica con datos correctos. Que muestra el acumulado de los casos por Covd-19 que se han presentado durante el semestre. Sin embargo, es una gráfica que envía un mensaje cláramente erróneo: que las defunciones han ido aumentando durante todo el primer semestre de 2022. Una gráfica de este tipo podría utilizarse para tratar de enviar el mensaje de que la pandemia no solo continúa, sino que está agravándose con el paso del tiempo. 
+"Técnicamente", esta es una gráfica con datos correctos. Que muestra el acumulado de los casos por Covd-19 que se han presentado durante el semestre. Sin embargo, es una gráfica que envía un mensaje cláramente erróneo: que las defunciones han ido aumentando durante todo el primer semestre de 2022. Una gráfica de este tipo podría utilizarse para tratar de enviar el mensaje de que la pandemia no solo continúa, sino que está agravándose con el paso del tiempo.
 
 Ahora veamos una gráfica del mismo tipo, con los mismos datos, pero representada de una forma diferente:
 
@@ -94,9 +94,9 @@ En este sentido, es fundamental tener el suficiente criterio para elegir la form
 
 ## Un famoso ejemplo de manipulación de datos
 
-El 10 de septiembre de 2013, el CEO de Apple, Tim Cook, presentó una gráfica en la que se mostraba el crecimiento acumulado en las ventas de iPhones desde 2007 hasta 2013. Por motivos de derechos de autor no puedo incluir la imagen en este sitio, pero les comparto la grabación de [la charla de Tim Cook](https://youtu.be/yBX-KpMoxYk?t=1247). El enlace inicia en el segundo exacto en el que se presenta la gráfica. 
+El 10 de septiembre de 2013, el CEO de Apple, Tim Cook, presentó una gráfica en la que se mostraba el crecimiento acumulado en las ventas de iPhones desde 2007 hasta 2013. Por motivos de derechos de autor no puedo incluir la imagen en este sitio, pero les comparto la grabación de [la charla de Tim Cook](https://youtu.be/yBX-KpMoxYk?t=1247). El enlace inicia en el segundo exacto en el que se presenta la gráfica.
 
-Como verás, la gráfica es usada solamente por unos segundos, pero tiene el propósito claro de ratificar el argumento que Cook está presentando: que el iPhone 5s fue el modelo más exitoso en su primer año de todos los demás modelos lanzados previamente. 
+Como verás, la gráfica es usada solamente por unos segundos, pero tiene el propósito claro de ratificar el argumento que Cook está presentando: que el iPhone 5s fue el modelo más exitoso en su primer año de todos los demás modelos lanzados previamente.
 
 Al ser utilizada por un tiempo tan breve, tiene un efecto directo entre los asistentes. Pero, llamó la atención de David Yanofsky, un periodista afiliado con la revista "Quartz", quien notó algunos aspectos extraños de la gráfica.
 
@@ -108,6 +108,8 @@ La conclusión que pudo extraer Yanofsky de los datos era radicalmente diferente
 
 Este ejemplo es apenas uno de los innumerables casos en los que las visualizaciones ayudan a ocultar o manipular el mensaje que se está intentando transmitir. La facilidad con la que se puede malintepretar una visualización, conlleva a una desconfianza generalizada en los datos, lo que puede ser un problema grave para la ciencia y la educación. Por esta razón, tener las herramientas para identificar una "buena" de una "mala" visualización es clave en el mundo de hoy.
 
-Finalmente, para cerrar esta sección, les quiero recomendar el ciclo de grabaciones del curso "Calling Bullshit in the Age of Big Data", impartido por los profesores Carl Bergstrom y Jevin West, de la universidad de Washington. Pueden verlo en [YouTube](https://youtube.com/playlist?list=PLPnZfvKID1Sje5jWxt-4CSZD7bUI4gSPS). En este encontrarán muchos ejemplos del uso indebido de las visualizaciones y de los datos, así como las herramientas para identificarlos.
+Finalmente, para cerrar esta sección, les quiero recomendar el ciclo de grabaciones del curso "Calling Bullshit in the Age of Big Data", impartido por los profesores Carl Bergstrom y Jevin West, de la universidad de Washington. Pueden verlo en [YouTube](https://youtube.com/playlist?list=PLPnZfvKID1Sje5jWxt-4CSZD7bUI4gSPS). En este encontrarán muchos ejemplos del "uso indebido" de las visualizaciones y de los datos, así como las herramientas para identificarlos.
+
+## Notas
 
 [^footnote1]: Los cuatro primeros capítulos de {cite}`spiegelhalter_art_2021` son una excelente guía para evitar confundir con los datos desde el mismo proceso de análisis.

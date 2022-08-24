@@ -62,8 +62,42 @@ En este caso utilizamos una función lambda. Este es un concepto algo complicado
 
 Obviamente, el inconveniente ahora será encontrar una opción para los casos en español. En este caso, incluyo esta función, modificada ligeramente a partir de esta respuesta dada en [StackOverflow](https://stackoverflow.com/a/62486395), con la cual podemos realizar esta conversión:
 
+```{admonition} conversor
+:class: tip
+El código que viene a continuación es un programa hecho a medida para manipular nuestros datos y poder visualizarlos posteriormente. No es necesario que lo apliques en este curso, pero ten en cuenta que no siempre es posible recurrir a soluciones predeterminadas y sintéticas para resolver un problema proveniente de nuestros conjuntos de datos.
+```
+
 ```{code-cell} ipython
+:tags: [hide-input]
+import pycountry
 import gettext
+
+# Esta corrección es necesaria para incluir una serie de países que de otra manera quedarían excluidos
+# Se excluyeron las siguientes claves por ser ambiguas o no localizables: 'OTRO', 'SE DESCONOCE', 'REPÚBLICA CHECA Y REPÚBLICA ESLOVACA', 'PAÍSES DE LA EX-U.R.S.S., EXCEPTO UCRANIA Y BIELORUSIA', 'AZERBAIYÁN - ISLAS AZORES'
+
+correccion_paises = {
+        'nombre_original': ['ESTADOS UNIDOS DE AMÉRICA', 'VENEZUELA', 'TAIWÁN', 'HOLANDA', 'REPÚBLICA DE HONDURAS', 'BOLIVIA',
+                            'REPÚBLICA DE COREA', 'GRAN BRETAÑA (REINO UNIDO)', 'RUSIA',
+                            'REPÚBLICA DE COSTA RICA', 'REPÚBLICA DE PANAMÁ',
+                            'REPÚBLICA ORIENTAL DEL URUGUAY',
+                            'RUMANIA', 'IRÁN', 'ESTADO LIBRE ASOCIADO DE PUERTO RICO',
+                            'ESTADO DE KUWAIT', 'ANTIGUA Y BERMUDA',
+                            'CAMPIONE DITALIA',
+                            'EMIRATOS ARABES UNIDOS',
+                            'ZONA ESPECIAL CANARIA', 'COMMONWEALTH DE DOMINICA',
+                            'THAILANDIA', 'ESTADO DE BAHREIN', 'MALÍ',
+                            'ISLAS MENORES ALEJADAS DE LOS ESTADOS UNIDOS', 'GUYANA FRANCESA',
+                            'IRAQ'],
+        'nombre_corregido': ['ESTADOS UNIDOS', 'VENEZUELA, REPÚBLICA BOLIVARIANA DE', 'TAIWÁN, PROVINCIA DE CHINA', 'PAÍSES BAJOS', 'HONDURAS', 'BOLIVIA, ESTADO PLURINACIONAL de',
+                             'COREA, REPÚBLICA DE', 'Reino Unido', 'FEDERACIÓN RUSA',
+                             'COSTA RICA', 'PANAMÁ', 'URUGUAY', 'rumanía', 'irán, república islámica de', 'Puerto rico', 'KUWAIT', 'ANTIGUA Y BARBUDA', 'ITALIA', 'EMIRATOS ÁRABES UNIDOS', 'ESPAÑA', 'DOMINICA', 'TAILANDIA', 'BAHREIN', 'MALI', 'ESTADOS UNIDOS', 'GUYANA', 'IRAK']
+    }
+
+
+none_countries = {'nombre': ['ZONA NEUTRAL', 'COSTA DE MARFIL', 'REPÚBLICA DEMOCRÁTICA DE COREA', 'ARGELIA', 'NUEVA ZELANDIA', 'ARABIA SAUDITA', 'REPÚBLICA CENTRO AFRICANA', 'SUDÁFRICA'],
+                  'alpha2': ['NT', 'CI', 'KP', 'DZ', 'NZ', 'SA', 'CF', 'ZA'],
+                  'alpha3': ['NTZ', 'CIV', 'PRK', 'DZA', 'NZL', 'SAU', 'CAF', 'ZAF']}
+
 
 def map_country_code(country_name, language, iso):
     '''
@@ -74,24 +108,40 @@ def map_country_code(country_name, language, iso):
     try:
         if country_name is None:
             return None
-        elif country_name == 'MÉXICO': # esta condición sintetiza el caso de México (reduce de 5 minutos a 6 segundos el tiempo de ejecución)
+        # esta condición sintetiza el caso de México (reduce de 5 minutos a 6 segundos el tiempo de ejecución)
+        elif country_name == 'MÉXICO':
             if iso == 'alpha_2':
                 return 'MX'
             elif iso == 'alpha_3':
                 return 'MEX'
-        spanish = gettext.translation('iso3166', pycountry.LOCALES_DIR, languages=[language])
+
+        spanish = gettext.translation(
+            'iso3166', pycountry.LOCALES_DIR, languages=[language])
         spanish.install()
         _ = spanish.gettext
-        for english_country in pycountry.countries:
-            country_name = country_name.lower()
-            spanish_country = _(english_country.name).lower()
-            if spanish_country == country_name:
-                if iso == 'alpha_3':
-                    return english_country.alpha_3
-                elif iso == 'alpha_2':
-                    return english_country.alpha_2
+
+        # check if country_name is in correccion_paises['nombre_original'] and correct it with correccion_paises['nombre_corregido']
+        if country_name in correccion_paises['nombre_original']:
+            country_name = correccion_paises['nombre_corregido'][correccion_paises['nombre_original'].index(country_name)] 
+
+        if country_name in none_countries['nombre']:
+            if iso == 'alpha_2':
+                return none_countries['alpha2'][none_countries['nombre'].index(country_name)]
+            elif iso == 'alpha_3':
+                return none_countries['alpha3'][none_countries['nombre'].index(country_name)]
+        else:
+            for english_country in pycountry.countries:
+                country_name = country_name.lower()
+                spanish_country = _(english_country.name).lower()
+                if spanish_country == country_name:
+                    if iso == 'alpha_3':
+                        return english_country.alpha_3
+                    elif iso == 'alpha_2':
+                        return english_country.alpha_2
+   
     except Exception as e:
         raise
+
 ```
 
 Por lo pronto, solamente es relevante que con esta función puedes obtener el código alpha-2 o alpha-3 de un país en varios idiomas. Podemos probar que funciona de la siguiente manera:
@@ -103,9 +153,19 @@ map_country_code('España', 'es', 'alpha_2')
 Ahora, vamos a aplicarlo a nuestro conjunto de datos:
 
 ```{code-cell} ipython
+:tags: [remove-cell]
+muestra_covid = pd.read_csv("../data/muestra_covid.csv")
+```
+
+```{code-cell} ipython
 muestra_covid['alpha3'] = muestra_covid['pais_nacionalidad'].apply(lambda x: map_country_code(x, 'es', 'alpha_3'))
 muestra_covid['alpha2'] = muestra_covid['pais_nacionalidad'].apply(lambda x: map_country_code(x, 'es', 'alpha_2'))
 muestra_covid.head()
+```
+
+```{code-cell} ipython
+:tags: [remove-cell]
+muestra_covid.to_csv('../data/muestra_georef_covid.csv', index=False)
 ```
 
 Como verás, las soluciones no siempre vienen dadas de antemano. Ciertas situaciones requerirán de nuestra exploración y creatividad para resolver un problema o alcanzar el objetivo que estamos buscando.

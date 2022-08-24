@@ -55,7 +55,19 @@ parts:
     chapters:
     - file: S4-visualizaciones-publicacion/S4P1-introduccion
     - file: S4-visualizaciones-publicacion/S4P2-claves-visualizacion
-    - file: S4-visualizaciones-publicacion/S4P3-visualizacion-malformada
+    - file: S4-visualizaciones-publicacion/S4P3-dataviz
+    - file: S4-visualizaciones-publicacion/S4P4-visualizacion-malformada
+    - file: S4-visualizaciones-publicacion/S4P5-actividad1
+    - file: S4-visualizaciones-publicacion/S4P6-intrografs
+      sections:
+      - file: S4-visualizaciones-publicacion/S4P7-graficos
+      - file: S4-visualizaciones-publicacion/S4P8-plotly
+      - file: S4-visualizaciones-publicacion/S4P9-actividad2
+      - file: S4-visualizaciones-publicacion/S4P10-mapas
+  - caption: Proyecto final
+    chapters:
+    - file: S4-visualizaciones-publicacion/S4P11-pfinal
+    - file: S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final
   - caption: Bibiografía
     chapters:
     - file: references

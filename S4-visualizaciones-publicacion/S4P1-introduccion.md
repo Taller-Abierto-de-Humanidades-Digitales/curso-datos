@@ -35,4 +35,6 @@ Antes de comenzar con nuestro tema, quisiera recomendar algunos libros recientes
 
 Y sin más preámbulo, vamos a comenzar con nuestro tema.
 
+## Notas
+
 [^footnote]: `Networkx` no es una librería enfocada en la visualización de datos, pero es una herramienta muy útil para preparar información que luego pueda ser visualizada en programas como [Gephi](https://gephi.org/).
