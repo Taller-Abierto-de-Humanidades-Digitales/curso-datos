@@ -1,0 +1,1201 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Georeferenciar &#8212; Visualización de datos educativos abiertos</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="to_csv" href="S3P16-to_csv.html" />
+    <link rel="prev" title="El método apply()" href="S3P14-apply.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_datos.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualización de datos educativos abiertos</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Te damos la bienvenida :)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Selecciona e importa una fuente de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P1-crear-cuaderno.html">
+   Crear un cuaderno para prácticar con código
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P2-seleccionar-fuente-datos.html">
+   Seleccionar una fuente de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P3-fuentes-datos.html">
+     Fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P4-selecciona-datos.html">
+     Actividad: Seleccionar tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P5-importar-datos.html">
+   Importar datos a Google Colab
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P6-actividad-importar-datos.html">
+     Actividad: importa tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P7-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de estructuras de datos y preparación
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P1-introduccion.html">
+   Análisis de estructuras de datos y preparación
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P2-como-describir.html">
+   ¿Cómo describir una fuente de datos?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P3-tipos-datos.html">
+     Tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P4-dtypes.html">
+     Tipos de datos con pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P5-operaciones-datos.html">
+     Variables cuantitativas y cualitativas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P6-describe.html">
+     Describir la fuente de datos con la función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       describe()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P7-actividad-avance-proyecto.html">
+     Actividad de avance del proyecto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P8-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Procesamiento de datos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P1-introduccion.html">
+   Introducción a la manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3P2-manipulacion.html">
+   Manipulación básica de un dataframe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P3-seleccion.html">
+     Selección de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P4-renombrar-columnas.html">
+     Renombrar columnas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P5-union-df.html">
+     Combinar fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P51-actividad1.html">
+     Actividad manipulación de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3P6-limpieza.html">
+   Limpieza de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P7-segmentar.html">
+     Segmentar la información
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P8-dropna.html">
+     Manejar datos nulos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P9-dropduplicates.html">
+     Eliminar duplicados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P10-tonumeric.html">
+     Asegurar datos numéricos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P11-todatetime.html">
+     Cambiar datos a fechas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P111-actividad2.html">
+     Actividad: limpieza de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="S3P12-transformar.html">
+   Operaciones “avanzadas”
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P13-agrupar.html">
+     Agrupar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P14-apply.html">
+     El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Georeferenciar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P16-to_csv.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       to_csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P161-actividad3.html">
+   Actividad normalización y transformación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P17-actividad-entrega.html">
+   Avance del proyecto
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualización de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P1-introduccion.html">
+   A ver datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P2-claves-visualizacion.html">
+   Bases para la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P3-dataviz.html">
+   Data Viz Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P4-visualizacion-malformada.html">
+   Sobre el mensaje en la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P5-actividad1.html">
+   ¿Qué visualización vas a utilizar para tus datos?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P6-intrografs.html">
+   Barras, líneas y mapas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P7-graficos.html">
+     Gráficos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P8-plotly.html">
+     Gráficos con plotly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P9-actividad2.html">
+     ¡Tu visualización!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P10-mapas.html">
+     Mapas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P11-pfinal.html">
+   Proyecto final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final.html">
+   Importar datos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibiografía
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P15-georeferenciar.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P15-georeferenciar.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/S3-procesamiento/S3P15-georeferenciar.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/S3-procesamiento/S3P15-georeferenciar.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Georeferenciar</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="georeferenciar">
+<h1>Georeferenciar<a class="headerlink" href="#georeferenciar" title="Permalink to this headline">#</a></h1>
+<p>Ya vimos en el apartado dedicado a la <a class="reference internal" href="S3P5-union-df.html"><span class="doc std std-doc">unión de dataframes</span></a> como agregar la información de geolocalización de un conjunto de datos a otro. En este sentido, la complejidad radica simplemente en encontrar un listado o conjunto de datos que coincida con los espacios que queremos representar.</p>
+<p>Lo que tenemos que garantizar simplemente es que la clave del nombre coincida con el lugar de geolocalización.</p>
+<p>En datos globales, la geolocalización por países puede valerse de los códigos alpha-2 y alpha-3, que corresponden a una cadena de dos o tres letras que identifican el país.</p>
+<p>En Python, una librería muy utilizada para realizar esta tarea es <a class="reference external" href="https://pypi.org/project/pycountry/"><code class="docutils literal notranslate"><span class="pre">pycountry</span></code></a>.</p>
+<p>Para usar esta librería en Google Colab, primero necesitamos instalarla de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pycountry
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycountry in /Users/jairoantonio/opt/anaconda3/lib/python3.9/site-packages (22.3.5)
+Requirement already satisfied: setuptools in /Users/jairoantonio/opt/anaconda3/lib/python3.9/site-packages (from pycountry) (58.0.4)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Posteriormente podemos importarla y utilizarla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pycountry</span>
+<span class="n">pycountry</span><span class="o">.</span><span class="n">countries</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">alpha_2</span><span class="o">=</span><span class="s1">&#39;MX&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Country(alpha_2=&#39;MX&#39;, alpha_3=&#39;MEX&#39;, flag=&#39;🇲🇽&#39;, name=&#39;Mexico&#39;, numeric=&#39;484&#39;, official_name=&#39;United Mexican States&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nuestra fuente de datos de <code class="docutils literal notranslate"><span class="pre">covid_nacional</span></code> contiene información relacionada con el país de origen, disponible en la columna <code class="docutils literal notranslate"><span class="pre">pais_nacionalidad</span></code>, así que podremos transformar esa columna para obtener los datos de georeferenciación.</p>
+<p>Pero antes, veamos un ejemplo ideal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">paises</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Andrea&#39;</span><span class="p">,</span> <span class="s1">&#39;Natalia&#39;</span><span class="p">,</span> <span class="s1">&#39;Guadalupe&#39;</span><span class="p">,</span> <span class="s1">&#39;Pedro&#39;</span><span class="p">,</span> <span class="s1">&#39;Joaquín&#39;</span><span class="p">,</span> <span class="s1">&#39;Julio&#39;</span><span class="p">,</span> <span class="s1">&#39;Luisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Vicente&#39;</span><span class="p">],</span> <span class="s1">&#39;País&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Mexico&#39;</span><span class="p">,</span> <span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="s1">&#39;Korea, Republic of&#39;</span><span class="p">]})</span>
+<span class="n">paises</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>País</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andrea</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Natalia</td>
+      <td>United States</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Guadalupe</td>
+      <td>Spain</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pedro</td>
+      <td>France</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Joaquín</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Julio</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Luisa</td>
+      <td>China</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Juan</td>
+      <td>Japan</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Vicente</td>
+      <td>Korea, Republic of</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En este caso, podemos utilizar un función para obtener el código alpha-2 de cada país a partir de su nombre en inglés:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="p">[</span><span class="s1">&#39;alpha2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">paises</span><span class="p">[</span><span class="s1">&#39;País&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pycountry</span><span class="o">.</span><span class="n">countries</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">alpha_2</span><span class="p">)</span>
+<span class="n">paises</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>País</th>
+      <th>alpha2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andrea</td>
+      <td>Mexico</td>
+      <td>MX</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Natalia</td>
+      <td>United States</td>
+      <td>US</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Guadalupe</td>
+      <td>Spain</td>
+      <td>ES</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pedro</td>
+      <td>France</td>
+      <td>FR</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Joaquín</td>
+      <td>Italy</td>
+      <td>IT</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Julio</td>
+      <td>Germany</td>
+      <td>DE</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Luisa</td>
+      <td>China</td>
+      <td>CN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Juan</td>
+      <td>Japan</td>
+      <td>JP</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Vicente</td>
+      <td>Korea, Republic of</td>
+      <td>KR</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Con este dato (alpha_2 o alpha_3) tendremos la posibilidad de visualizar nuestra información en un mapa.</p>
+<div class="tip admonition">
+<p class="admonition-title">Función lambda</p>
+<p>En este caso utilizamos una función lambda. Este es un concepto algo complicado, pero básicamente, es una función que utilizaremos una sola vez y de manera repetida en una serie de filas.</p>
+</div>
+<p>Obviamente, el inconveniente ahora será encontrar una opción para los casos en español. En este caso, incluyo esta función, modificada ligeramente a partir de esta respuesta dada en <a class="reference external" href="https://stackoverflow.com/a/62486395">StackOverflow</a>, con la cual podemos realizar esta conversión:</p>
+<div class="tip admonition">
+<p class="admonition-title">conversor</p>
+<p>El código que viene a continuación es un programa hecho a medida para manipular nuestros datos y poder visualizarlos posteriormente. No es necesario que lo apliques en este curso, pero ten en cuenta que no siempre es posible recurrir a soluciones predeterminadas y sintéticas para resolver un problema proveniente de nuestros conjuntos de datos.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pycountry</span>
+<span class="kn">import</span> <span class="nn">gettext</span>
+
+<span class="c1"># Esta corrección es necesaria para incluir una serie de países que de otra manera quedarían excluidos</span>
+<span class="c1"># Se excluyeron las siguientes claves por ser ambiguas o no localizables: &#39;OTRO&#39;, &#39;SE DESCONOCE&#39;, &#39;REPÚBLICA CHECA Y REPÚBLICA ESLOVACA&#39;, &#39;PAÍSES DE LA EX-U.R.S.S., EXCEPTO UCRANIA Y BIELORUSIA&#39;, &#39;AZERBAIYÁN - ISLAS AZORES&#39;</span>
+
+<span class="n">correccion_paises</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;nombre_original&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ESTADOS UNIDOS DE AMÉRICA&#39;</span><span class="p">,</span> <span class="s1">&#39;VENEZUELA&#39;</span><span class="p">,</span> <span class="s1">&#39;TAIWÁN&#39;</span><span class="p">,</span> <span class="s1">&#39;HOLANDA&#39;</span><span class="p">,</span> <span class="s1">&#39;REPÚBLICA DE HONDURAS&#39;</span><span class="p">,</span> <span class="s1">&#39;BOLIVIA&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;REPÚBLICA DE COREA&#39;</span><span class="p">,</span> <span class="s1">&#39;GRAN BRETAÑA (REINO UNIDO)&#39;</span><span class="p">,</span> <span class="s1">&#39;RUSIA&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;REPÚBLICA DE COSTA RICA&#39;</span><span class="p">,</span> <span class="s1">&#39;REPÚBLICA DE PANAMÁ&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;REPÚBLICA ORIENTAL DEL URUGUAY&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;RUMANIA&#39;</span><span class="p">,</span> <span class="s1">&#39;IRÁN&#39;</span><span class="p">,</span> <span class="s1">&#39;ESTADO LIBRE ASOCIADO DE PUERTO RICO&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;ESTADO DE KUWAIT&#39;</span><span class="p">,</span> <span class="s1">&#39;ANTIGUA Y BERMUDA&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;CAMPIONE DITALIA&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;EMIRATOS ARABES UNIDOS&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;ZONA ESPECIAL CANARIA&#39;</span><span class="p">,</span> <span class="s1">&#39;COMMONWEALTH DE DOMINICA&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;THAILANDIA&#39;</span><span class="p">,</span> <span class="s1">&#39;ESTADO DE BAHREIN&#39;</span><span class="p">,</span> <span class="s1">&#39;MALÍ&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;ISLAS MENORES ALEJADAS DE LOS ESTADOS UNIDOS&#39;</span><span class="p">,</span> <span class="s1">&#39;GUYANA FRANCESA&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;IRAQ&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;nombre_corregido&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ESTADOS UNIDOS&#39;</span><span class="p">,</span> <span class="s1">&#39;VENEZUELA, REPÚBLICA BOLIVARIANA DE&#39;</span><span class="p">,</span> <span class="s1">&#39;TAIWÁN, PROVINCIA DE CHINA&#39;</span><span class="p">,</span> <span class="s1">&#39;PAÍSES BAJOS&#39;</span><span class="p">,</span> <span class="s1">&#39;HONDURAS&#39;</span><span class="p">,</span> <span class="s1">&#39;BOLIVIA, ESTADO PLURINACIONAL de&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;COREA, REPÚBLICA DE&#39;</span><span class="p">,</span> <span class="s1">&#39;Reino Unido&#39;</span><span class="p">,</span> <span class="s1">&#39;FEDERACIÓN RUSA&#39;</span><span class="p">,</span>
+                             <span class="s1">&#39;COSTA RICA&#39;</span><span class="p">,</span> <span class="s1">&#39;PANAMÁ&#39;</span><span class="p">,</span> <span class="s1">&#39;URUGUAY&#39;</span><span class="p">,</span> <span class="s1">&#39;rumanía&#39;</span><span class="p">,</span> <span class="s1">&#39;irán, república islámica de&#39;</span><span class="p">,</span> <span class="s1">&#39;Puerto rico&#39;</span><span class="p">,</span> <span class="s1">&#39;KUWAIT&#39;</span><span class="p">,</span> <span class="s1">&#39;ANTIGUA Y BARBUDA&#39;</span><span class="p">,</span> <span class="s1">&#39;ITALIA&#39;</span><span class="p">,</span> <span class="s1">&#39;EMIRATOS ÁRABES UNIDOS&#39;</span><span class="p">,</span> <span class="s1">&#39;ESPAÑA&#39;</span><span class="p">,</span> <span class="s1">&#39;DOMINICA&#39;</span><span class="p">,</span> <span class="s1">&#39;TAILANDIA&#39;</span><span class="p">,</span> <span class="s1">&#39;BAHREIN&#39;</span><span class="p">,</span> <span class="s1">&#39;MALI&#39;</span><span class="p">,</span> <span class="s1">&#39;ESTADOS UNIDOS&#39;</span><span class="p">,</span> <span class="s1">&#39;GUYANA&#39;</span><span class="p">,</span> <span class="s1">&#39;IRAK&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+
+
+<span class="n">none_countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ZONA NEUTRAL&#39;</span><span class="p">,</span> <span class="s1">&#39;COSTA DE MARFIL&#39;</span><span class="p">,</span> <span class="s1">&#39;REPÚBLICA DEMOCRÁTICA DE COREA&#39;</span><span class="p">,</span> <span class="s1">&#39;ARGELIA&#39;</span><span class="p">,</span> <span class="s1">&#39;NUEVA ZELANDIA&#39;</span><span class="p">,</span> <span class="s1">&#39;ARABIA SAUDITA&#39;</span><span class="p">,</span> <span class="s1">&#39;REPÚBLICA CENTRO AFRICANA&#39;</span><span class="p">,</span> <span class="s1">&#39;SUDÁFRICA&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;alpha2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;NT&#39;</span><span class="p">,</span> <span class="s1">&#39;CI&#39;</span><span class="p">,</span> <span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;DZ&#39;</span><span class="p">,</span> <span class="s1">&#39;NZ&#39;</span><span class="p">,</span> <span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;CF&#39;</span><span class="p">,</span> <span class="s1">&#39;ZA&#39;</span><span class="p">],</span>
+                  <span class="s1">&#39;alpha3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;NTZ&#39;</span><span class="p">,</span> <span class="s1">&#39;CIV&#39;</span><span class="p">,</span> <span class="s1">&#39;PRK&#39;</span><span class="p">,</span> <span class="s1">&#39;DZA&#39;</span><span class="p">,</span> <span class="s1">&#39;NZL&#39;</span><span class="p">,</span> <span class="s1">&#39;SAU&#39;</span><span class="p">,</span> <span class="s1">&#39;CAF&#39;</span><span class="p">,</span> <span class="s1">&#39;ZAF&#39;</span><span class="p">]}</span>
+
+
+<span class="k">def</span> <span class="nf">map_country_code</span><span class="p">(</span><span class="n">country_name</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">iso</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    country_name: str. El nombre del país en español.</span>
+<span class="sd">    language: str. El idioma en el que se desea obtener el código (p. ej: &#39;es&#39;).</span>
+<span class="sd">    iso: str. Opciones posibles: &#39;alpha_2&#39; o &#39;alpha_3&#39;.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">country_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="c1"># esta condición sintetiza el caso de México (reduce de 5 minutos a 6 segundos el tiempo de ejecución)</span>
+        <span class="k">elif</span> <span class="n">country_name</span> <span class="o">==</span> <span class="s1">&#39;MÉXICO&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">iso</span> <span class="o">==</span> <span class="s1">&#39;alpha_2&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s1">&#39;MX&#39;</span>
+            <span class="k">elif</span> <span class="n">iso</span> <span class="o">==</span> <span class="s1">&#39;alpha_3&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s1">&#39;MEX&#39;</span>
+
+        <span class="n">spanish</span> <span class="o">=</span> <span class="n">gettext</span><span class="o">.</span><span class="n">translation</span><span class="p">(</span>
+            <span class="s1">&#39;iso3166&#39;</span><span class="p">,</span> <span class="n">pycountry</span><span class="o">.</span><span class="n">LOCALES_DIR</span><span class="p">,</span> <span class="n">languages</span><span class="o">=</span><span class="p">[</span><span class="n">language</span><span class="p">])</span>
+        <span class="n">spanish</span><span class="o">.</span><span class="n">install</span><span class="p">()</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">spanish</span><span class="o">.</span><span class="n">gettext</span>
+
+        <span class="c1"># check if country_name is in correccion_paises[&#39;nombre_original&#39;] and correct it with correccion_paises[&#39;nombre_corregido&#39;]</span>
+        <span class="k">if</span> <span class="n">country_name</span> <span class="ow">in</span> <span class="n">correccion_paises</span><span class="p">[</span><span class="s1">&#39;nombre_original&#39;</span><span class="p">]:</span>
+            <span class="n">country_name</span> <span class="o">=</span> <span class="n">correccion_paises</span><span class="p">[</span><span class="s1">&#39;nombre_corregido&#39;</span><span class="p">][</span><span class="n">correccion_paises</span><span class="p">[</span><span class="s1">&#39;nombre_original&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">country_name</span><span class="p">)]</span> 
+
+        <span class="k">if</span> <span class="n">country_name</span> <span class="ow">in</span> <span class="n">none_countries</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">iso</span> <span class="o">==</span> <span class="s1">&#39;alpha_2&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">none_countries</span><span class="p">[</span><span class="s1">&#39;alpha2&#39;</span><span class="p">][</span><span class="n">none_countries</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">country_name</span><span class="p">)]</span>
+            <span class="k">elif</span> <span class="n">iso</span> <span class="o">==</span> <span class="s1">&#39;alpha_3&#39;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">none_countries</span><span class="p">[</span><span class="s1">&#39;alpha3&#39;</span><span class="p">][</span><span class="n">none_countries</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">country_name</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">english_country</span> <span class="ow">in</span> <span class="n">pycountry</span><span class="o">.</span><span class="n">countries</span><span class="p">:</span>
+                <span class="n">country_name</span> <span class="o">=</span> <span class="n">country_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">spanish_country</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="n">english_country</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">spanish_country</span> <span class="o">==</span> <span class="n">country_name</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">iso</span> <span class="o">==</span> <span class="s1">&#39;alpha_3&#39;</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">english_country</span><span class="o">.</span><span class="n">alpha_3</span>
+                    <span class="k">elif</span> <span class="n">iso</span> <span class="o">==</span> <span class="s1">&#39;alpha_2&#39;</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">english_country</span><span class="o">.</span><span class="n">alpha_2</span>
+   
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Por lo pronto, solamente es relevante que con esta función puedes obtener el código alpha-2 o alpha-3 de un país en varios idiomas. Podemos probar que funciona de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_country_code</span><span class="p">(</span><span class="s1">&#39;España&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha_2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ES&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, vamos a aplicarlo a nuestro conjunto de datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muestra_covid</span><span class="p">[</span><span class="s1">&#39;alpha3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muestra_covid</span><span class="p">[</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">map_country_code</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha_3&#39;</span><span class="p">))</span>
+<span class="n">muestra_covid</span><span class="p">[</span><span class="s1">&#39;alpha2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muestra_covid</span><span class="p">[</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">map_country_code</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;alpha_2&#39;</span><span class="p">))</span>
+<span class="n">muestra_covid</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>sexo</th>
+      <th>edad</th>
+      <th>entidad_nacimiento</th>
+      <th>municipio_residencia</th>
+      <th>indigena</th>
+      <th>nacionalidad</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>fecha_ingreso</th>
+      <th>fecha_sintomas</th>
+      <th>fecha_def</th>
+      <th>alpha3</th>
+      <th>alpha2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>HOMBRE</td>
+      <td>43</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>MEXICANA</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>2022-05-03</td>
+      <td>2022-05-03</td>
+      <td>NaN</td>
+      <td>MEX</td>
+      <td>MX</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>HOMBRE</td>
+      <td>39</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>MEXICANA</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>2022-01-13</td>
+      <td>2022-01-10</td>
+      <td>NaN</td>
+      <td>MEX</td>
+      <td>MX</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>HOMBRE</td>
+      <td>55</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>MEXICANA</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>2022-01-12</td>
+      <td>2022-01-12</td>
+      <td>NaN</td>
+      <td>MEX</td>
+      <td>MX</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>HOMBRE</td>
+      <td>54</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>MEXICANA</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>2022-02-20</td>
+      <td>2022-02-13</td>
+      <td>NaN</td>
+      <td>MEX</td>
+      <td>MX</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>MUJER</td>
+      <td>41</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NO</td>
+      <td>MEXICANA</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>2022-01-12</td>
+      <td>2022-01-10</td>
+      <td>NaN</td>
+      <td>MEX</td>
+      <td>MX</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Como verás, las soluciones no siempre vienen dadas de antemano. Ciertas situaciones requerirán de nuestra exploración y creatividad para resolver un problema o alcanzar el objetivo que estamos buscando.</p>
+<p>La gran riqueza de la programación radica, precisamente, en la capacidad creativa que podemos tener con cada lenguaje.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./S3-procesamiento"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="S3P14-apply.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">El método <code class="docutils literal notranslate"><span class="pre">apply()</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="S3P16-to_csv.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">to_csv</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      Este cuaderno fue elaborado en el marco del curso ofrecido por el programa de formación docente y eduación continua de la <a href="https://cuaieed.unam.mx/formacion_docente_educacion_continua" target="_blank">CUAIEED-UNAM</a> en el mes de agosto de 2022.<br /> | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

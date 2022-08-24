@@ -1,0 +1,2287 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Combinar fuentes de datos &#8212; Visualización de datos educativos abiertos</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Actividad manipulación de datos" href="S3P51-actividad1.html" />
+    <link rel="prev" title="Renombrar columnas" href="S3P4-renombrar-columnas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_datos.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualización de datos educativos abiertos</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Te damos la bienvenida :)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Selecciona e importa una fuente de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P1-crear-cuaderno.html">
+   Crear un cuaderno para prácticar con código
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P2-seleccionar-fuente-datos.html">
+   Seleccionar una fuente de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P3-fuentes-datos.html">
+     Fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P4-selecciona-datos.html">
+     Actividad: Seleccionar tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P5-importar-datos.html">
+   Importar datos a Google Colab
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P6-actividad-importar-datos.html">
+     Actividad: importa tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P7-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de estructuras de datos y preparación
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P1-introduccion.html">
+   Análisis de estructuras de datos y preparación
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P2-como-describir.html">
+   ¿Cómo describir una fuente de datos?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P3-tipos-datos.html">
+     Tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P4-dtypes.html">
+     Tipos de datos con pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P5-operaciones-datos.html">
+     Variables cuantitativas y cualitativas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P6-describe.html">
+     Describir la fuente de datos con la función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       describe()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P7-actividad-avance-proyecto.html">
+     Actividad de avance del proyecto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P8-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Procesamiento de datos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P1-introduccion.html">
+   Introducción a la manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="S3P2-manipulacion.html">
+   Manipulación básica de un dataframe
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P3-seleccion.html">
+     Selección de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P4-renombrar-columnas.html">
+     Renombrar columnas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Combinar fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P51-actividad1.html">
+     Actividad manipulación de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3P6-limpieza.html">
+   Limpieza de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P7-segmentar.html">
+     Segmentar la información
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P8-dropna.html">
+     Manejar datos nulos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P9-dropduplicates.html">
+     Eliminar duplicados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P10-tonumeric.html">
+     Asegurar datos numéricos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P11-todatetime.html">
+     Cambiar datos a fechas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P111-actividad2.html">
+     Actividad: limpieza de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3P12-transformar.html">
+   Operaciones “avanzadas”
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P13-agrupar.html">
+     Agrupar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P14-apply.html">
+     El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P15-georeferenciar.html">
+     Georeferenciar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P16-to_csv.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       to_csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P161-actividad3.html">
+   Actividad normalización y transformación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P17-actividad-entrega.html">
+   Avance del proyecto
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualización de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P1-introduccion.html">
+   A ver datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P2-claves-visualizacion.html">
+   Bases para la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P3-dataviz.html">
+   Data Viz Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P4-visualizacion-malformada.html">
+   Sobre el mensaje en la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P5-actividad1.html">
+   ¿Qué visualización vas a utilizar para tus datos?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P6-intrografs.html">
+   Barras, líneas y mapas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P7-graficos.html">
+     Gráficos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P8-plotly.html">
+     Gráficos con plotly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P9-actividad2.html">
+     ¡Tu visualización!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P10-mapas.html">
+     Mapas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P11-pfinal.html">
+   Proyecto final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final.html">
+   Importar datos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibiografía
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P5-union-df.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P5-union-df.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/S3-procesamiento/S3P5-union-df.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/S3-procesamiento/S3P5-union-df.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-merge">
+   “Inner” merge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outer-merge">
+   Outer Merge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-modo-de-cierre">
+   A modo de cierre
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#para-saber-mas">
+   Para saber más
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Combinar fuentes de datos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-merge">
+   “Inner” merge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outer-merge">
+   Outer Merge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-modo-de-cierre">
+   A modo de cierre
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#para-saber-mas">
+   Para saber más
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="combinar-fuentes-de-datos">
+<h1>Combinar fuentes de datos<a class="headerlink" href="#combinar-fuentes-de-datos" title="Permalink to this headline">#</a></h1>
+<p>En las bases de datos relacionales, combinar tablas es una de las tareas más comunes y necesarias. Por lo general, la información se divide para hacerla más fácil de gestionar y por ello al recuperarla necesitamos combinarlas para obtener un resultado coherente en una sola tabla.</p>
+<p>Para este ejercicio necesitaremos dos fuentes de datos, así que aprovecharé el “Catálogo Único de Claves de Áreas Geoestadísticas Estatales, Municipales y Localidades” que proveé el <a class="reference external" href="https://www.inegi.org.mx/app/ageeml/">INEGI</a> para obtener las coordenadas geográficas de los municipios que se anotan en el conjunto de datos por Covid.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">ruta_areas_inegi</span> <span class="o">=</span> <span class="s1">&#39;../data/AGEEML_2022842026272.csv&#39;</span>
+<span class="n">areas_inegi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ruta_areas_inegi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">areas_inegi</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">areas_inegi</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(300083, 19)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mapa</th>
+      <th>Cve_Ent</th>
+      <th>Nom_Ent</th>
+      <th>Nom_Abr</th>
+      <th>Cve_Mun</th>
+      <th>Nom_Mun</th>
+      <th>Cve_Loc</th>
+      <th>Nom_Loc</th>
+      <th>Ámbito</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10010001</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>U</td>
+      <td>21°52´47.362N"</td>
+      <td>102°17´45.768W"</td>
+      <td>21.879823</td>
+      <td>-102.296047</td>
+      <td>1878</td>
+      <td>F13D19</td>
+      <td>863893</td>
+      <td>419168</td>
+      <td>444725</td>
+      <td>246259</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10010094</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>94</td>
+      <td>Granja Adelita</td>
+      <td>R</td>
+      <td>21°52´18.749N"</td>
+      <td>102°22´24.710W"</td>
+      <td>21.871875</td>
+      <td>-102.373531</td>
+      <td>1901</td>
+      <td>F13D18</td>
+      <td>5</td>
+      <td>*</td>
+      <td>*</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10010096</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>96</td>
+      <td>Agua Azul</td>
+      <td>R</td>
+      <td>21°53´01.522N"</td>
+      <td>102°21´25.639W"</td>
+      <td>21.883756</td>
+      <td>-102.357122</td>
+      <td>1861</td>
+      <td>F13D18</td>
+      <td>41</td>
+      <td>24</td>
+      <td>17</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10010100</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>100</td>
+      <td>Rancho Alegre</td>
+      <td>R</td>
+      <td>21°51´16.556N"</td>
+      <td>102°22´21.884W"</td>
+      <td>21.854599</td>
+      <td>-102.372746</td>
+      <td>1879</td>
+      <td>F13D18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10010102</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>102</td>
+      <td>Los Arbolitos [Rancho]</td>
+      <td>R</td>
+      <td>21°46´48.650N"</td>
+      <td>102°21´26.261W"</td>
+      <td>21.780181</td>
+      <td>-102.357295</td>
+      <td>1861</td>
+      <td>F13D18</td>
+      <td>8</td>
+      <td>*</td>
+      <td>*</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Verás que nuestro nuevo conjunto de datos contiene 300,083 filas y 19 columnas. Además de los datos correspondientes a las coordenadas geográficas tenemos otros datos como la altitud, el total de población (total y por sexos), el total de viviendas habitadas, entre otros datos relacionados con claves de entidades.</p>
+<p>Tenemos como dato común los municipios de residencia de los casos por Covid y el nombre del municipio (<code class="docutils literal notranslate"><span class="pre">Nom_Mun</span></code>) de los datos del INEGI. Ya que aprendimos a renombrar las columnas, aprovechemos para renombrar las columnas de las coordenadas de tal manera que podamos crear una columna común sobre la cual hacer la unión.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">areas_inegi</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Nom_Mun&#39;</span><span class="p">:</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">},</span> <span class="c1"># recordemos que cambiamos el nombre de la columna en el ejercicio anterior</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">areas_inegi</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mapa</th>
+      <th>Cve_Ent</th>
+      <th>Nom_Ent</th>
+      <th>Nom_Abr</th>
+      <th>Cve_Mun</th>
+      <th>municipio_residencia</th>
+      <th>Cve_Loc</th>
+      <th>Nom_Loc</th>
+      <th>Ámbito</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10010001</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>U</td>
+      <td>21°52´47.362N"</td>
+      <td>102°17´45.768W"</td>
+      <td>21.879823</td>
+      <td>-102.296047</td>
+      <td>1878</td>
+      <td>F13D19</td>
+      <td>863893</td>
+      <td>419168</td>
+      <td>444725</td>
+      <td>246259</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10010094</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>94</td>
+      <td>Granja Adelita</td>
+      <td>R</td>
+      <td>21°52´18.749N"</td>
+      <td>102°22´24.710W"</td>
+      <td>21.871875</td>
+      <td>-102.373531</td>
+      <td>1901</td>
+      <td>F13D18</td>
+      <td>5</td>
+      <td>*</td>
+      <td>*</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10010096</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>96</td>
+      <td>Agua Azul</td>
+      <td>R</td>
+      <td>21°53´01.522N"</td>
+      <td>102°21´25.639W"</td>
+      <td>21.883756</td>
+      <td>-102.357122</td>
+      <td>1861</td>
+      <td>F13D18</td>
+      <td>41</td>
+      <td>24</td>
+      <td>17</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10010100</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>100</td>
+      <td>Rancho Alegre</td>
+      <td>R</td>
+      <td>21°51´16.556N"</td>
+      <td>102°22´21.884W"</td>
+      <td>21.854599</td>
+      <td>-102.372746</td>
+      <td>1879</td>
+      <td>F13D18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10010102</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>Ags.</td>
+      <td>1</td>
+      <td>Aguascalientes</td>
+      <td>102</td>
+      <td>Los Arbolitos [Rancho]</td>
+      <td>R</td>
+      <td>21°46´48.650N"</td>
+      <td>102°21´26.261W"</td>
+      <td>21.780181</td>
+      <td>-102.357295</td>
+      <td>1861</td>
+      <td>F13D18</td>
+      <td>8</td>
+      <td>*</td>
+      <td>*</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Ahora sí podremos empezar a “jugar” con nuestros datos para lograr un conjunto de datos con la información de geolocalización.</p>
+<section id="inner-merge">
+<h2>“Inner” merge<a class="headerlink" href="#inner-merge" title="Permalink to this headline">#</a></h2>
+<p>De manera predeterminada, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> combina nuestros datos con una unión “inner”, es decir, que encuentra la información común de ambos conjuntos de datos y excluye la que no está en ambos. Podemos representar lo anterior a través de este diagrama de Venn:</p>
+<img alt="../_images/inner.jpeg" class="align-center" src="../_images/inner.jpeg" />
+<p>Para hacer la unión de nuestros datos usaremos la siguiente sintaxis:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Lo cual se traduce en:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inner_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">covid_nacional</span><span class="p">,</span> <span class="n">areas_inegi</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">)</span>
+<span class="n">inner_merge</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nacimiento</th>
+      <th>entidad_residencia</th>
+      <th>municipio_residencia</th>
+      <th>...</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<p>0 rows × 59 columns</p>
+</div></div></div>
+</div>
+<p>Pero ¡este no es el resultado que esperábamos! ¿Por qué nos regresa una tabla vacía pero con 59 columnas?</p>
+<p>Esto es fácil de identificar: <code class="docutils literal notranslate"><span class="pre">pandas</span></code> no encuentra datos comunes porque la información del conjunto de datos de <code class="docutils literal notranslate"><span class="pre">covid_nacional</span></code> está escrito en mayúsculas sostenidas y la información del conjunto de datos de <code class="docutils literal notranslate"><span class="pre">areas_inegi</span></code> está escrito en mayúsculas y minúsculas. Más adelante veremos con mayor detalle como “normalizar” nuestros datos para evitar estas inconsistencias.</p>
+<p>Por lo pronto, podemos transformar nuestros datos a minúsculas en la columna <code class="docutils literal notranslate"><span class="pre">municipio_residencia</span></code> tanto en <code class="docutils literal notranslate"><span class="pre">covid_nacional</span></code> como en <code class="docutils literal notranslate"><span class="pre">areas_inegi</span></code> para que podamos hacer la unión. Afortunadamente, ambos conjuntos de datos conservan la acentuación gráfica de los datos, lo que nos facilita su unificación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">covid_nacional</span><span class="p">[</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="p">[</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">areas_inegi</span><span class="p">[</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">areas_inegi</span><span class="p">[</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, apliquemos nuevamente la unión a nuestro conjunto de datos. Pero primero, vamos a reducir nuestro conjunto de datos para hacerlo más manejable.</p>
+<div class="tip admonition">
+<p class="admonition-title">¿Por qué reducimos los datos?</p>
+<p>Al experimentar con grandes conjuntos de datos es altamente recomendable ser amable con los recursos computacionales. Si hacemos estos ejercicios directamente con todo el conjunto de datos nos tomará más tiempo y estaremos expuestos a errores de memoria.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">covid_nacional_tm</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span> <span class="c1"># reducimos el conjunto de datos a 100 filas</span>
+
+<span class="n">inner_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">covid_nacional_tm</span><span class="p">,</span> <span class="n">areas_inegi</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inner_merge</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">inner_merge</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(624, 59)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nacimiento</th>
+      <th>entidad_residencia</th>
+      <th>municipio_residencia</th>
+      <th>...</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>naucalpan de juárez</td>
+      <td>...</td>
+      <td>19°28´43.690N"</td>
+      <td>099°13´59.585W"</td>
+      <td>19.478803</td>
+      <td>-99.233218</td>
+      <td>2280</td>
+      <td>E14A39</td>
+      <td>776220</td>
+      <td>373698</td>
+      <td>402522</td>
+      <td>225509</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>naucalpan de juárez</td>
+      <td>...</td>
+      <td>19°26´28.806N"</td>
+      <td>099°20´21.556W"</td>
+      <td>19.441335</td>
+      <td>-99.339321</td>
+      <td>2846</td>
+      <td>E14A38</td>
+      <td>9920</td>
+      <td>4802</td>
+      <td>5118</td>
+      <td>2404</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>naucalpan de juárez</td>
+      <td>...</td>
+      <td>19°28´32.024N"</td>
+      <td>099°20´39.833W"</td>
+      <td>19.475562</td>
+      <td>-99.344398</td>
+      <td>2738</td>
+      <td>E14A38</td>
+      <td>3595</td>
+      <td>1773</td>
+      <td>1822</td>
+      <td>942</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>naucalpan de juárez</td>
+      <td>...</td>
+      <td>19°26´21.138N"</td>
+      <td>099°22´38.200W"</td>
+      <td>19.439205</td>
+      <td>-99.377278</td>
+      <td>3298</td>
+      <td>E14A38</td>
+      <td>50</td>
+      <td>28</td>
+      <td>22</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>naucalpan de juárez</td>
+      <td>...</td>
+      <td>19°29´44.683N"</td>
+      <td>099°18´19.417W"</td>
+      <td>19.495745</td>
+      <td>-99.305394</td>
+      <td>2501</td>
+      <td>E14A39</td>
+      <td>1013</td>
+      <td>490</td>
+      <td>523</td>
+      <td>255</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 59 columns</p>
+</div></div></div>
+</div>
+<p>Ahora estamos enfrentándonos a otro problema: ¡el resultado de la unión son 624 filas! ¿Por qué? Esto se debe a que los datos de <code class="docutils literal notranslate"><span class="pre">municipio_residencia</span></code> no están asociados con un campo único. Esto lo podemos ver aquí:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">areas_inegi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">areas_inegi</span><span class="p">[</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;chalco&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mapa</th>
+      <th>Cve_Ent</th>
+      <th>Nom_Ent</th>
+      <th>Nom_Abr</th>
+      <th>Cve_Mun</th>
+      <th>municipio_residencia</th>
+      <th>Cve_Loc</th>
+      <th>Nom_Loc</th>
+      <th>Ámbito</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>140805</th>
+      <td>150250001</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>1</td>
+      <td>Chalco de Díaz Covarrubias</td>
+      <td>U</td>
+      <td>19°15´40.074N"</td>
+      <td>098°53´44.357W"</td>
+      <td>19.261132</td>
+      <td>-98.895655</td>
+      <td>2238</td>
+      <td>E14B31</td>
+      <td>174704</td>
+      <td>83207</td>
+      <td>91497</td>
+      <td>45578</td>
+    </tr>
+    <tr>
+      <th>140806</th>
+      <td>150250002</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>2</td>
+      <td>La Candelaria Tlapala</td>
+      <td>U</td>
+      <td>19°14´26.710N"</td>
+      <td>098°50´49.712W"</td>
+      <td>19.240753</td>
+      <td>-98.847142</td>
+      <td>2254</td>
+      <td>E14B41</td>
+      <td>9446</td>
+      <td>4620</td>
+      <td>4826</td>
+      <td>2428</td>
+    </tr>
+    <tr>
+      <th>140807</th>
+      <td>150250005</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>5</td>
+      <td>San Gregorio Cuautzingo</td>
+      <td>U</td>
+      <td>19°15´25.528N"</td>
+      <td>098°51´29.893W"</td>
+      <td>19.257091</td>
+      <td>-98.858304</td>
+      <td>2244</td>
+      <td>E14B31</td>
+      <td>8485</td>
+      <td>4109</td>
+      <td>4376</td>
+      <td>2134</td>
+    </tr>
+    <tr>
+      <th>140808</th>
+      <td>150250009</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>9</td>
+      <td>Instituto Damián (Ex-Hacienda San Juan de Dios)</td>
+      <td>R</td>
+      <td>19°14´16.312N"</td>
+      <td>098°54´32.585W"</td>
+      <td>19.237864</td>
+      <td>-98.909051</td>
+      <td>2241</td>
+      <td>E14B41</td>
+      <td>1</td>
+      <td>*</td>
+      <td>*</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>140809</th>
+      <td>150250010</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>10</td>
+      <td>San Juan Tezompa</td>
+      <td>U</td>
+      <td>19°12´25.717N"</td>
+      <td>098°57´37.832W"</td>
+      <td>19.207144</td>
+      <td>-98.960509</td>
+      <td>2239</td>
+      <td>E14B41</td>
+      <td>13127</td>
+      <td>6422</td>
+      <td>6705</td>
+      <td>3453</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>140872</th>
+      <td>150250147</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>147</td>
+      <td>Hacienda San Juan [Conjunto Urbano]</td>
+      <td>U</td>
+      <td>19°16´08.352N"</td>
+      <td>098°50´25.142W"</td>
+      <td>19.268987</td>
+      <td>-98.840317</td>
+      <td>2257</td>
+      <td>E14B31</td>
+      <td>1623</td>
+      <td>774</td>
+      <td>849</td>
+      <td>458</td>
+    </tr>
+    <tr>
+      <th>140873</th>
+      <td>150250148</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>148</td>
+      <td>Villas de San Martín [Conjunto Urbano]</td>
+      <td>U</td>
+      <td>19°16´03.967N"</td>
+      <td>098°50´09.801W"</td>
+      <td>19.267769</td>
+      <td>-98.836056</td>
+      <td>2258</td>
+      <td>E14B31</td>
+      <td>5714</td>
+      <td>2786</td>
+      <td>2928</td>
+      <td>1698</td>
+    </tr>
+    <tr>
+      <th>140874</th>
+      <td>150250149</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>149</td>
+      <td>Los Héroes Chalco [Conjunto Urbano]</td>
+      <td>U</td>
+      <td>19°15´37.533N"</td>
+      <td>098°50´29.037W"</td>
+      <td>19.260426</td>
+      <td>-98.841399</td>
+      <td>2253</td>
+      <td>E14B31</td>
+      <td>34277</td>
+      <td>16552</td>
+      <td>17725</td>
+      <td>9965</td>
+    </tr>
+    <tr>
+      <th>140875</th>
+      <td>150250151</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>151</td>
+      <td>Valle Plateado [Fraccionamiento]</td>
+      <td>R</td>
+      <td>19°13´06.312N"</td>
+      <td>098°47´15.789W"</td>
+      <td>19.218420</td>
+      <td>-98.787719</td>
+      <td>2449</td>
+      <td>E14B41</td>
+      <td>67</td>
+      <td>36</td>
+      <td>31</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>140876</th>
+      <td>150250152</td>
+      <td>15</td>
+      <td>México</td>
+      <td>Mex.</td>
+      <td>25</td>
+      <td>chalco</td>
+      <td>152</td>
+      <td>La Pulida</td>
+      <td>R</td>
+      <td>19°13´30.678N"</td>
+      <td>098°49´25.945W"</td>
+      <td>19.225188</td>
+      <td>-98.823874</td>
+      <td>2292</td>
+      <td>E14B41</td>
+      <td>154</td>
+      <td>68</td>
+      <td>86</td>
+      <td>39</td>
+    </tr>
+  </tbody>
+</table>
+<p>72 rows × 19 columns</p>
+</div></div></div>
+</div>
+<p>Al hacer el merge, el conjunto de datos se multiplica por las coincidencias, encontrándonos así con una tabla que nos da información inconsistente.</p>
+<div class="tip admonition">
+<p class="admonition-title">¡importante!</p>
+<p>Un error común al hacer un merge es terminar con un conjunto de datos mucho mayor del esperado. Esto se debe a que provienen de fuentes diferentes y no se puede predecir con exactitud cuántos datos se obtendrán.
+Por esta razón es <strong>fundamental</strong> asegurarse de que el conjunto de datos resultante sea el esperado. Una manera práctica de hacerlo es valiéndose del módulo shape. Si el resultado es un número inconsistente (por ejemplo, que 100 casos de Covid se convirtieran en 624) debemos revisar dónde se encuentra el error.</p>
+<p>Lastimosamente no existe una fórmula que abarque todos los casos, así que este es un paso que depende en buena medida de nuestra capacidad para detectar errores.</p>
+</div>
+<p>Tendremos finalmente que hacer una depuración de los datos de <code class="docutils literal notranslate"><span class="pre">areas_inegi_tm</span></code> para que coincida con nuestros datos. Encontramos que el registro de datos de <code class="docutils literal notranslate"><span class="pre">covid_nacional</span></code> usa como <code class="docutils literal notranslate"><span class="pre">municipio_residencia</span></code> el nombre principal del municipio, en este caso, coincide con la clave <code class="docutils literal notranslate"><span class="pre">1</span></code> del campo <code class="docutils literal notranslate"><span class="pre">Cve_Loc</span></code> en <code class="docutils literal notranslate"><span class="pre">areas_inegi</span></code>. Segmentaremos nuestro conjunto de datos valiéndonos del método <code class="docutils literal notranslate"><span class="pre">.loc</span></code> y podremos hacer nuevamente nuestro ‘inner merge’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># segmentamos nuestro conjunto de datos de areas_inegi</span>
+<span class="n">areas_inegi_tm</span> <span class="o">=</span> <span class="n">areas_inegi</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">areas_inegi</span><span class="p">[</span><span class="s1">&#39;Cve_Loc&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># realizamos nuestro merge</span>
+<span class="n">inner_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">covid_nacional_tm</span><span class="p">,</span> <span class="n">areas_inegi_tm</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inner_merge</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">inner_merge</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15, 59)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nacimiento</th>
+      <th>entidad_residencia</th>
+      <th>municipio_residencia</th>
+      <th>...</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>naucalpan de juárez</td>
+      <td>...</td>
+      <td>19°28´43.690N"</td>
+      <td>099°13´59.585W"</td>
+      <td>19.478803</td>
+      <td>-99.233218</td>
+      <td>2280</td>
+      <td>E14A39</td>
+      <td>776220</td>
+      <td>373698</td>
+      <td>402522</td>
+      <td>225509</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11</td>
+      <td>2022-06-26</td>
+      <td>04fc18</td>
+      <td>FUERA DE USMER</td>
+      <td>SEDENA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>atizapán</td>
+      <td>...</td>
+      <td>19°10´36.328N"</td>
+      <td>099°29´16.591W"</td>
+      <td>19.176758</td>
+      <td>-99.487942</td>
+      <td>2590</td>
+      <td>E14A48</td>
+      <td>10873</td>
+      <td>5250</td>
+      <td>5623</td>
+      <td>2342</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>24</td>
+      <td>2022-06-26</td>
+      <td>3a5f83</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>zumpango</td>
+      <td>...</td>
+      <td>19°47´49.643N"</td>
+      <td>099°06´02.282W"</td>
+      <td>19.797123</td>
+      <td>-99.100634</td>
+      <td>2261</td>
+      <td>E14A19</td>
+      <td>53362</td>
+      <td>26058</td>
+      <td>27304</td>
+      <td>13659</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25</td>
+      <td>2022-06-26</td>
+      <td>3d59ea</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>GUERRERO</td>
+      <td>MÉXICO</td>
+      <td>zumpango</td>
+      <td>...</td>
+      <td>19°47´49.643N"</td>
+      <td>099°06´02.282W"</td>
+      <td>19.797123</td>
+      <td>-99.100634</td>
+      <td>2261</td>
+      <td>E14A19</td>
+      <td>53362</td>
+      <td>26058</td>
+      <td>27304</td>
+      <td>13659</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>26</td>
+      <td>2022-06-26</td>
+      <td>284743</td>
+      <td>USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>nezahualcóyotl</td>
+      <td>...</td>
+      <td>19°24´31.548N"</td>
+      <td>099°01´05.520W"</td>
+      <td>19.408763</td>
+      <td>-99.018200</td>
+      <td>2262</td>
+      <td>E14A39</td>
+      <td>1072676</td>
+      <td>515678</td>
+      <td>556998</td>
+      <td>297975</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 59 columns</p>
+</div></div></div>
+</div>
+<p>¡Eureka! Tenemos una tabla con el resultado esperado. ¿Cómo lo sabemos? (15 filas parece un número sospechoso) Porque coincide con el número de valores no nulos que nos regresa la columna <code class="docutils literal notranslate"><span class="pre">municipio_residencia</span></code> en <code class="docutils literal notranslate"><span class="pre">covid_nacional_tm</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">covid_nacional_tm</span><span class="p">[</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nezahualcóyotl         5
+zumpango               2
+chalco                 2
+naucalpan de juárez    1
+atizapán               1
+atlautla               1
+ciudad fernández       1
+ecatepec de morelos    1
+huixquilucan           1
+Name: municipio_residencia, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="outer-merge">
+<h2>Outer Merge<a class="headerlink" href="#outer-merge" title="Permalink to this headline">#</a></h2>
+<p>La unión “hacia afuera” es todo lo contrario a un “inner merge”. En este caso, combinamos todos los campos de <code class="docutils literal notranslate"><span class="pre">covid_nacional</span></code> con todos los campos de <code class="docutils literal notranslate"><span class="pre">areas_inegi</span></code>, incluyendo aquellos que no coincidan. Así lo vemos en un diagrama de Venn:</p>
+<img alt="../_images/outer.jpeg" class="align-center" src="../_images/outer.jpeg" />
+<p>Apliquemos un “outer merge” a nuestro ejemplo anterior para ver los resultados:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outer_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">covid_nacional_tm</span><span class="p">,</span> <span class="n">areas_inegi_tm</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;municipio_residencia&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">outer_merge</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">outer_merge</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2564, 59)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nacimiento</th>
+      <th>entidad_residencia</th>
+      <th>municipio_residencia</th>
+      <th>...</th>
+      <th>Latitud</th>
+      <th>Longitud</th>
+      <th>Lat_Decimal</th>
+      <th>Lon_Decimal</th>
+      <th>Altitud</th>
+      <th>Cve_Carta</th>
+      <th>Pob_Total</th>
+      <th>Pob_Masculina</th>
+      <th>Pob_Femenina</th>
+      <th>Total De Viviendas Habitadas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>2022-06-26</td>
+      <td>0793b8</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>2022-06-26</td>
+      <td>0fef08</td>
+      <td>USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>2022-06-26</td>
+      <td>11e31a</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.0</td>
+      <td>2022-06-26</td>
+      <td>0741e4</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>2022-06-26</td>
+      <td>13c92b</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 59 columns</p>
+</div></div></div>
+</div>
+<p>Vemos que el resultado son 2,564 filas. Es una cantidad bastante grande, pero no es un error. Lo que sucede en este caso, es que se combinan los datos que coincide con los valores de <code class="docutils literal notranslate"><span class="pre">municipio_residencia</span></code> y se combinan los datos que no coinciden. Donde no hay coincidencias, las celdas se llenan con valores nulos.</p>
+<p>Para nuestro ejemplo, una unión hacia afuera no es útil. Pero supongamos que tenemos un conjunto de datos de estudiantes con las calificaciones del primer trimestre:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estudiantes_trimestre1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">&#39;Nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Andrea&quot;</span><span class="p">,</span> <span class="s2">&quot;Berenice&quot;</span><span class="p">,</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">],</span>
+     <span class="s1">&#39;Calificaciones_T1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]})</span>
+<span class="n">estudiantes_trimestre1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Calificaciones_T1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andrea</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Berenice</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carlos</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Ahora, queremos agregar las calificaciones de otro conjunto de datos correspondiente al segundo trimestre:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estudiantes_trimestre2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span><span class="s1">&#39;Nombre&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Andrea&quot;</span><span class="p">,</span> <span class="s2">&quot;Berenice&quot;</span><span class="p">,</span> <span class="s2">&quot;Carlos&quot;</span><span class="p">],</span>
+     <span class="s1">&#39;Calificaciones_T2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]})</span>
+<span class="n">estudiantes_trimestre2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Calificaciones_T2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andrea</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Berenice</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carlos</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En este caso, un ‘outer merge’ es indicado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outer_merge</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">estudiantes_trimestre1</span><span class="p">,</span> <span class="n">estudiantes_trimestre2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Nombre&#39;</span><span class="p">)</span>
+<span class="n">outer_merge</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Calificaciones_T1</th>
+      <th>Calificaciones_T2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andrea</td>
+      <td>10</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Berenice</td>
+      <td>8</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Carlos</td>
+      <td>9</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="a-modo-de-cierre">
+<h2>A modo de cierre<a class="headerlink" href="#a-modo-de-cierre" title="Permalink to this headline">#</a></h2>
+<p>Es necesario que selecciones tu método de unión de acuerdo a la lógica de tus datos. Revisa los resultados de tus combinaciones y ajusta los datos para que lleguen al resultado esperado. En ocasiones esto no es un proceso simple, tienes que reducir los datos y hacerlos manejables para que sea mucho más sencillo llegar a encontrar el error. Todas estas son prácticas que debes tener en cuenta y que no dependen del lenguaje de programación que estes utilizando.</p>
+</section>
+<section id="para-saber-mas">
+<h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">#</a></h2>
+<p>Existen otros métodos de unión de conjuntos de datos como el ‘left merge’ y el ‘right merge’, el método ‘join’ o la concatenación (‘concat’). Para no extendernos más, quisiera sugerirles el capítulo 2 del libro de <span id="id1">[<a class="reference internal" href="../references.html#id11" title="Stepanek and Suresh John. Thinking in Pandas. Apress, S.l., 2020. ISBN 978-1-4842-5838-5. OCLC: 1181905701. URL: https://link.springer.com/10.1007/978-1-4842-5839-2 (visited on 2021-03-05).">Stepanek and John, 2020</a>]</span> donde se explica de manera sintética cómo utilizar estos métodos.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./S3-procesamiento"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="S3P4-renombrar-columnas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Renombrar columnas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="S3P51-actividad1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Actividad manipulación de datos</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      Este cuaderno fue elaborado en el marco del curso ofrecido por el programa de formación docente y eduación continua de la <a href="https://cuaieed.unam.mx/formacion_docente_educacion_continua" target="_blank">CUAIEED-UNAM</a> en el mes de agosto de 2022.<br /> | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

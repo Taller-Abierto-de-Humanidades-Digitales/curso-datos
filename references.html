@@ -42,6 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -52,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="¿Qué aprendimos esta semana?" href="S2-estructuras-preparacion/S2P8-sintesis.html" />
+    <link rel="prev" title="Importar datos" href="S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -196,7 +197,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="S2-estructuras-preparacion/S2P4-dtypes.html">
-     Tipos de datos con Pandas
+     Tipos de datos con pandas
     </a>
    </li>
    <li class="toctree-l2">
@@ -224,6 +225,224 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="S2-estructuras-preparacion/S2P8-sintesis.html">
    ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Procesamiento de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3-procesamiento/S3P1-introduccion.html">
+   Introducción a la manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3-procesamiento/S3P2-manipulacion.html">
+   Manipulación básica de un dataframe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P3-seleccion.html">
+     Selección de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P4-renombrar-columnas.html">
+     Renombrar columnas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P5-union-df.html">
+     Combinar fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P51-actividad1.html">
+     Actividad manipulación de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3-procesamiento/S3P6-limpieza.html">
+   Limpieza de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P7-segmentar.html">
+     Segmentar la información
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P8-dropna.html">
+     Manejar datos nulos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P9-dropduplicates.html">
+     Eliminar duplicados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P10-tonumeric.html">
+     Asegurar datos numéricos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P11-todatetime.html">
+     Cambiar datos a fechas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P111-actividad2.html">
+     Actividad: limpieza de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3-procesamiento/S3P12-transformar.html">
+   Operaciones “avanzadas”
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P13-agrupar.html">
+     Agrupar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P14-apply.html">
+     El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P15-georeferenciar.html">
+     Georeferenciar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3-procesamiento/S3P16-to_csv.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       to_csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3-procesamiento/S3P161-actividad3.html">
+   Actividad normalización y transformación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3-procesamiento/S3P17-actividad-entrega.html">
+   Avance del proyecto
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualización de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P1-introduccion.html">
+   A ver datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P2-claves-visualizacion.html">
+   Bases para la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P3-dataviz.html">
+   Data Viz Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P4-visualizacion-malformada.html">
+   Sobre el mensaje en la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P5-actividad1.html">
+   ¿Qué visualización vas a utilizar para tus datos?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P6-intrografs.html">
+   Barras, líneas y mapas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4-visualizaciones-publicacion/S4P7-graficos.html">
+     Gráficos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4-visualizaciones-publicacion/S4P8-plotly.html">
+     Gráficos con plotly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4-visualizaciones-publicacion/S4P9-actividad2.html">
+     ¡Tu visualización!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4-visualizaciones-publicacion/S4P10-mapas.html">
+     Mapas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P11-pfinal.html">
+   Proyecto final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final.html">
+   Importar datos
   </a>
  </li>
 </ul>
@@ -470,17 +689,59 @@ title="Print to PDF"
 <dt class="label" id="id6"><span class="brackets">BBG20</span></dt>
 <dd><p>Peter C. Bruce, Andrew Bruce, and Peter Gedeck. <em>Practical statistics for data scientists: 50+ essential concepts using R and Python</em>. O'Reilly Media, Inc, Sebastopol, CA, second edition edition, 2020. ISBN 978-1-4920-7294-2. OCLC: on1158315601.</p>
 </dd>
+<dt class="label" id="id15"><span class="brackets">CCFO22</span></dt>
+<dd><p>Jeffrey D. Camm, James J. Cochran, Michael J. Fry, and Jeffrey W. Ohlmann. <em>Data visualization: exploring and explaining with data</em>. Cengage Learning, Boston, 1e edition, 2022. ISBN 978-0-357-63134-8.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">DI21</span></dt>
+<dd><p>Jack Dougherty and Ilya Ilyankou. <em>Hands-on data visualization: interactive storytelling from spreadsheets to code</em>. O'Reilly Media, Inc, Boston, 2021. ISBN 978-1-4920-8600-0. OCLC: on1197722533.</p>
+</dd>
 <dt class="label" id="id5"><span class="brackets">Her06</span></dt>
 <dd><p>José Juan Cáceres Hernández. <em>Conceptos Basicos de Estadistica para Ciencias Sociales</em>. Delta Publicaciones, 2006. ISBN 978-84-96477-43-8. Google-Books-ID: S3i_fndtcIEC.</p>
 </dd>
 <dt class="label" id="id4"><span class="brackets">HC15</span></dt>
 <dd><p>Llinas Humberto and Rojas Álvarez Carlos. <em>Estadística descriptiva y distribuciones de probabilidad</em>. Universidad del Norte, January 2015. ISBN 978-958-741-915-3. Google-Books-ID: 43haDwAAQBAJ.</p>
 </dd>
+<dt class="label" id="id10"><span class="brackets">JF19</span></dt>
+<dd><p>Fotis Jannidis and Julia Flanders. A gentle introduction to data modeling. In Julia Flanders and Fotis Jannidis, editors, <em>The shape of data in the digital humanities: modeling texts and text-based resources</em>, Digital research in the arts and humanities, pages 26–95. Routledge, Taylor &amp; Francis Group, London ; New York, 2019.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">JR17</span></dt>
+<dd><p>Patrick Juola and Stephen Ramsay. <em>Six Septembers: mathematics for the humanist</em>. Zea E-Books, Lincoln, 2017. ISBN 978-1-60962-111-7. OCLC: 1015817392.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">MSCI13</span></dt>
+<dd><p>Viktor Mayer-Schönberger, Kenneth Cukier, and Antonio Iriarte. <em>Big data: la revolución de los datos masivos</em>. Turner, Madrid, 2013. ISBN 978-84-15832-10-2. OCLC: 892201485.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">McG22</span></dt>
+<dd><p>Susan E. McGregor. <em>Practical Python data wrangling and data quality</em>. O'Reilly Media. Inc, Sebastopol, CA, 2022. ISBN 978-1-4920-9150-9.</p>
+</dd>
 <dt class="label" id="id2"><span class="brackets">McK18</span></dt>
 <dd><p>Wes McKinney. <em>Python for data analysis: data wrangling with pandas, NumPy, and IPython</em>. O'Reilly Media, Inc, Sebastopol, California, second edition edition, 2018. ISBN 978-1-4919-5766-0. OCLC: ocn959595088.</p>
 </dd>
+<dt class="label" id="id20"><span class="brackets">Mor07</span></dt>
+<dd><p>Franco Moretti. <em>Graphs, maps, trees: abstract models for literary history</em>. Verso, London, New York, 2007. ISBN 978-1-84467-185-4. OCLC: 845372315.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">NK15</span></dt>
+<dd><p>Cole Nussbaumer Knaflic. <em>Storytelling with data: a data visualization guide for business professionals</em>. Wiley, Hoboken, New Jersey, 2015. ISBN 978-1-119-00225-3. OCLC: ocn909318525.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">NK17</span></dt>
+<dd><p>Cole Nussbaumer Knaflic. <em>Storytelling con datos. Visualización de datos para profesionales</em>. Wiley y Anaya Multimedia, Madrid, 2017. ISBN 978-84-415-3930-3. OCLC: 1022571497.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">Sch21</span></dt>
+<dd><p>Jonathan A. Schwabish. <em>Better data visualizations: a guide for scholars, researchers, and wonks</em>. Columbia University Press, New York, 2021. ISBN 978-0-231-55015-4.</p>
+</dd>
 <dt class="label" id="id3"><span class="brackets">Spi21</span></dt>
 <dd><p>David J Spiegelhalter. <em>The art of statistics: how to learn from data</em>. Basic Books, New York, NY, 2021. ISBN 978-1-5416-7570-4. OCLC: 1226564752.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">UN20</span></dt>
+<dd><p>Torgeir Uberg Nærland. The political significance of data visualization: Four key perspectives. In Martin Engebretsen and Helen Kennedy, editors, <em>Data Visualization in Society</em>, pages 63–74. Amsterdam University Press, Amsterdam, 2020. URL: <a class="reference external" href="https://doi.org/10.5117/9789463722902_ch04">https://doi.org/10.5117/9789463722902_ch04</a> (visited on 2022-08-19).</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">Who21</span></dt>
+<dd><p>Casey Whorton. Applying Custom Functions to Groups of Data in Pandas. July 2021. URL: <a class="reference external" href="https://towardsdatascience.com/applying-custom-functions-to-groups-of-data-in-pandas-928d7eece0aa">https://towardsdatascience.com/applying-custom-functions-to-groups-of-data-in-pandas-928d7eece0aa</a> (visited on 2022-08-16).</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">Yan13</span></dt>
+<dd><p>David Yanofsky. The chart Tim Cook doesn’t want you to see. September 2013. URL: <a class="reference external" href="https://qz.com/122921/the-chart-tim-cook-doesnt-want-you-to-see/">https://qz.com/122921/the-chart-tim-cook-doesnt-want-you-to-see/</a> (visited on 2022-08-19).</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">StepanekJ20</span></dt>
+<dd><p>Stepanek and Suresh John. <em>Thinking in Pandas</em>. Apress, S.l., 2020. ISBN 978-1-4842-5838-5. OCLC: 1181905701. URL: <a class="reference external" href="https://link.springer.com/10.1007/978-1-4842-5839-2">https://link.springer.com/10.1007/978-1-4842-5839-2</a> (visited on 2021-03-05).</p>
 </dd>
 </dl>
 </div>
@@ -513,11 +774,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="S2-estructuras-preparacion/S2P8-sintesis.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">¿Qué aprendimos esta semana?</p>
+            <p class="prev-next-title">Importar datos</p>
         </div>
     </a>
 </div>
@@ -530,8 +791,7 @@ title="Print to PDF"
     By Jairo Antonio Melo Flórez<br/>
   
     <div class="extra_footer">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
-
+      Este cuaderno fue elaborado en el marco del curso ofrecido por el programa de formación docente y eduación continua de la <a href="https://cuaieed.unam.mx/formacion_docente_educacion_continua" target="_blank">CUAIEED-UNAM</a> en el mes de agosto de 2022.<br /> | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
     </div>
 </p>
         </footer>

@@ -1,0 +1,2401 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Selección de datos &#8212; Visualización de datos educativos abiertos</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Renombrar columnas" href="S3P4-renombrar-columnas.html" />
+    <link rel="prev" title="Manipulación básica de un dataframe" href="S3P2-manipulacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_datos.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualización de datos educativos abiertos</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Te damos la bienvenida :)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Selecciona e importa una fuente de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P1-crear-cuaderno.html">
+   Crear un cuaderno para prácticar con código
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P2-seleccionar-fuente-datos.html">
+   Seleccionar una fuente de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P3-fuentes-datos.html">
+     Fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P4-selecciona-datos.html">
+     Actividad: Seleccionar tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P5-importar-datos.html">
+   Importar datos a Google Colab
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P6-actividad-importar-datos.html">
+     Actividad: importa tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P7-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de estructuras de datos y preparación
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P1-introduccion.html">
+   Análisis de estructuras de datos y preparación
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P2-como-describir.html">
+   ¿Cómo describir una fuente de datos?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P3-tipos-datos.html">
+     Tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P4-dtypes.html">
+     Tipos de datos con pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P5-operaciones-datos.html">
+     Variables cuantitativas y cualitativas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P6-describe.html">
+     Describir la fuente de datos con la función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       describe()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P7-actividad-avance-proyecto.html">
+     Actividad de avance del proyecto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P8-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Procesamiento de datos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P1-introduccion.html">
+   Introducción a la manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="S3P2-manipulacion.html">
+   Manipulación básica de un dataframe
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Selección de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P4-renombrar-columnas.html">
+     Renombrar columnas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P5-union-df.html">
+     Combinar fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P51-actividad1.html">
+     Actividad manipulación de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3P6-limpieza.html">
+   Limpieza de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P7-segmentar.html">
+     Segmentar la información
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P8-dropna.html">
+     Manejar datos nulos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P9-dropduplicates.html">
+     Eliminar duplicados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P10-tonumeric.html">
+     Asegurar datos numéricos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P11-todatetime.html">
+     Cambiar datos a fechas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P111-actividad2.html">
+     Actividad: limpieza de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S3P12-transformar.html">
+   Operaciones “avanzadas”
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P13-agrupar.html">
+     Agrupar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P14-apply.html">
+     El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P15-georeferenciar.html">
+     Georeferenciar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S3P16-to_csv.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       to_csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P161-actividad3.html">
+   Actividad normalización y transformación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3P17-actividad-entrega.html">
+   Avance del proyecto
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualización de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P1-introduccion.html">
+   A ver datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P2-claves-visualizacion.html">
+   Bases para la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P3-dataviz.html">
+   Data Viz Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P4-visualizacion-malformada.html">
+   Sobre el mensaje en la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P5-actividad1.html">
+   ¿Qué visualización vas a utilizar para tus datos?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P6-intrografs.html">
+   Barras, líneas y mapas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P7-graficos.html">
+     Gráficos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P8-plotly.html">
+     Gráficos con plotly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P9-actividad2.html">
+     ¡Tu visualización!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P10-mapas.html">
+     Mapas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P11-pfinal.html">
+   Proyecto final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S4-visualizaciones-publicacion/S4P12-mi-cuaderno-de-datos_final.html">
+   Importar datos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibiografía
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P3-seleccion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P3-seleccion.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/S3-procesamiento/S3P3-seleccion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/S3-procesamiento/S3P3-seleccion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-metodo-loc">
+   El método
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .loc
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metodo-loc-en-multiples-columnas">
+     Método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc
+      </span>
+     </code>
+     en múltiples columnas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-metodo-iloc">
+   El método
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .iloc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Selección de datos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-metodo-loc">
+   El método
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .loc
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metodo-loc-en-multiples-columnas">
+     Método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc
+      </span>
+     </code>
+     en múltiples columnas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-metodo-iloc">
+   El método
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .iloc
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="seleccion-de-datos">
+<h1>Selección de datos<a class="headerlink" href="#seleccion-de-datos" title="Permalink to this headline">#</a></h1>
+<p>Una operación fundamental cuando trabajamos con datos consiste en seleccionar los datos que nos interesan. Por ejemplo, en los datos de casos de Covid que hemos utilizados, podremos seleccionar de ellos cuáles corresponden a mujeres y a partir de allí realizar otras operaciones de datos. Es un ejemplo simple, pero es una operación común que vamos a realizar continuamente.</p>
+<section id="el-metodo-loc">
+<h2>El método <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#el-metodo-loc" title="Permalink to this headline">#</a></h2>
+<p>Este es la forma más intuitiva de realizar una selección en nuestro conjunto de datos. Lo que se consigue con este método es filtrar por coincidencias en una columna a partir de las condiciones que se especifiquen. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casos_mujeres</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">covid_nacional</span><span class="p">[</span><span class="s1">&#39;sexo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MUJER&#39;</span><span class="p">]</span>
+<span class="n">casos_mujeres</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2022-06-26</td>
+      <td>13c92b</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>2022-06-26</td>
+      <td>04f190</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>NAUCALPAN DE JUÁREZ</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>2022-06-26</td>
+      <td>0a98b4</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MICHOACÁN DE OCAMPO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>2022-06-26</td>
+      <td>112072</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>En este caso, le dijimos a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> que busque en la columna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> los valores que sean iguales a <code class="docutils literal notranslate"><span class="pre">MUJER</span></code> y los muestre. Como habrás notado, el operador <code class="docutils literal notranslate"><span class="pre">==</span></code> indica igualdad. Este es un operador lógico, por lo que no es necesario que el valor a comparar sea numérico. Podemos utilizar el mismo método para localizar un valor numérico, por ejemplo, las mujeres que tengan edad de 25 años:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mujeres_25</span> <span class="o">=</span> <span class="n">casos_mujeres</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">casos_mujeres</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">mujeres_25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>76</th>
+      <td>77</td>
+      <td>2022-06-26</td>
+      <td>1eaf9d</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>121</td>
+      <td>2022-06-26</td>
+      <td>c54e7c</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>177</td>
+      <td>2022-06-26</td>
+      <td>4a7184</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>355</th>
+      <td>356</td>
+      <td>2022-06-26</td>
+      <td>71baef</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>CHALCO</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>750</th>
+      <td>751</td>
+      <td>2022-06-26</td>
+      <td>65cd8e</td>
+      <td>USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1322903</th>
+      <td>1322904</td>
+      <td>2022-06-26</td>
+      <td>m10d115</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323061</th>
+      <td>1323062</td>
+      <td>2022-06-26</td>
+      <td>m1c3e25</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323178</th>
+      <td>1323179</td>
+      <td>2022-06-26</td>
+      <td>m0cbd03</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>SI</td>
+      <td>RESULTADO NO ADECUADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323288</th>
+      <td>1323289</td>
+      <td>2022-06-26</td>
+      <td>m04a712</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323350</th>
+      <td>1323351</td>
+      <td>2022-06-26</td>
+      <td>m00101e</td>
+      <td>FUERA DE USMER</td>
+      <td>PRIVADA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>16002 rows × 41 columns</p>
+</div></div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Para resaltar</p>
+<ul class="simple">
+<li><p>Nota que en el caso del valor numérico no lo incluimos entre paréntesis. Eso es fundamental porque, como recordarás, en la columna <code class="docutils literal notranslate"><span class="pre">edad</span></code> el tipo de dato es numérico (<code class="docutils literal notranslate"><span class="pre">int64</span></code>).</p></li>
+<li><p>Para evitar procesar todo el dataframe nuevamente, lo que hicimos fue acotar el <em>grupo</em> que hicimos con el primer resultado (<code class="docutils literal notranslate"><span class="pre">casos_mujeres</span></code>).</p></li>
+</ul>
+</div>
+<p>En ocasiones, vamos a querer descartar un valor en particular de una columna que contiene muchos elementos. Por ejemplo, en la columna <code class="docutils literal notranslate"><span class="pre">entidad_nac</span></code> (entidad de nacimiento de la persona) podemos querer seleccionar los valores que no sean <code class="docutils literal notranslate"><span class="pre">CIUDAD</span> <span class="pre">DE</span> <span class="pre">MÉXICO</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">entidad_nac_no_cdmx</span> <span class="o">=</span> <span class="n">casos_mujeres</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">casos_mujeres</span><span class="p">[</span><span class="s1">&#39;entidad_nac&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;CIUDAD DE MÉXICO&#39;</span><span class="p">]</span>
+<span class="n">entidad_nac_no_cdmx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>NAUCALPAN DE JUÁREZ</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>2022-06-26</td>
+      <td>0a98b4</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MICHOACÁN DE OCAMPO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>2022-06-26</td>
+      <td>044350</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>2022-06-26</td>
+      <td>375634</td>
+      <td>USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>2022-06-26</td>
+      <td>3d59ea</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>GUERRERO</td>
+      <td>MÉXICO</td>
+      <td>ZUMPANGO</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1323465</th>
+      <td>1323466</td>
+      <td>2022-06-26</td>
+      <td>m0b9e6b</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>GUERRERO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323467</th>
+      <td>1323468</td>
+      <td>2022-06-26</td>
+      <td>m10ccd6</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323483</th>
+      <td>1323484</td>
+      <td>2022-06-26</td>
+      <td>m00d216</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MICHOACÁN DE OCAMPO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>SI</td>
+      <td>RESULTADO NO ADECUADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323487</th>
+      <td>1323488</td>
+      <td>2022-06-26</td>
+      <td>m0c8c4a</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>SI</td>
+      <td>RESULTADO NO ADECUADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323491</th>
+      <td>1323492</td>
+      <td>2022-06-26</td>
+      <td>m139158</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>GUANAJUATO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>144256 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>Esta forma de seleccionar información es muy relevante cuando solamente nos interesa una parte de la información del conjunto de datos para analizar. Por ejemplo, si queremos averiguar los casos por un Estado en un conjunto de datos nacional, o las cifras nacionales en uno global.</p>
+<section id="metodo-loc-en-multiples-columnas">
+<h3>Método <code class="docutils literal notranslate"><span class="pre">.loc</span></code> en múltiples columnas<a class="headerlink" href="#metodo-loc-en-multiples-columnas" title="Permalink to this headline">#</a></h3>
+<p>Los casos anteriores son bastante simples, y si te das cuenta, lo que hicimos fue hacer tres grupos para llegar al resultado deseado. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> nos ofrece la posibilidad de hacer una selección en múltiples columnas. Por ejemplo, si queremos seleccionar los casos de mujeres de 25 años de edad, nacidas en México, y que no sean de CDMX:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casos_mujeres_25_mexico</span> <span class="o">=</span> <span class="n">casos_mujeres</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">casos_mujeres</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">casos_mujeres</span><span class="p">[</span><span class="s1">&#39;entidad_nac&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MÉXICO&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">casos_mujeres</span><span class="p">[</span><span class="s1">&#39;entidad_nac&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;CIUDAD DE MÉXICO&#39;</span><span class="p">)]</span>
+<span class="n">casos_mujeres_25_mexico</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>355</th>
+      <td>356</td>
+      <td>2022-06-26</td>
+      <td>71baef</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>CHALCO</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1421</th>
+      <td>1422</td>
+      <td>2022-06-26</td>
+      <td>7a7ccb</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>NEZAHUALCÓYOTL</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>2446</th>
+      <td>2447</td>
+      <td>2022-06-26</td>
+      <td>b90a4e</td>
+      <td>FUERA DE USMER</td>
+      <td>IMSS</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>2815</th>
+      <td>2816</td>
+      <td>2022-06-26</td>
+      <td>dc9510</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>LA PAZ</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>2939</th>
+      <td>2940</td>
+      <td>2022-06-26</td>
+      <td>92801c</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1319471</th>
+      <td>1319472</td>
+      <td>2022-06-26</td>
+      <td>g0c9923</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1320074</th>
+      <td>1320075</td>
+      <td>2022-06-26</td>
+      <td>g029f84</td>
+      <td>FUERA DE USMER</td>
+      <td>PRIVADA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>NEZAHUALCÓYOTL</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1321052</th>
+      <td>1321053</td>
+      <td>2022-06-26</td>
+      <td>g1e1667</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>MÉXICO</td>
+      <td>TLALNEPANTLA DE BAZ</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323061</th>
+      <td>1323062</td>
+      <td>2022-06-26</td>
+      <td>m1c3e25</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1323178</th>
+      <td>1323179</td>
+      <td>2022-06-26</td>
+      <td>m0cbd03</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>MÉXICO</td>
+      <td>MUJER</td>
+      <td>MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO ESPECIFICADO</td>
+      <td>SI</td>
+      <td>RESULTADO NO ADECUADO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>2126 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>Si observas con atención, notarás que lo que hicimos fue encadenar varias peticiones en una sola. Para ello nos servimos del operador <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (‘and’) que es un operador lógico <a class="footnote-reference brackets" href="#footnote1" id="id1">1</a>.</p>
+<p>O, los casos que corresponden a mujeres <strong>o</strong> migrantes. En este caso usaremos el operador <code class="docutils literal notranslate"><span class="pre">|</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">casos_mujeres_migrantes</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">covid_nacional</span><span class="p">[</span><span class="s1">&#39;sexo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;MUJER&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">covid_nacional</span><span class="p">[</span><span class="s1">&#39;migrante&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SI&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;total casos: </span><span class="si">{</span><span class="n">casos_mujeres_migrantes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">casos_mujeres_migrantes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total casos: 735841
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2022-06-26</td>
+      <td>13c92b</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>SI</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>2022-06-26</td>
+      <td>04f190</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>2022-06-26</td>
+      <td>0ba73d</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>QUERÉTARO</td>
+      <td>MÉXICO</td>
+      <td>NAUCALPAN DE JUÁREZ</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>2022-06-26</td>
+      <td>0a98b4</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>MICHOACÁN DE OCAMPO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>2022-06-26</td>
+      <td>112072</td>
+      <td>FUERA DE USMER</td>
+      <td>ISSSTE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>MUJER</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO SOSPECHOSO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>Notarás que se regresa una cantidad diferente de filas dependiendo del condicional. Esto simplemente se debe a que estamos utilizando un operador lógico. Así, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> selecciona la información según lo siguiente<a class="footnote-reference brackets" href="#footnote2" id="id2">2</a>:</p>
+<ul class="simple">
+<li><p>busca (<code class="docutils literal notranslate"><span class="pre">loc</span></code>) las filas en la columna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> que cumplen con la condición <code class="docutils literal notranslate"><span class="pre">'MUJER'</span></code> y con la condición <code class="docutils literal notranslate"><span class="pre">'SI'</span></code> en la columna <code class="docutils literal notranslate"><span class="pre">migrante</span></code>. Todas las filas que no cumplan con esa condición en ambas columnas serán descartadas.</p></li>
+<li><p>busca las filas de la columnna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> que cumplan con la condición <code class="docutils literal notranslate"><span class="pre">'MUJER'</span></code> o las filas de la columna <code class="docutils literal notranslate"><span class="pre">migrante</span></code> que cumplan con la condición <code class="docutils literal notranslate"><span class="pre">'SI'</span></code>. En este caso, solamente descarta las filas que no cumplan con una de las condiciones. Por esa razón nos devolverá todos los casos donde aparezca <code class="docutils literal notranslate"><span class="pre">'MUJER'</span></code> en la columna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> y todos los casos donde aparezca <code class="docutils literal notranslate"><span class="pre">'SI'</span></code> en la columna <code class="docutils literal notranslate"><span class="pre">migrante</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="el-metodo-iloc">
+<h2>El método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#el-metodo-iloc" title="Permalink to this headline">#</a></h2>
+<p>El método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> permite seleccionar filas y columnas por su índice. Por ejemplo, si quisiera seleccionar las tres primeras filas del conjunto de datos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tres_filas</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">tres_filas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+      <th>entidad_um</th>
+      <th>sexo</th>
+      <th>entidad_nac</th>
+      <th>entidad_res</th>
+      <th>municipio_res</th>
+      <th>...</th>
+      <th>otro_caso</th>
+      <th>toma_muestra_lab</th>
+      <th>resultado_lab</th>
+      <th>toma_muestra_antigeno</th>
+      <th>resultado_antigeno</th>
+      <th>clasificacion_final</th>
+      <th>migrante</th>
+      <th>pais_nacionalidad</th>
+      <th>pais_origen</th>
+      <th>uci</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2022-06-26</td>
+      <td>0793b8</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2022-06-26</td>
+      <td>0fef08</td>
+      <td>USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>SI</td>
+      <td>POSITIVO A SARS-COV-2</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>CASO DE SARS-COV-2  CONFIRMADO</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>2022-06-26</td>
+      <td>11e31a</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>HOMBRE</td>
+      <td>CIUDAD DE MÉXICO</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NO</td>
+      <td>NO</td>
+      <td>NO APLICA (CASO SIN MUESTRA)</td>
+      <td>SI</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NEGATIVO A SARS-COV-2</td>
+      <td>NO ESPECIFICADO</td>
+      <td>MÉXICO</td>
+      <td>NO APLICA</td>
+      <td>NO APLICA</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 41 columns</p>
+</div></div></div>
+</div>
+<p>Ahora, podríamos seleccionar las columnas 1 a 5 de las filas 1 a 3:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filas_columnas</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">filas_columnas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fecha_actualizacion</th>
+      <th>id_registro</th>
+      <th>origen</th>
+      <th>sector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-06-26</td>
+      <td>0793b8</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-06-26</td>
+      <td>0fef08</td>
+      <td>USMER</td>
+      <td>SSA</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-06-26</td>
+      <td>11e31a</td>
+      <td>FUERA DE USMER</td>
+      <td>SSA</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En información muy bien estructurada, este método permite acceder a información sin preocuparnos por el tipo de dato o la forma en la cual fue escrita la celda. En general, si la información es creada a través de un gestor de base de datos el método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> puede ser muy útil. Es además más rápido que el método <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, puesto que no tiene que buscar coincidencias sino seleccionar información dentro de una matriz.</p>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="footnote1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>En Python el posible utilizar el operador lógico <code class="docutils literal notranslate"><span class="pre">and</span></code>, pero en <code class="docutils literal notranslate"><span class="pre">pandas</span></code> no es permitido. Si quieres profundizar sobre esto puedes consultar el artículo de <a class="reference external" href="https://towardsdatascience.com/bitwise-operators-and-chaining-comparisons-in-pandas-d3a559487525">Àlex Escolà Nixon en Towards Data Science</a>.</p>
+</dd>
+<dt class="label" id="footnote2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>En este curso no podemos profundizar en lógica y teoría de conjuntos, pero puedo recomendar el primer capítulo del libro de <span id="id3">[<a class="reference internal" href="../references.html#id9" title="Patrick Juola and Stephen Ramsay. Six Septembers: mathematics for the humanist. Zea E-Books, Lincoln, 2017. ISBN 978-1-60962-111-7. OCLC: 1015817392.">Juola and Ramsay, 2017</a>]</span> para una introducción bastante comprensible de la lógica. Para la teoría de conjuntos, el capítulo de <span id="id4">[<a class="reference internal" href="../references.html#id10" title="Fotis Jannidis and Julia Flanders. A gentle introduction to data modeling. In Julia Flanders and Fotis Jannidis, editors, The shape of data in the digital humanities: modeling texts and text-based resources, Digital research in the arts and humanities, pages 26–95. Routledge, Taylor &amp; Francis Group, London ; New York, 2019.">Jannidis and Flanders, 2019</a>]</span> es una introducción sencilla y completa.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./S3-procesamiento"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="S3P2-manipulacion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Manipulación básica de un dataframe</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="S3P4-renombrar-columnas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Renombrar columnas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      Este cuaderno fue elaborado en el marco del curso ofrecido por el programa de formación docente y eduación continua de la <a href="https://cuaieed.unam.mx/formacion_docente_educacion_continua" target="_blank">CUAIEED-UNAM</a> en el mes de agosto de 2022.<br /> | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

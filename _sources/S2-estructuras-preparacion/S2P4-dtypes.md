@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Tipos de datos con Pandas
+# Tipos de datos con pandas
 
 Ya hemos visto los tipos básicos del lenguaje Python [^footnote1]. Ahora bien, la librería `pandas` también cuenta con una serie de tipos de datos que debemos tener en cuenta para poder realizar nuestras operaciones de análisis. Para complejizar un poco más lo anterior, los tipos de datos de `pandas` se sobreponen con los de otras librerías como `numpy` y `scipy`.
 
@@ -21,7 +21,7 @@ Ya hemos visto los tipos básicos del lenguaje Python [^footnote1]. Ahora bien, 
 
 Para entender un poco mejor los tipos de datos en `pandas`, veamos la siguiente tabla:
 
-| tipo de dato Pandas | tipo Python    | uso                                                           |
+| tipo de dato pandas | tipo Python    | uso                                                           |
 |---------------------|----------------|---------------------------------------------------------------|
 | object              | str o mezclado | Valores de texto o mezcla de valores numéricos y no numéricos |
 | int64               | int            | número enteros                                                |
@@ -78,7 +78,7 @@ Verás que prácticamente todas las columnas son de tipo object. Esto se debe a 
 
 El tipo de dato `datetime64` es un tipo de dato que representa una fecha y una hora. El tipo de dato `datetime64` es un préstamo de `numpy` y es un tipo de dato que se puede usar para representar una fecha y una hora.
 
-En nuestro ejemplo de datos por Covid 19, las fechas están representadas con el formato AAAA-MM-DD (por ejemplo: 2022-05-03). Para representar una fecha y una hora, podemos usar el formato `datetime64[ns]`. `Pandas` incluye una función para convertir una cadena de texto a un tipo de dato `datetime64[ns]` llamada `to_datetime`. Usémosla en la columna 'fecha_ingreso' para ver el resultado
+En nuestro ejemplo de datos por Covid 19, las fechas están representadas con el formato AAAA-MM-DD (por ejemplo: 2022-05-03). Para representar una fecha y una hora, podemos usar el formato `datetime64[ns]`. `pandas` incluye una función para convertir una cadena de texto a un tipo de dato `datetime64[ns]` llamada `to_datetime`. Usémosla en la columna 'fecha_ingreso' para ver el resultado
 
 ```{code-cell}
 covid_nacional['fecha_ingreso'] = pd.to_datetime(covid_nacional['fecha_ingreso'])
@@ -128,6 +128,6 @@ Comparte con los demás colegas la descripción de la fuente de datos y solament
 
 [^footnote1]: Los tipos básicos (primitivos o integrados) dependen de cada lenguaje. En ciertos lenguajes como Java existen tipos de datos como byte, short, long y double, que hacen más preciso el manejo de los datos. Una gran ventaja de Python es que sintetiza estos tipos de datos, que son un tanto más abstractos, en favor de la legibilidad. Para un listado completo de estos tipos de datos en Python puedes consultar la [documentación de Python](https://docs.python.org/es/3/library/stdtypes.html#types-and-values).
 
-[^footnote2]: `Pandas` usa este tipo de datos porque son computacionalmente más precisos que los de Python, lo cual hace más rápido procesar grandes cantidades de datos.
+[^footnote2]: `pandas` usa este tipo de datos porque son computacionalmente más precisos que los de Python, lo cual hace más rápido procesar grandes cantidades de datos.
 
 [^footnote3]: Este tipo de dato es similar a los 'factors' de R. Los factores son una forma de representar una variable categórica, en la que cada valor de la variable es una categoría.Sobre este tipo de datos puedes consultar la siguiente [página](https://swcarpentry.github.io/r-novice-inflammation/12-supp-factors/index.html).

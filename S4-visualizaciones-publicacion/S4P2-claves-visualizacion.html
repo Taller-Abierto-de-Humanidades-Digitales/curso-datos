@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Bases para la visualización de datos &#8212; Visualización de datos educativos abiertos</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Viz Project" href="S4P3-dataviz.html" />
+    <link rel="prev" title="A ver datos" href="S4P1-introduccion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_datos.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualización de datos educativos abiertos</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Te damos la bienvenida :)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Selecciona e importa una fuente de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P1-crear-cuaderno.html">
+   Crear un cuaderno para prácticar con código
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P2-seleccionar-fuente-datos.html">
+   Seleccionar una fuente de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P3-fuentes-datos.html">
+     Fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P4-selecciona-datos.html">
+     Actividad: Seleccionar tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P5-importar-datos.html">
+   Importar datos a Google Colab
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P6-actividad-importar-datos.html">
+     Actividad: importa tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P7-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de estructuras de datos y preparación
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P1-introduccion.html">
+   Análisis de estructuras de datos y preparación
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P2-como-describir.html">
+   ¿Cómo describir una fuente de datos?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P3-tipos-datos.html">
+     Tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P4-dtypes.html">
+     Tipos de datos con pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P5-operaciones-datos.html">
+     Variables cuantitativas y cualitativas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P6-describe.html">
+     Describir la fuente de datos con la función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       describe()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P7-actividad-avance-proyecto.html">
+     Actividad de avance del proyecto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P8-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Procesamiento de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S3-procesamiento/S3P1-introduccion.html">
+   Introducción a la manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S3-procesamiento/S3P2-manipulacion.html">
+   Manipulación básica de un dataframe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P3-seleccion.html">
+     Selección de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P4-renombrar-columnas.html">
+     Renombrar columnas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P5-union-df.html">
+     Combinar fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P51-actividad1.html">
+     Actividad manipulación de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S3-procesamiento/S3P6-limpieza.html">
+   Limpieza de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P7-segmentar.html">
+     Segmentar la información
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P8-dropna.html">
+     Manejar datos nulos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P9-dropduplicates.html">
+     Eliminar duplicados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P10-tonumeric.html">
+     Asegurar datos numéricos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P11-todatetime.html">
+     Cambiar datos a fechas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P111-actividad2.html">
+     Actividad: limpieza de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S3-procesamiento/S3P12-transformar.html">
+   Operaciones “avanzadas”
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P13-agrupar.html">
+     Agrupar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P14-apply.html">
+     El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P15-georeferenciar.html">
+     Georeferenciar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P16-to_csv.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       to_csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S3-procesamiento/S3P161-actividad3.html">
+   Actividad normalización y transformación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S3-procesamiento/S3P17-actividad-entrega.html">
+   Avance del proyecto
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualización de datos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P1-introduccion.html">
+   A ver datos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Bases para la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P3-dataviz.html">
+   Data Viz Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P4-visualizacion-malformada.html">
+   Sobre el mensaje en la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P5-actividad1.html">
+   ¿Qué visualización vas a utilizar para tus datos?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S4P6-intrografs.html">
+   Barras, líneas y mapas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P7-graficos.html">
+     Gráficos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P8-plotly.html">
+     Gráficos con plotly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P9-actividad2.html">
+     ¡Tu visualización!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P10-mapas.html">
+     Mapas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P11-pfinal.html">
+   Proyecto final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P12-mi-cuaderno-de-datos_final.html">
+   Importar datos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibiografía
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S4-visualizaciones-publicacion/S4P2-claves-visualizacion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P2-claves-visualizacion.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/S4-visualizaciones-publicacion/S4P2-claves-visualizacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/S4-visualizaciones-publicacion/S4P2-claves-visualizacion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sumar">
+   Sumar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#promedio">
+   Promedio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#porcentaje">
+   Porcentaje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-sintesis">
+   En síntesis
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Bases para la visualización de datos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sumar">
+   Sumar
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#promedio">
+   Promedio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#porcentaje">
+   Porcentaje
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-sintesis">
+   En síntesis
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="bases-para-la-visualizacion-de-datos">
+<h1>Bases para la visualización de datos<a class="headerlink" href="#bases-para-la-visualizacion-de-datos" title="Permalink to this headline">#</a></h1>
+<p>Como bien subrayan Dougherty e Ilyankou <span id="id1">[<a class="reference internal" href="../references.html#id16" title="Jack Dougherty and Ilya Ilyankou. Hands-on data visualization: interactive storytelling from spreadsheets to code. O'Reilly Media, Inc, Boston, 2021. ISBN 978-1-4920-8600-0. OCLC: on1197722533.">Dougherty and Ilyankou, 2021</a>]</span> la clave de nuestras visualizaciones consiste en comparar dos o más variables. Por ejemplo, cantidad de contagios y tiempo; o defunciones y sexo. Decidir qué variables comparamos es relevante porque nos da la pauta para elegir el tipo de visualización que mejor se adapta a nuestro objetivo.</p>
+<p>Aunque ya tengamos nuestros datos limpios, tendremos que realizar algunas operaciones para poderlos comparar. Esto es, requeriremos sumar, promediar, contar, hacer porcentajes, entre otras operaciones.</p>
+<p>Afortunadamente, al ser acciones tan comunes, la mayoría de programas que trabajan con datos incluyen procesos para hacer esos cálculos. Te mostraremos algunos ejemplos de operaciones que podemos realizar con los datos de la pandemia que hemos limpiado anteriormente.</p>
+<p>Notarás que no son los únicos cálculos posibles y que tal vez podríamos realizar otros si no hubiésemos descartados algunas columnas previamente. Esto es algo común en el análisis de datos. Tendrás que segmentar, ampliar o reducir tus datos, en el camino, tendrás que tomar decisiones que te ayudarán a enfocar tu análisis y no será extraño que regreses al conjunto de datos original para realizar nuevas operaciones.</p>
+<section id="sumar">
+<h2>Sumar<a class="headerlink" href="#sumar" title="Permalink to this headline">#</a></h2>
+<p>Esta es una operación aritmética sumamente común. Por ejemplo, podemos querer establecer la cantidad de defunciones por día. Para ello, vamos a necesitar modificar nuestros datos para incluir un valor de 1 en cada fila donde se haya registrado un deceso (fecha_def):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">datos_covid</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">ruta_datos</span><span class="p">)</span>
+<span class="n">datos_covid</span><span class="p">[</span><span class="s1">&#39;decesos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datos_covid</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, podremos agrupar por fecha y sumar las muertes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">muertes_diarias</span> <span class="o">=</span> <span class="n">datos_covid</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">)[</span><span class="s1">&#39;decesos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;fallecidos_diarios&#39;</span><span class="p">)</span>
+<span class="n">muertes_diarias</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fecha_def</th>
+      <th>fallecidos_diarios</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-01-03</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-01-04</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-01-05</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022-01-06</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2022-01-07</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="promedio">
+<h2>Promedio<a class="headerlink" href="#promedio" title="Permalink to this headline">#</a></h2>
+<p>Por ejemplo, un dato interesante que podríamos querer reconocer es el promedio de edad de las personas contagiadas por Covid-19 en el primer semestre de 2022. Aunque técnicamente podemos hacer este cálculo por nuestra cuenta (sumar todas las edades y dividir por el número de personas), es más fácil que <code class="docutils literal notranslate"><span class="pre">pandas</span></code> lo haga por nosotros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_covid</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.94687035455609
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aquí estamos realizando un cálculo de promedio bastante simple (la cantidad por el total de elementos). Ahora, supongamos que queremos saber el promedio de edad por sexo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">promedio_es</span> <span class="o">=</span> <span class="n">datos_covid</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;sexo&#39;</span><span class="p">)[</span><span class="s1">&#39;edad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">promedio_es</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sexo
+HOMBRE    36.796708
+MUJER     37.094279
+Name: edad, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vemos es prácticamente indistinta la edad de mujeres y hombres con relación a sus contagios, esto podría indicar que no existe una correlación entre edad, sexo y contagio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_corr</span> <span class="o">=</span> <span class="n">datos_covid</span><span class="o">.</span><span class="n">sexo</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">()</span><span class="o">.</span><span class="n">corrwith</span><span class="p">(</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">edad</span><span class="p">)</span>
+<span class="n">c_corr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HOMBRE   -0.008921
+MUJER     0.008921
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>El resultado de la correlación entre edad y sexo es prácticamente cero, muy alejada de cualquier valor que indique una correlación fuerte.</p>
+</section>
+<section id="porcentaje">
+<h2>Porcentaje<a class="headerlink" href="#porcentaje" title="Permalink to this headline">#</a></h2>
+<p>También podríamos calcular el porcentaje de infectados por país de origen (excluyendo México, obviamente):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datos_covid</span><span class="p">[</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datos_covid</span><span class="p">[</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">porcentaje_pais</span> <span class="o">=</span> <span class="n">datos_covid</span><span class="p">[</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">pais_nacionalidad</span> <span class="o">!=</span> <span class="s1">&#39;méxico&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="n">datos_covid</span><span class="p">[</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">pais_nacionalidad</span> <span class="o">!=</span> <span class="s1">&#39;méxico&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="c1"># nombrar las columnas</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;porcentaje&#39;</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pais&#39;</span>
+<span class="c1"># ordenar por porcentaje</span>
+<span class="n">porcentaje_pais</span> <span class="o">=</span> <span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;porcentaje&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">porcentaje_pais</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pais</th>
+      <th>porcentaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>estados unidos de américa</td>
+      <td>39.560440</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>venezuela</td>
+      <td>8.131868</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>colombia</td>
+      <td>5.714286</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>argentina</td>
+      <td>5.274725</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>cuba</td>
+      <td>5.274725</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>otro</td>
+      <td>3.956044</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>españa</td>
+      <td>3.956044</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>república de honduras</td>
+      <td>2.857143</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>chile</td>
+      <td>2.417582</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>brasil</td>
+      <td>2.197802</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Ahora, hagamos el cálculo del porcentaje de contagios por país de origen teniendo en cuenta el tipo de migrante.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span> <span class="c1"># vamos a aprovechar la función reduce para hacer un merge de los dataframes</span>
+
+<span class="n">tipos_migracion</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SI&#39;</span><span class="p">,</span> <span class="s1">&#39;NO&#39;</span><span class="p">,</span> <span class="s1">&#39;NO ESPECIFICADO&#39;</span><span class="p">]</span>
+
+<span class="c1"># Esta es una larga lista de acciones que están escritas de una manera sintética</span>
+
+<span class="c1"># 1. Filtrar por tipo de migración</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">datos_covid</span><span class="p">[(</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">migrante</span> <span class="o">==</span> <span class="n">tipo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">pais_nacionalidad</span> <span class="o">!=</span> <span class="s1">&#39;méxico&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="n">datos_covid</span><span class="p">[(</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">migrante</span> <span class="o">==</span> <span class="n">tipo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">datos_covid</span><span class="o">.</span><span class="n">pais_nacionalidad</span> <span class="o">!=</span> <span class="s1">&#39;méxico&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">tipo</span> <span class="ow">in</span> <span class="n">tipos_migracion</span><span class="p">]</span>
+
+<span class="c1"># 2. Renombrar las columnas</span>
+<span class="n">dfsname</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">df</span><span class="p">,</span> <span class="n">tipo</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">dfs</span><span class="p">,</span> <span class="n">tipos_migracion</span><span class="p">):</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">tipo</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pais_nacionalidad&#39;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">tipo</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dfsname</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># 3. Unir los dataframes</span>
+<span class="n">porcentaje_pais</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;pais_nacionalidad&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">),</span> <span class="n">dfsname</span><span class="p">)</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;SI&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">porcentaje_pais</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">porcentaje_pais</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pais_nacionalidad</th>
+      <th>SI</th>
+      <th>NO</th>
+      <th>NO ESPECIFICADO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>estados unidos de américa</td>
+      <td>31.2500</td>
+      <td>41.208791</td>
+      <td>37.037037</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>cuba</td>
+      <td>12.5000</td>
+      <td>4.120879</td>
+      <td>3.703704</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>venezuela</td>
+      <td>10.9375</td>
+      <td>7.967033</td>
+      <td>3.703704</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>república de honduras</td>
+      <td>7.8125</td>
+      <td>1.648352</td>
+      <td>7.407407</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>colombia</td>
+      <td>7.8125</td>
+      <td>4.670330</td>
+      <td>14.814815</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>argentina</td>
+      <td>3.1250</td>
+      <td>6.043956</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>haití</td>
+      <td>3.1250</td>
+      <td>0.549451</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>guatemala</td>
+      <td>3.1250</td>
+      <td>1.098901</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>españa</td>
+      <td>3.1250</td>
+      <td>4.120879</td>
+      <td>3.703704</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>canadá</td>
+      <td>3.1250</td>
+      <td>1.373626</td>
+      <td>3.703704</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Ahora tenemos un escenario más preciso. Ya no sabemos solamente cuántos contagios tenemos por país de origen, sino tenemos un valor que representa cuál es el porcentaje de cada uno de estas nacionalidad en el conjunto general de extranjeros. Además, podemos contrastar entre aquellos que son migrantes y aquellos que simplemente están de visita, o que no lo especificaron.</p>
+<p>En esta tabla tenemos el dato ordenado por migrantes y solamente incluye el top 10 de países de origen. Pero hay sutilezas que podríamos explorar con mayor detalle, por ejemplo, de cuáles países se contagiaron mayor cantidad de visitantes que de migrantes, cuál es el orden de nacionalidad no especificada, etc. Es aquí donde la visualización de datos puede ayudarnos a entender mejor estas relaciones.</p>
+</section>
+<section id="en-sintesis">
+<h2>En síntesis<a class="headerlink" href="#en-sintesis" title="Permalink to this headline">#</a></h2>
+<p>Como verás, estas operaciones pueden ser más o menos complejas, dependiendo de los datos que tenemos disponibles y de lo que queremos hacer con ellos. Aunque estas líneas de código pueden ser ilegibles por momentos, es importante tener en cuenta que <code class="docutils literal notranslate"><span class="pre">pandas</span></code> es una herramienta muy poderosa que nos permite hacer análisis de datos de una manera muy sencilla.</p>
+<p>Te recomiendo que intentes replicar algunos de los ejemplos que hemos visto aquí y que te desafíes a hacer tus propios análisis de datos.</p>
+<p>¡Adelante!</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./S4-visualizaciones-publicacion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="S4P1-introduccion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">A ver datos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="S4P3-dataviz.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Viz Project</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      Este cuaderno fue elaborado en el marco del curso ofrecido por el programa de formación docente y eduación continua de la <a href="https://cuaieed.unam.mx/formacion_docente_educacion_continua" target="_blank">CUAIEED-UNAM</a> en el mes de agosto de 2022.<br /> | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

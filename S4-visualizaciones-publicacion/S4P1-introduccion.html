@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>A ver datos &#8212; Visualización de datos educativos abiertos</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bases para la visualización de datos" href="S4P2-claves-visualizacion.html" />
+    <link rel="prev" title="Avance del proyecto" href="../S3-procesamiento/S3P17-actividad-entrega.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_datos.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Visualización de datos educativos abiertos</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Te damos la bienvenida :)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Selecciona e importa una fuente de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P1-crear-cuaderno.html">
+   Crear un cuaderno para prácticar con código
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P2-seleccionar-fuente-datos.html">
+   Seleccionar una fuente de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P3-fuentes-datos.html">
+     Fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P4-selecciona-datos.html">
+     Actividad: Seleccionar tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P5-importar-datos.html">
+   Importar datos a Google Colab
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S1-identificacion-importacion/S1P6-actividad-importar-datos.html">
+     Actividad: importa tu fuente de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S1-identificacion-importacion/S1P7-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Análisis de estructuras de datos y preparación
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P1-introduccion.html">
+   Análisis de estructuras de datos y preparación
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P2-como-describir.html">
+   ¿Cómo describir una fuente de datos?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P3-tipos-datos.html">
+     Tipos de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P4-dtypes.html">
+     Tipos de datos con pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P5-operaciones-datos.html">
+     Variables cuantitativas y cualitativas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P6-describe.html">
+     Describir la fuente de datos con la función
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       describe()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S2-estructuras-preparacion/S2P7-actividad-avance-proyecto.html">
+     Actividad de avance del proyecto
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S2-estructuras-preparacion/S2P8-sintesis.html">
+   ¿Qué aprendimos esta semana?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Procesamiento de datos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S3-procesamiento/S3P1-introduccion.html">
+   Introducción a la manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S3-procesamiento/S3P2-manipulacion.html">
+   Manipulación básica de un dataframe
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P3-seleccion.html">
+     Selección de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P4-renombrar-columnas.html">
+     Renombrar columnas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P5-union-df.html">
+     Combinar fuentes de datos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P51-actividad1.html">
+     Actividad manipulación de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S3-procesamiento/S3P6-limpieza.html">
+   Limpieza de datos
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P7-segmentar.html">
+     Segmentar la información
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P8-dropna.html">
+     Manejar datos nulos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P9-dropduplicates.html">
+     Eliminar duplicados
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P10-tonumeric.html">
+     Asegurar datos numéricos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P11-todatetime.html">
+     Cambiar datos a fechas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P111-actividad2.html">
+     Actividad: limpieza de datos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../S3-procesamiento/S3P12-transformar.html">
+   Operaciones “avanzadas”
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P13-agrupar.html">
+     Agrupar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P14-apply.html">
+     El método
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply()
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P15-georeferenciar.html">
+     Georeferenciar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../S3-procesamiento/S3P16-to_csv.html">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       to_csv
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S3-procesamiento/S3P161-actividad3.html">
+   Actividad normalización y transformación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../S3-procesamiento/S3P17-actividad-entrega.html">
+   Avance del proyecto
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualización de datos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   A ver datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P2-claves-visualizacion.html">
+   Bases para la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P3-dataviz.html">
+   Data Viz Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P4-visualizacion-malformada.html">
+   Sobre el mensaje en la visualización de datos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P5-actividad1.html">
+   ¿Qué visualización vas a utilizar para tus datos?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="S4P6-intrografs.html">
+   Barras, líneas y mapas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P7-graficos.html">
+     Gráficos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P8-plotly.html">
+     Gráficos con plotly
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P9-actividad2.html">
+     ¡Tu visualización!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="S4P10-mapas.html">
+     Mapas
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P11-pfinal.html">
+   Proyecto final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S4P12-mi-cuaderno-de-datos_final.html">
+   Importar datos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Bibiografía
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P1-introduccion.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/S4-visualizaciones-publicacion/S4P1-introduccion.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algunas-claves-para-la-visualizacion-de-datos">
+   Algunas claves para la visualización de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>A ver datos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algunas-claves-para-la-visualizacion-de-datos">
+   Algunas claves para la visualización de datos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="a-ver-datos">
+<h1>A ver datos<a class="headerlink" href="#a-ver-datos" title="Permalink to this headline">#</a></h1>
+<p>Después de tantas horas de trabajo ha llegado el momento de crear nuestras visualizaciones 📊 📉</p>
+<p>Gracias a las modificaciones que realizaste a la fuente de datos que seleccionaste, es ahora posible crear visualizaciones que nos permitan entender mejor los datos. En este curso te mostraremos cómo hacer algunas visualizaciones básicas con Python y las librerías <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> y <code class="docutils literal notranslate"><span class="pre">networkx</span></code> <a class="footnote-reference brackets" href="#footnote" id="id1">1</a>.</p>
+<section id="algunas-claves-para-la-visualizacion-de-datos">
+<h2>Algunas claves para la visualización de datos<a class="headerlink" href="#algunas-claves-para-la-visualizacion-de-datos" title="Permalink to this headline">#</a></h2>
+<p>Es imposible cubrir en este corto curso todos los aspectos involucrados en la visualización de datos. De hecho, sería un tanto arrogante pretender hacerlo en unas cuantas líneas.</p>
+<p>Las posibilidades de visualización son innumerables y con un mismo conjunto de datos es posible hacer múltiples visualizaciones. De hecho, esta decisión puede llevar a interpretaciones erróneas o malintencionadas.</p>
+<p>La realidad es que las personas no leemos datos, sino gráficos. La asociación entre “presentar resultados” y gráficos es un asunto esencial en la política de la actualidad <span id="id2">[<a class="reference internal" href="../references.html#id19" title="Torgeir Uberg Nærland. The political significance of data visualization: Four key perspectives. In Martin Engebretsen and Helen Kennedy, editors, Data Visualization in Society, pages 63–74. Amsterdam University Press, Amsterdam, 2020. URL: https://doi.org/10.5117/9789463722902_ch04 (visited on 2022-08-19).">Uberg Nærland, 2020</a>]</span>. De hecho, cuando genero una imagen con <a class="reference external" href="https://openai.com/dall-e-2">DALL·E</a> (la inteligencia artifical que genera creaciones a partir de textos) con la clave “político mostrando resultados al público”, el resultado es el siguiente:</p>
+<figure class="align-center" id="politico-mostrando-resultados-al-publico">
+<a class="reference internal image-reference" href="../_images/dall-e.png"><img alt="../_images/dall-e.png" src="../_images/dall-e.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Imagen generada por DALL-E con la clave “politician showing results to public”. Disponible en <a class="reference external" href="https://labs.openai.com/s/W5xUlz19fiqS4yzicu3D82D6">https://labs.openai.com/</a> Created with <a class="reference external" href="https://openai.com/dall-e-2">DALL·E</a>, an AI system by OpenAI</span><a class="headerlink" href="#politico-mostrando-resultados-al-publico" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>De los millones de imágenes que toma DALL·E como referencia, un patrón frecuente con el que puede asociar “resultados”, “público” y “político” está relacionado justamente con tener un gráfico en el fondo sustentando sus argumentos.</p>
+<p>Esto nos da una idea de lo relevante que es utilizar datos hoy para la ciencia y la educación. E igualmente nos da una idea de lo importante que es hacerlo de manera adecuada.</p>
+<p>Antes de comenzar con nuestro tema, quisiera recomendar algunos libros recientes que considero pueden ser de mucha utilidad en caso de que deseen profundizar en la visualización de datos:</p>
+<ul class="simple">
+<li><p>Un libro bastante accesible para aquellos que no provenimos del universo de la estadística es el escrito por Jonathan A. Schwabish, <em>Better data visualizations</em> <span id="id3">[<a class="reference internal" href="../references.html#id14" title="Jonathan A. Schwabish. Better data visualizations: a guide for scholars, researchers, and wonks. Columbia University Press, New York, 2021. ISBN 978-0-231-55015-4.">Schwabish, 2021</a>]</span>. Es una excelente e inteligible introducción a los principios de la visualización de datos, los tipos de gráficos y algunas guías para el diseño de las visualizaciones.</p></li>
+<li><p>Una publicación reciente, realizada por dos educadores que se han dedicado durante muchos años a la enseñanza con datos, es el libro <em>Hands-On Data Visualization</em> de Jack Dougherty e Ilya Ilyankou <span id="id4">[<a class="reference internal" href="../references.html#id16" title="Jack Dougherty and Ilya Ilyankou. Hands-on data visualization: interactive storytelling from spreadsheets to code. O'Reilly Media, Inc, Boston, 2021. ISBN 978-1-4920-8600-0. OCLC: on1197722533.">Dougherty and Ilyankou, 2021</a>]</span>. Es un libro muy práctico, que parte de herramientas disponibles como Excel, Open Refine, Tableau, entre otras, para ir desde la recolección de los datos hasta su visualización. Sin duda un excelente complemento para este curso introductorio. Y lo mejor, es que existe una versión abierta disponible en <a class="reference external" href="https://handsondataviz.org/">https://handsondataviz.org/</a>.</p></li>
+<li><p>Ahora un <em>best-seller</em>: <em>Storytelling with data</em> de Cole Nussbaumer Knaflic <span id="id5">[<a class="reference internal" href="../references.html#id17" title="Cole Nussbaumer Knaflic. Storytelling with data: a data visualization guide for business professionals. Wiley, Hoboken, New Jersey, 2015. ISBN 978-1-119-00225-3. OCLC: ocn909318525.">Nussbaumer Knaflic, 2015</a>]</span> (hay versión en español <span id="id6">[<a class="reference internal" href="../references.html#id18" title="Cole Nussbaumer Knaflic. Storytelling con datos. Visualización de datos para profesionales. Wiley y Anaya Multimedia, Madrid, 2017. ISBN 978-84-415-3930-3. OCLC: 1022571497.">Nussbaumer Knaflic, 2017</a>]</span>). Nussbauer fue analista de datos en el área comercial de Google, y de esta experiencia surgió este libro, el cual se ha convertido en uno de los más vendidos de los últimos años para la narración de datos. También tiene un interesante canal en <a class="reference external" href="https://www.youtube.com/c/storytellingwithdata">Youtube</a> donde puedes seguir sus consejos para la visualización de datos.</p></li>
+<li><p>Finalmente, un libro algo más técnico: <em>Data visualization: exploring and explaining with data</em> <span id="id7">[<a class="reference internal" href="../references.html#id15" title="Jeffrey D. Camm, James J. Cochran, Michael J. Fry, and Jeffrey W. Ohlmann. Data visualization: exploring and explaining with data. Cengage Learning, Boston, 1e edition, 2022. ISBN 978-0-357-63134-8.">Camm <em>et al.</em>, 2022</a>]</span>. Este es un libro de texto cuyo público principal son los estudiantes de estadística y ciencias de datos. En caso de querer entrar de lleno en esta área, es una muy buena opción.</p></li>
+</ul>
+<p>Y sin más preámbulo, vamos a comenzar con nuestro tema.</p>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="footnote"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">Networkx</span></code> no es una librería enfocada en la visualización de datos, pero es una herramienta muy útil para preparar información que luego pueda ser visualizada en programas como <a class="reference external" href="https://gephi.org/">Gephi</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./S4-visualizaciones-publicacion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../S3-procesamiento/S3P17-actividad-entrega.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Avance del proyecto</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="S4P2-claves-visualizacion.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bases para la visualización de datos</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      Este cuaderno fue elaborado en el marco del curso ofrecido por el programa de formación docente y eduación continua de la <a href="https://cuaieed.unam.mx/formacion_docente_educacion_continua" target="_blank">CUAIEED-UNAM</a> en el mes de agosto de 2022.<br /> | <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
