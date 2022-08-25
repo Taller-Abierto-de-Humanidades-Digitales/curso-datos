@@ -13,9 +13,9 @@ El cuaderno de Google Colab debe tener un orden en los textos y las celdas de c�
 
 También es relevante que las celdas de código estén bien organizadas y comentadas, de tal manera que cualquier persona pueda entender qué es lo que estás haciendo. Es relevante que exista una secuencialidad, que la celda que se encuentre en la posición superior del cuaderno sea la primera en ejecutarse y secuencialmente se vayan ejecutando las demás celdas. Para ello, prueba que el cuaderno se ejecuta secuencialmente desde el menú 'Entorno de ejecución' y seleccionando la opción 'Reiniciar y ejecutar todo'. Si todo funciona correctamente, entonces tu cuaderno está bien organizado :)
 
-## Secciones del cuaderno final
+## Secciones recomendables del cuaderno final
 
-El cuaderno final debe contener los siguientes aspectos:
+El cuaderno final puede contener los siguientes aspectos:
 
 - Presentas el origen de tu fuente de datos:
   - ¿De dónde proviene?
@@ -43,8 +43,6 @@ El cuaderno final debe contener los siguientes aspectos:
 
 ## ¿Cómo presentar el cuaderno?
 
-Simplemente comparte un enlace a tu cuaderno de Google Colab (un enlace público de solo lectura) en el espacio correspondiente al [taller final](https://formaciondocente.bunam.unam.mx:8091/moodle/fdocente/mod/workshop/view.php?id=653).
+Simplemente comparte un enlace a tu cuaderno de Google Colab (un enlace público de solo lectura) en el espacio correspondiente al [taller final](https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Actividad%20Proyecto%20final&body=El%20contenido%20de%20tu%20%20actividad).
 
-## ¿Cómo calificar el cuaderno?
-
-El cuaderno será calificado por el profesor y por los compañeros de clase. La calificación de los compañeros será promediada para obtener la calificación final del cuaderno, pero la calificación del profesor será la definitiva. La calificación del cuaderno se basará en los aspectos mencionados en las "secciones del cuaderno final".
+Es importante asimismo que puedas comentar, retroalimentar y responder a las dudas de tus compañeros; para así darle vida al curso :)

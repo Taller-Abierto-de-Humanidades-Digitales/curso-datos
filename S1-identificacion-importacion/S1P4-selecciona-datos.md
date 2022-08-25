@@ -23,4 +23,4 @@ Selecciona una fuente de datos que te sea de interés para analizar y visualizar
 - ¿En qué formato de archivo se encuentra disponible? (csv, json, Excel)
 - ¿Por qué consideras que esta fuente de datos te será útil?
 
-Realiza tu aporte [en el foro](https://formaciondocente.bunam.unam.mx:8091/moodle/fdocente/mod/forum/view.php?id=641&forceview=1), comenta los aportes de los demás participantes y valóralos con las estrellas :D
+Realiza tu aporte [en el foro](https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Actividad%20fuente%20de%20datos&body=El%20contenido%20de%20tu%20%20actividad.), comenta los aportes de los demás participantes y valóralos con las estrellas :D

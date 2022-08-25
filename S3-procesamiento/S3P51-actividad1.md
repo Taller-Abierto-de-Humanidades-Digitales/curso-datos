@@ -1,6 +1,6 @@
 # Actividad manipulación de datos
 
-Comparte en el [foro](https://formaciondocente.bunam.unam.mx:8091/moodle/fdocente/mod/forum/view.php?id=647) un documento de Google Colab (puede ser el de tu proyecto u otro nuevo que hayas creado para este ejercicio) en el que apliques los siguientes métodos:
+Comparte en el [foro](https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Actividad%20manipulación%20de%20datos&body=El%20contenido%20de%20tu%20%20actividad) un documento de Google Colab (puede ser el de tu proyecto u otro nuevo que hayas creado para este ejercicio) en el que apliques los siguientes métodos:
 
 - iloc - localizar filas por índice
 - loc - localizar filas por coincidencia
