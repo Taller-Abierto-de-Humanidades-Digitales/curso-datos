@@ -36,7 +36,7 @@ import pycountry
 pycountry.countries.get(alpha_2='MX')
 ```
 
-Nuestra fuente de datos de `covid_nacional` contiene información relacionada con el país de origen, disponible en la columna `pais_nacionalidad`, así que podremos transformar esa columna para obtener los datos de georeferenciación. 
+Nuestra fuente de datos de `covid_nacional` contiene información relacionada con el país de origen, disponible en la columna `pais_nacionalidad`, así que podremos transformar esa columna para obtener los datos de georeferenciación.
 
 Pero antes, veamos un ejemplo ideal:
 
