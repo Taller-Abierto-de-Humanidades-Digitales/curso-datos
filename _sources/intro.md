@@ -19,7 +19,7 @@ Nos encanta que hagas parte de esta experiencia de aprendizaje. Vamos a enfrenta
 
 El requisito fundamental para culminar exitosamente este curso es que tengas la curiosidad suficiente como para experimentar y aprender de los errores que se van a ir presentando en el curso.
 
-En términos de requerimientos prácticos solamente necesitas contar con una cuenta de Google (para crear tu cuaderno de Google Colab) y una cuenta de GitHub (para compartir tu actividad en los "foros"). 
+En términos de requerimientos prácticos solamente necesitas contar con una cuenta de Google (para crear tu cuaderno de Google Colab) y una cuenta de GitHub (para compartir tu actividad en los "foros").
 
 En este curso usaremos un conjunto de datos particular, con el cual podrás realizar una visualización. Pero, es imposible que ese conjunto de datos sea de interés para todos. Por esa razón, el proyecto final de este curso consistirá en la elaboración de una visualización realizada con un conjunto de datos que sea de tu interés.
 
