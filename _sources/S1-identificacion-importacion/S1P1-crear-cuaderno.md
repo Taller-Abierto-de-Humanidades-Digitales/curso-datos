@@ -13,7 +13,7 @@ kernelspec:
   name: python3
 ---
 
-# Crear un cuaderno para prácticar con código
+# Crear un cuaderno para practicar con código
 
 Para hacer las cosas más simples poner rápidamente manos a la obra, vamos a crear un cuaderno en Google Colab para importar, procesar y visualizar nuestros datos.
 
