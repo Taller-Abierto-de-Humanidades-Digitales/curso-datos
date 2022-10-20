@@ -19,7 +19,7 @@ Nos encanta que hagas parte de esta experiencia de aprendizaje. Vamos a enfrenta
 
 El requisito fundamental para culminar exitosamente este curso es que tengas la curiosidad suficiente como para experimentar y aprender de los errores que se van a ir presentando en el curso.
 
-En términos de requerimientos prácticos solamente necesitas contar con una cuenta de Google (para crear tu cuaderno de Google Colab) y una cuenta de GitHub (para compartir tu actividad en los "foros"). 
+En términos de requerimientos prácticos solamente necesitas contar con una cuenta de Google (para crear tu cuaderno de Google Colab) y una cuenta de GitHub (para compartir tu actividad en los "foros").
 
 En este curso usaremos un conjunto de datos particular, con el cual podrás realizar una visualización. Pero, es imposible que ese conjunto de datos sea de interés para todos. Por esa razón, el proyecto final de este curso consistirá en la elaboración de una visualización realizada con un conjunto de datos que sea de tu interés.
 
@@ -69,7 +69,7 @@ Este curso no tiene la posibilidad de dar una certificación. Es decir, la parti
 
 Estos materiales extienden el curso original ofrecido por el programa de formación docente y eduación continua de la CUAIEED-UNAM en el mes de agosto de 2022, y no suplen de ninguna manera el curso original.
 
-Cualquier duda que tengas al respecto, solamente deja una entrada en los [issues](https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Duda%20sobre%20el%20curso&body=Escribe%20aquí%20tu%20comentario.) del cuaderno.
+Cualquier duda que tengas al respecto, solamente deja una entrada en las [discusiones](https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=q-a&title=Duda%20sobre%20el%20curso&body=Escribe%20aquí%20tu%20comentario.) del cuaderno.
 ```
 
 ## Contenido del curso
