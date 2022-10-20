@@ -69,7 +69,7 @@ Este curso no tiene la posibilidad de dar una certificación. Es decir, la parti
 
 Estos materiales extienden el curso original ofrecido por el programa de formación docente y eduación continua de la CUAIEED-UNAM en el mes de agosto de 2022, y no suplen de ninguna manera el curso original.
 
-Cualquier duda que tengas al respecto, solamente deja una entrada en los [issues](https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Duda%20sobre%20el%20curso&body=Escribe%20aquí%20tu%20comentario.) del cuaderno.
+Cualquier duda que tengas al respecto, solamente deja una entrada en las [discusiones](https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=q-a&title=Duda%20sobre%20el%20curso&body=Escribe%20aquí%20tu%20comentario.) del cuaderno.
 ```
 
 ## Contenido del curso

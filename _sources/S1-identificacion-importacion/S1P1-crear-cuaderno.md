@@ -85,7 +85,7 @@ Finalmente, vamos a compartir nuestro cuaderno de Google Colab. Estos cuadernos 
 
 ## Comparte tu cuaderno
 
-Como un ejercicio práctico, comparte en el foro <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Actividad%20Google%20Colab&body=El%20contenido%20de%20tu%20%20actividad." target="_blank"> Google Colab</a> de la primera semana el cuaderno que has creado. Solamente copia el enlace público (*solo lectura*) en el foro para que los demás participantes lo puedan consultar.
+Como un ejercicio práctico, comparte en el foro <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=actividades&title=Actividad%20Google%20Colab&body=El%20contenido%20de%20tu%20%20actividad." target="_blank"> Google Colab</a> de la primera semana el cuaderno que has creado. Solamente copia el enlace público (*solo lectura*) en el foro para que los demás participantes lo puedan consultar.
 
 Solamente unos requisitos básicos:
 
