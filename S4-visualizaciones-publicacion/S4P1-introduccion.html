@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A ver datos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -539,7 +538,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -556,7 +555,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P1-introduccion.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P1-introduccion.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -692,21 +691,19 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="a-ver-datos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-ver-datos">
 <h1>A ver datos<a class="headerlink" href="#a-ver-datos" title="Permalink to this headline">#</a></h1>
 <p>Después de tantas horas de trabajo ha llegado el momento de crear nuestras visualizaciones 📊 📉</p>
 <p>Gracias a las modificaciones que realizaste a la fuente de datos que seleccionaste, es ahora posible crear visualizaciones que nos permitan entender mejor los datos. En este curso te mostraremos cómo hacer algunas visualizaciones básicas con Python y las librerías <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> y <code class="docutils literal notranslate"><span class="pre">networkx</span></code> <a class="footnote-reference brackets" href="#footnote" id="id1">1</a>.</p>
-<section id="algunas-claves-para-la-visualizacion-de-datos">
+<div class="section" id="algunas-claves-para-la-visualizacion-de-datos">
 <h2>Algunas claves para la visualización de datos<a class="headerlink" href="#algunas-claves-para-la-visualizacion-de-datos" title="Permalink to this headline">#</a></h2>
 <p>Es imposible cubrir en este corto curso todos los aspectos involucrados en la visualización de datos. De hecho, sería un tanto arrogante pretender hacerlo en unas cuantas líneas.</p>
 <p>Las posibilidades de visualización son innumerables y con un mismo conjunto de datos es posible hacer múltiples visualizaciones. De hecho, esta decisión puede llevar a interpretaciones erróneas o malintencionadas.</p>
 <p>La realidad es que las personas no leemos datos, sino gráficos. La asociación entre “presentar resultados” y gráficos es un asunto esencial en la política de la actualidad <span id="id2">[<a class="reference internal" href="../references.html#id19" title="Torgeir Uberg Nærland. The political significance of data visualization: Four key perspectives. In Martin Engebretsen and Helen Kennedy, editors, Data Visualization in Society, pages 63–74. Amsterdam University Press, Amsterdam, 2020. URL: https://doi.org/10.5117/9789463722902_ch04 (visited on 2022-08-19).">Uberg Nærland, 2020</a>]</span>. De hecho, cuando genero una imagen con <a class="reference external" href="https://openai.com/dall-e-2">DALL·E</a> (la inteligencia artifical que genera creaciones a partir de textos) con la clave “político mostrando resultados al público”, el resultado es el siguiente:</p>
-<figure class="align-center" id="politico-mostrando-resultados-al-publico">
+<div class="figure align-center" id="politico-mostrando-resultados-al-publico">
 <a class="reference internal image-reference" href="../_images/dall-e.png"><img alt="../_images/dall-e.png" src="../_images/dall-e.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Imagen generada por DALL-E con la clave “politician showing results to public”. Disponible en <a class="reference external" href="https://labs.openai.com/s/W5xUlz19fiqS4yzicu3D82D6">https://labs.openai.com/</a> Created with <a class="reference external" href="https://openai.com/dall-e-2">DALL·E</a>, an AI system by OpenAI</span><a class="headerlink" href="#politico-mostrando-resultados-al-publico" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Imagen generada por DALL-E con la clave “politician showing results to public”. Disponible en <a class="reference external" href="https://labs.openai.com/s/W5xUlz19fiqS4yzicu3D82D6">https://labs.openai.com/</a> Created with <a class="reference external" href="https://openai.com/dall-e-2">DALL·E</a>, an AI system by OpenAI</span><a class="headerlink" href="#politico-mostrando-resultados-al-publico" title="Permalink to this image">#</a></p>
+</div>
 <p>De los millones de imágenes que toma DALL·E como referencia, un patrón frecuente con el que puede asociar “resultados”, “público” y “político” está relacionado justamente con tener un gráfico en el fondo sustentando sus argumentos.</p>
 <p>Esto nos da una idea de lo relevante que es utilizar datos hoy para la ciencia y la educación. E igualmente nos da una idea de lo importante que es hacerlo de manera adecuada.</p>
 <p>Antes de comenzar con nuestro tema, quisiera recomendar algunos libros recientes que considero pueden ser de mucha utilidad en caso de que deseen profundizar en la visualización de datos:</p>
@@ -717,8 +714,8 @@ title="Print to PDF"
 <li><p>Finalmente, un libro algo más técnico: <em>Data visualization: exploring and explaining with data</em> <span id="id7">[<a class="reference internal" href="../references.html#id15" title="Jeffrey D. Camm, James J. Cochran, Michael J. Fry, and Jeffrey W. Ohlmann. Data visualization: exploring and explaining with data. Cengage Learning, Boston, 1e edition, 2022. ISBN 978-0-357-63134-8.">Camm <em>et al.</em>, 2022</a>]</span>. Este es un libro de texto cuyo público principal son los estudiantes de estadística y ciencias de datos. En caso de querer entrar de lleno en esta área, es una muy buena opción.</p></li>
 </ul>
 <p>Y sin más preámbulo, vamos a comenzar con nuestro tema.</p>
-</section>
-<section id="notas">
+</div>
+<div class="section" id="notas">
 <h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -726,8 +723,8 @@ title="Print to PDF"
 <dd><p><code class="docutils literal notranslate"><span class="pre">Networkx</span></code> no es una librería enfocada en la visualización de datos, pero es una herramienta muy útil para preparar información que luego pueda ser visualizada en programas como <a class="reference external" href="https://gephi.org/">Gephi</a>.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

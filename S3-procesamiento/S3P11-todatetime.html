@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cambiar datos a fechas &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P11-todatetime.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P11-todatetime.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P11-todatetime.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P11-todatetime.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -691,7 +690,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="cambiar-datos-a-fechas">
+  <div class="tex2jax_ignore mathjax_ignore section" id="cambiar-datos-a-fechas">
 <h1>Cambiar datos a fechas<a class="headerlink" href="#cambiar-datos-a-fechas" title="Permalink to this headline">#</a></h1>
 <p>Otra transformación común en los conjuntos de datos es aquella relacionada con los datos temporales. Vimos en la sección dedicada a los <a class="reference internal" href="../S2-estructuras-preparacion/S2P4-dtypes.html"><span class="doc std std-doc">tipos de datos</span></a> las diferencias entre los tipos temporales <code class="docutils literal notranslate"><span class="pre">datetime</span></code> y <code class="docutils literal notranslate"><span class="pre">timedelta</span></code>. Incluso realizamos un ejercicio de transformar dos columnas al tipo <code class="docutils literal notranslate"><span class="pre">datetime</span></code> y hacer un cálculo con ellas.</p>
 <p>En ese caso, utilizamos la siguiente sintaxis:</p>
@@ -792,72 +791,91 @@ dtype: object
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2186</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2187</span>             <span class="n">values</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">conversion</span><span class="o">.</span><span class="n">datetime_to_datetime64</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">2188</span>             <span class="c1"># If tzaware, these values represent unix timestamps, so we</span>
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\pandas\core\arrays\datetimes.py:2085,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2084</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2085</span>     <span class="n">values</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">conversion</span><span class="o">.</span><span class="n">datetime_to_datetime64</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2086</span>     <span class="c1"># If tzaware, these values represent unix timestamps, so we</span>
+<span class="g g-Whitespace">   </span><span class="mi">2087</span>     <span class="c1">#  return them as i8 to distinguish from wall times</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/tslibs/conversion.pyx</span> in <span class="ni">pandas._libs.tslibs.conversion.datetime_to_datetime64</span><span class="nt">()</span>
+<span class="nn">File pandas\_libs\tslibs\conversion.pyx:350,</span> in <span class="ni">pandas._libs.tslibs.conversion.datetime_to_datetime64</span><span class="nt">()</span>
 
 <span class="ne">TypeError</span>: Unrecognized value type: &lt;class &#39;str&#39;&gt;
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">6</span><span class="n">z</span><span class="o">/</span><span class="n">cjmzygfj49d6yzn_qgny7hgr0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_99206</span><span class="o">/</span><span class="mf">1962731354.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fecha</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">fecha</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">])</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
-<span class="g g-Whitespace">    </span><span class="mi">885</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cache_array</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">886</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">887</span>             <span class="n">values</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">888</span>             <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">arg</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">arg</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">889</span>     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="p">(</span><span class="n">ABCDataFrame</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">MutableMapping</span><span class="p">)):</span>
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\pandas\core\tools\datetimes.py:805,</span> in <span class="ni">to_datetime</span><span class="nt">(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cache_array</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">805</span>         <span class="n">values</span> <span class="o">=</span> <span class="n">convert_listlike</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">_values</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">806</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">arg</span><span class="o">.</span><span class="n">_constructor</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">arg</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">arg</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">807</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="p">(</span><span class="n">ABCDataFrame</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">MutableMapping</span><span class="p">)):</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/tools/datetimes.py</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span>     <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>     <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">401</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>         <span class="n">arg</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\pandas\core\tools\datetimes.py:465,</span> in <span class="ni">_convert_listlike_datetimes</span><span class="nt">(arg, format, name, tz, unit, errors, infer_datetime_format, dayfirst, yearfirst, exact)</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="k">assert</span> <span class="nb">format</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">infer_datetime_format</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">utc</span> <span class="o">=</span> <span class="n">tz</span> <span class="o">==</span> <span class="s2">&quot;utc&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">465</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">objects_to_datetime64ns</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span>         <span class="n">arg</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">468</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">471</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span>         <span class="n">allow_object</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span>     <span class="c1"># is in UTC</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span>     <span class="n">dta</span> <span class="o">=</span> <span class="n">DatetimeArray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tz_to_dtype</span><span class="p">(</span><span class="n">tz_parsed</span><span class="p">))</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2191</span>             <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2192</span>         <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">2193</span>             <span class="k">raise</span> <span class="n">err</span>
-<span class="g g-Whitespace">   </span><span class="mi">2194</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2195</span>     <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\pandas\core\arrays\datetimes.py:2090,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2088</span>         <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
+<span class="g g-Whitespace">   </span><span class="mi">2089</span>     <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2090</span>         <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">   </span><span class="mi">2092</span> <span class="k">if</span> <span class="n">tz_parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2093</span>     <span class="c1"># We can take a shortcut since the datetime64 numpy array</span>
+<span class="g g-Whitespace">   </span><span class="mi">2094</span>     <span class="c1">#  is in UTC</span>
+<span class="g g-Whitespace">   </span><span class="mi">2095</span>     <span class="c1"># Return i8 values to denote unix timestamps</span>
+<span class="g g-Whitespace">   </span><span class="mi">2096</span>     <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="s2">&quot;i8&quot;</span><span class="p">),</span> <span class="n">tz_parsed</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/arrays/datetimes.py</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object, allow_mixed)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2173</span>     <span class="n">order</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;F&quot;</span> <span class="k">if</span> <span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="k">else</span> <span class="s2">&quot;C&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2174</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2175</span>         <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2176</span>             <span class="n">data</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2177</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\pandas\core\arrays\datetimes.py:2075,</span> in <span class="ni">objects_to_datetime64ns</span><span class="nt">(data, dayfirst, yearfirst, utc, errors, require_iso8601, allow_object)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2072</span> <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">object_</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2074</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2075</span>     <span class="n">result</span><span class="p">,</span> <span class="n">tz_parsed</span> <span class="o">=</span> <span class="n">tslib</span><span class="o">.</span><span class="n">array_to_datetime</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2076</span>         <span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2077</span>         <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2078</span>         <span class="n">utc</span><span class="o">=</span><span class="n">utc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2079</span>         <span class="n">dayfirst</span><span class="o">=</span><span class="n">dayfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2080</span>         <span class="n">yearfirst</span><span class="o">=</span><span class="n">yearfirst</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2081</span>         <span class="n">require_iso8601</span><span class="o">=</span><span class="n">require_iso8601</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2082</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2083</span> <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2084</span>     <span class="k">try</span><span class="p">:</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File pandas\_libs\tslib.pyx:364,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
+<span class="nn">File pandas\_libs\tslib.pyx:591,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime</span><span class="nt">()</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+<span class="nn">File pandas\_libs\tslib.pyx:726,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime_object</span><span class="nt">()</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/tslib.pyx</span> in <span class="ni">pandas._libs.tslib._array_to_datetime_object</span><span class="nt">()</span>
+<span class="nn">File pandas\_libs\tslib.pyx:717,</span> in <span class="ni">pandas._libs.tslib.array_to_datetime_object</span><span class="nt">()</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/tslibs/parsing.pyx</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
+<span class="nn">File pandas\_libs\tslibs\parsing.pyx:243,</span> in <span class="ni">pandas._libs.tslibs.parsing.parse_datetime_string</span><span class="nt">()</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1366</span>         <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1367</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1368</span>         <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1369</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1370</span> 
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\dateutil\parser\_parser.py:1368,</span> in <span class="ni">parse</span><span class="nt">(timestr, parserinfo, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1366</span>     <span class="k">return</span> <span class="n">parser</span><span class="p">(</span><span class="n">parserinfo</span><span class="p">)</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1367</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1368</span>     <span class="k">return</span> <span class="n">DEFAULTPARSER</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">~/opt/anaconda3/lib/python3.9/site-packages/dateutil/parser/_parser.py</span> in <span class="ni">parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span> 
-<span class="g g-Whitespace">    </span><span class="mi">642</span>         <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">643</span>             <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span> 
-<span class="g g-Whitespace">    </span><span class="mi">645</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nn">File c:\users\jairo\.virtualenvs\temp\lib\site-packages\dateutil\parser\_parser.py:643,</span> in <span class="ni">parser.parse</span><span class="nt">(self, timestr, default, ignoretz, tzinfos, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span> <span class="n">res</span><span class="p">,</span> <span class="n">skipped_tokens</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse</span><span class="p">(</span><span class="n">timestr</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">643</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;Unknown string format: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">645</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span>     <span class="k">raise</span> <span class="n">ParserError</span><span class="p">(</span><span class="s2">&quot;String does not contain a date: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">timestr</span><span class="p">)</span>
 
 <span class="ne">ParserError</span>: Unknown string format: 12 de enero de 2022
 </pre></div>
@@ -909,7 +927,7 @@ dtype: object
 </div></div></div>
 </div>
 <p>En este momento, es suficiente con tener en cuenta estas advertencias. Si tu conjunto de datos pudo ser manipulada de manera correcta con los procesos que vimos anteriormente, estás listo para realizar la visualización de datos. Si quieres aprender un poco más o requieres de alguna transformación adicional, puedes pasar a la siguiente sección.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {

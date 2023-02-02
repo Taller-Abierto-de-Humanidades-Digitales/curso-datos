@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manejar datos nulos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P8-dropna.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P8-dropna.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P8-dropna.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P8-dropna.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -764,10 +763,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="manejar-datos-nulos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="manejar-datos-nulos">
 <h1>Manejar datos nulos<a class="headerlink" href="#manejar-datos-nulos" title="Permalink to this headline">#</a></h1>
 <p>Los datos nulos corresponden a información que no se consignó, ya fuese en la creación del archivo o en la entrada de datos. Nuevamente, esta es una decisión de diseño del modelo de datos y no todos los casos son iguales, así que hay que tener en cuenta que no todos los conjuntos de datos requerirán las mismas acciones.</p>
-<section id="dropna">
+<div class="section" id="dropna">
 <h2><code class="docutils literal notranslate"><span class="pre">dropna()</span></code><a class="headerlink" href="#dropna" title="Permalink to this headline">#</a></h2>
 <p>Esta función elimina los valores nulos de un conjunto de datos. Su sintaxis es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -1026,8 +1025,8 @@ title="Print to PDF"
 </div>
 <p>En este caso tendremos un número un tanto más significativo de casos (149,707).</p>
 <p>Aparentemente hemos perdido mucha información, pero en realidad hemos segmentado el conjunto de datos para seleccionar solamente aquellos que podamos representar en un mapa. Como conservamos nuestro conjunto de datos original, incluso nuestro dataframe segmentado (<code class="docutils literal notranslate"><span class="pre">muestra_covid</span></code>), no debemos preocuparnos por perder la información de sexo, edad, etc; que no esté asociada a una ubicación geográfica.</p>
-</section>
-<section id="fillna">
+</div>
+<div class="section" id="fillna">
 <h2><code class="docutils literal notranslate"><span class="pre">fillna()</span></code><a class="headerlink" href="#fillna" title="Permalink to this headline">#</a></h2>
 <p>Otra función para lidiar con valores nulos es <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>. Esta función reemplaza los valores nulos por un valor específico. Su sintaxis es:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
@@ -1281,8 +1280,8 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="como-saber-cuales-columnas-tienen-valores-nulos">
+</div>
+<div class="section" id="como-saber-cuales-columnas-tienen-valores-nulos">
 <h2>¿Cómo saber cuáles columnas tienen valores nulos?<a class="headerlink" href="#como-saber-cuales-columnas-tienen-valores-nulos" title="Permalink to this headline">#</a></h2>
 <p>En conjuntos grandes de datos, es posible que no identifiquemos un valor nulo hasta el momento que nos encontremos con un mensaje de error. Por esta razón, es probable que queramos obtener las columnas que tengan valores nulos antes de proceder con un dataframe. Para ello, podemos usar la función <code class="docutils literal notranslate"><span class="pre">isnull()</span></code> aplicada a una columna en específico, combinada con el método <code class="docutils literal notranslate"><span class="pre">.loc</span></code>:</p>
 <div class="cell docutils container">
@@ -1514,8 +1513,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>Este loop lo puedes aplicar a cualquier dataframe, sin importar la cantidad de columnas que tenga.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

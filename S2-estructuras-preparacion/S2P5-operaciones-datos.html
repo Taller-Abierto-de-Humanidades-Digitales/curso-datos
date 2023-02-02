@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Variables cuantitativas y cualitativas &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S2-estructuras-preparacion/S2P5-operaciones-datos.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S2-estructuras-preparacion/S2P5-operaciones-datos.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS2-estructuras-preparacion/S2P5-operaciones-datos.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS2-estructuras-preparacion/S2P5-operaciones-datos.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -772,7 +771,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="variables-cuantitativas-y-cualitativas">
+  <div class="tex2jax_ignore mathjax_ignore section" id="variables-cuantitativas-y-cualitativas">
 <h1>Variables cuantitativas y cualitativas<a class="headerlink" href="#variables-cuantitativas-y-cualitativas" title="Permalink to this headline">#</a></h1>
 <p>Ya vimos en la sección anterior que identificar el tipo de datos es fundamental para comprender las mediciones u operaciones que podremos realizar con los datos.</p>
 <p>Vamos a intentar detallar un poco más lo anterior. En general, tendemos a asociar los datos cuantitativos con los valores numéricos, en tanto los cualitativos serían valores de texto. Por ejemplo:</p>
@@ -793,10 +792,10 @@ title="Print to PDF"
 </div>
 </div>
 <p>Sumar, restar o promediar números de identificación no tiene mucho sentido, por ello debemos considerar que en nuestros conjuntos de datos no solamente es el tipo de dato de Python el que tenemos que considerar, además debemos valorar si estos datos son cuantitativos o cualitativos.</p>
-<section id="escalas-de-medicion-por-variable">
+<div class="section" id="escalas-de-medicion-por-variable">
 <h2>Escalas de medición por variable<a class="headerlink" href="#escalas-de-medicion-por-variable" title="Permalink to this headline">#</a></h2>
 <p>Las escalas de medición nos indican las operaciones posibles que podemos realizar con los datos, según sean estos cualitativos o cuantitativos.</p>
-<section id="escalas-de-medicion-para-variables-cualitativas">
+<div class="section" id="escalas-de-medicion-para-variables-cualitativas">
 <h3>Escalas de medición para variables cualitativas<a class="headerlink" href="#escalas-de-medicion-para-variables-cualitativas" title="Permalink to this headline">#</a></h3>
 <p>Las escalas de medición para variables cualitativas son las siguientes:</p>
 <ul class="simple">
@@ -921,10 +920,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    23
-2    26
-3    16
-4    15
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    17
+2    28
+3    13
+4    22
 5    20
 dtype: int64
 </pre></div>
@@ -940,19 +939,19 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    15
-1    16
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    13
+1    17
 2    20
-3    23
-4    26
+3    22
+4    28
 dtype: int64
 20.0
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="escalas-de-medicion-para-variables-cuantitativas">
+</div>
+<div class="section" id="escalas-de-medicion-para-variables-cuantitativas">
 <h3>Escalas de medición para variables cuantitativas<a class="headerlink" href="#escalas-de-medicion-para-variables-cuantitativas" title="Permalink to this headline">#</a></h3>
 <p>Las escalas de medición para variables cuantitativas son las siguientes:</p>
 <ul class="simple">
@@ -982,17 +981,17 @@ dtype: int64
 <li><p><strong>Razón o proporción:</strong> En este tipo de escala, los valores sí representan un cero absoluto, es decir, la ausencia de valor. Ejemplos típicos de estos valores son: la altura, el dinero, la población, la edad, entre otras. Identificar una escala de proporción está relacionado con saber si es lógico que un valor tenga un cero (incluso si hay un vlor negativo). Por ejemplo, decir que una persona tiene 0 pesos es totalmente posible, es decir, hay una ausencia de dinero. No es lo mismo que decir que hay 0 grados centígrados, ya que en ese caso no hay una ausencia de temperatura, tanto es así que hay 32° Fahrenheit, o 273.15 Kelvin. Tener 0 pesos en cambio no significa que tengamos un valor diferente en dólares o euros, por ejemplo.</p></li>
 </ul>
 <p>En términos de medidas de proporción, podemos aplicar las mismas operaciones que en los intervalos, además de dividir y multiplicar un valor. Matemáticamente también podemos multiplicar y dividir una escala de intervalo (25 grados Celcius por 2 = 50 grados Celcius, por ejemplo), pero esta relación no es lógica. 50 grados centígrados es el doble de 25 grados, pero no es el doble de calor que hay en 25 grados. Tiene sentido numéricamente, pero no en términos de la termodinámica.</p>
-</section>
-</section>
-<section id="en-sintesis">
+</div>
+</div>
+<div class="section" id="en-sintesis">
 <h2>En síntesis<a class="headerlink" href="#en-sintesis" title="Permalink to this headline">#</a></h2>
 <p>Las escalas de medición son muy relevantes al momento de hacer nuestro análisis, en parte porque determinan el tipo de operaciones estadísticas que podemos realizar con los datos, y sobre todo porque nos permiten identificcar si esas operaciones son lógicas o no. Esto es algo que una librería como <code class="docutils literal notranslate"><span class="pre">pandas</span></code> no puede realizar de manera automática, puesto que solamente puede saber si un dato pertenece a un tipo específico. En ese mismo sentido, tendremos en cuenta que hay operaciones que no representan la realidad aunque estadísticamente sean correctas.</p>
-</section>
-<section id="para-saber-mas">
+</div>
+<div class="section" id="para-saber-mas">
 <h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">#</a></h2>
 <p>Las escalas de medición están muy relacionadas con los tipos de datos, pero son solamente la punta del iceberg en lo que se puede hacer con los datos. Para los propósitos de nuestro curso, es suficiente con acercarse a algún manual o libro de texto para estadística básica <span id="id1">[<a class="reference internal" href="../references.html#id6" title="Peter C. Bruce, Andrew Bruce, and Peter Gedeck. Practical statistics for data scientists: 50+ essential concepts using R and Python. O'Reilly Media, Inc, Sebastopol, CA, second edition edition, 2020. ISBN 978-1-4920-7294-2. OCLC: on1158315601.">Bruce <em>et al.</em>, 2020</a>, <a class="reference internal" href="../references.html#id5" title="José Juan Cáceres Hernández. Conceptos Basicos de Estadistica para Ciencias Sociales. Delta Publicaciones, 2006. ISBN 978-84-96477-43-8. Google-Books-ID: S3i_fndtcIEC.">Hernández, 2006</a>, <a class="reference internal" href="../references.html#id4" title="Llinas Humberto and Rojas Álvarez Carlos. Estadística descriptiva y distribuciones de probabilidad. Universidad del Norte, January 2015. ISBN 978-958-741-915-3. Google-Books-ID: 43haDwAAQBAJ.">Humberto and Carlos, 2015</a>]</span>. También recomendaría el libro <em>The art of statistics</em> de David Spiegelhalter, en particular los tres primeros capítulos <span id="id2">[<a class="reference internal" href="../references.html#id3" title="David J Spiegelhalter. The art of statistics: how to learn from data. Basic Books, New York, NY, 2021. ISBN 978-1-5416-7570-4. OCLC: 1226564752.">Spiegelhalter, 2021</a>]</span>.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

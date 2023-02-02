@@ -43,6 +43,6 @@ El cuaderno final puede contener los siguientes aspectos:
 
 ## ¿Cómo presentar el cuaderno?
 
-Simplemente comparte un enlace a tu cuaderno de Google Colab (un enlace público de solo lectura) en el espacio correspondiente al [taller final](https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=actividades&title=Actividad%20Proyecto%20final&body=El%20contenido%20de%20tu%20%20actividad).
+Simplemente comparte un enlace a tu cuaderno de Google Colab (un enlace público de solo lectura) en el espacio correspondiente al [taller final](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/discussions/new?category=actividades&title=Actividad%20Proyecto%20final&body=El%20contenido%20de%20tu%20%20actividad).
 
 Es importante asimismo que puedas comentar, retroalimentar y responder a las dudas de tus compañeros; para así darle vida al curso :)

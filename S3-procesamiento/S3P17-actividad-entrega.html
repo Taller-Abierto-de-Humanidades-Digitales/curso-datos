@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avance del proyecto &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P17-actividad-entrega.ipynb"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P17-actividad-entrega.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P17-actividad-entrega.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P17-actividad-entrega.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -951,12 +950,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="avance-del-proyecto">
+  <div class="tex2jax_ignore mathjax_ignore section" id="avance-del-proyecto">
 <h1>Avance del proyecto<a class="headerlink" href="#avance-del-proyecto" title="Permalink to this headline">#</a></h1>
 <p>Para esta semana, deberás tener un cuaderno similar al que te presentamos a continuación. Asegúrate de realizar las operaciones necesarias para que tu conjunto de datos sea lo más preciso posible.</p>
 <p><a href="https://colab.research.google.com/gist/jairomelo/91a48cd45e1dd2c1de2de80f29237867/mi-cuaderno-de-datos_semana3.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="importar-datos">
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="importar-datos">
 <h1>Importar datos<a class="headerlink" href="#importar-datos" title="Permalink to this headline">#</a></h1>
 <p>Con “importar datos” nos referimos a la manera en la que preparamos la fuente de datos para ser leída por nuestro programa.</p>
 <p>Existen múltiples maneras de importar la información. Por ejemplo, podemos sencillamente utilizar el mismo método que usamos con nuestro archivo <code class="docutils literal notranslate"><span class="pre">ejemplo-1.txt</span></code>.</p>
@@ -1247,10 +1246,10 @@ title="Print to PDF"
 </div></div>
 </div>
 <p>De esta manera, nuestro archivo estará listo para ser procesado :)</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="analisis-de-estructuras-de-datos-y-preparacion">
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="analisis-de-estructuras-de-datos-y-preparacion">
 <h1>Análisis de estructuras de datos y preparación<a class="headerlink" href="#analisis-de-estructuras-de-datos-y-preparacion" title="Permalink to this headline">#</a></h1>
-<section id="describe-la-fuente-de-datos">
+<div class="section" id="describe-la-fuente-de-datos">
 <h2>Describe la fuente de datos<a class="headerlink" href="#describe-la-fuente-de-datos" title="Permalink to this headline">#</a></h2>
 <p>Una descripción simple de la forma de la fuente de datos es la siguiente:</p>
 <div class="cell docutils container">
@@ -1308,8 +1307,8 @@ title="Print to PDF"
 </div>
 <p>El nombre de las columnas nos ayuda a identificar las categorías y posibles datos que contienen nuestra fuente de datos.</p>
 <p>No todas las fuentes de datos nombran sus columnas de manera significativa. En el caso de nuestro ejemplo, es bastante sencillo identificar qué tipo de información contiene cada categoría o columna, incluso qué tipo de dato sería deseable que tuviese cada una.</p>
-</section>
-<section id="tipos-de-datos-con-dtypes">
+</div>
+<div class="section" id="tipos-de-datos-con-dtypes">
 <h2>Tipos de datos con <code class="docutils literal notranslate"><span class="pre">dtypes()</span></code><a class="headerlink" href="#tipos-de-datos-con-dtypes" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1366,8 +1365,8 @@ dtype: object
 </div>
 <p>La mayoría de los datos se encuentran representados como tipo <code class="docutils literal notranslate"><span class="pre">object</span></code>, es decir, que son de tipo texto, numérico-textual o mixto.</p>
 <p>Aunque hay columnas que podrían tener un tipo de dato <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, están representadas en tipo <code class="docutils literal notranslate"><span class="pre">object</span></code>. Esas columnas deberán ser transformadas para poder hacer operaciones y visualizaciones.</p>
-</section>
-<section id="descripcion-de-los-datos-con-describe">
+</div>
+<div class="section" id="descripcion-de-los-datos-con-describe">
 <h2>Descripción de los datos con <code class="docutils literal notranslate"><span class="pre">describe()</span></code><a class="headerlink" href="#descripcion-de-los-datos-con-describe" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1923,11 +1922,11 @@ dtype: object
 <p>El parámetro <code class="docutils literal notranslate"><span class="pre">include='all'</span></code> obliga a realizar la operación en todas las columnas.</p>
 <p>Esto permite identificar algunas columnas con ciertas frecuencias que podrían ser sujeto de análisis. Por ejemplo, correlaciones entre enfermedades crónicas y resultados (positivos o negativos), o frecuencias de casos de migrantes, mujeres o indígenas relacionadas con un área geográfica.</p>
 <p>Debido a que esta fuente de datos no cuenta con información georeferenciada (contamos con los nombres de los municipios, pero no la información de latitud y longitud) será necesario utilizar una fuente de datos que permita agregar esa información.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="procesamiento-de-datos">
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="procesamiento-de-datos">
 <h1>Procesamiento de datos<a class="headerlink" href="#procesamiento-de-datos" title="Permalink to this headline">#</a></h1>
-<section id="manipulacion-de-datos">
+<div class="section" id="manipulacion-de-datos">
 <h2>Manipulación de datos<a class="headerlink" href="#manipulacion-de-datos" title="Permalink to this headline">#</a></h2>
 <p>Aplicación del método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> para localizar filas y columnas por índice:</p>
 <div class="cell docutils container">
@@ -2709,8 +2708,8 @@ dtype: object
   </div>
 </div></div>
 </div>
-</section>
-<section id="merge">
+</div>
+<div class="section" id="merge">
 <h2>Merge<a class="headerlink" href="#merge" title="Permalink to this headline">#</a></h2>
 <p>Nuevo conjunto de datos para realizar la combinación:</p>
 <div class="cell docutils container">
@@ -2955,11 +2954,11 @@ dtype: object
   </div>
 </div></div>
 </div>
-</section>
-<section id="pasos-previos-para-el-inner-merge">
+</div>
+<div class="section" id="pasos-previos-para-el-inner-merge">
 <h2>Pasos previos para el inner merge<a class="headerlink" href="#pasos-previos-para-el-inner-merge" title="Permalink to this headline">#</a></h2>
 <p>Para nuestros conjuntos de datos requiere un <code class="docutils literal notranslate"><span class="pre">inner</span> <span class="pre">merge</span></code> para geolocalizar los datos. Pero para ello requeriremos realizar algunas tareas previas:</p>
-<section id="renombrar-columna-para-union-en-el-segundo-dataframe">
+<div class="section" id="renombrar-columna-para-union-en-el-segundo-dataframe">
 <h3>1. Renombrar columna para unión en el segundo dataframe<a class="headerlink" href="#renombrar-columna-para-union-en-el-segundo-dataframe" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3204,8 +3203,8 @@ dtype: object
   </div>
 </div></div>
 </div>
-</section>
-<section id="normalizar-la-columna-comun">
+</div>
+<div class="section" id="normalizar-la-columna-comun">
 <h3>2. Normalizar la columna común<a class="headerlink" href="#normalizar-la-columna-comun" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3215,8 +3214,8 @@ dtype: object
 </div>
 </div>
 </div>
-</section>
-<section id="segmentacion-de-la-informacion">
+</div>
+<div class="section" id="segmentacion-de-la-informacion">
 <h3>3. Segmentación de la información<a class="headerlink" href="#segmentacion-de-la-informacion" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3225,9 +3224,9 @@ dtype: object
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="realizacion-del-inner-merge">
+</div>
+</div>
+<div class="section" id="realizacion-del-inner-merge">
 <h2>Realización del inner merge<a class="headerlink" href="#realizacion-del-inner-merge" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3487,10 +3486,10 @@ dtype: object
   </div>
 </div></div>
 </div>
-</section>
-<section id="limpieza-de-datos">
+</div>
+<div class="section" id="limpieza-de-datos">
 <h2>Limpieza de datos<a class="headerlink" href="#limpieza-de-datos" title="Permalink to this headline">#</a></h2>
-<section id="segmentacion-por-columnas-utiles">
+<div class="section" id="segmentacion-por-columnas-utiles">
 <h3>Segmentación por columnas útiles<a class="headerlink" href="#segmentacion-por-columnas-utiles" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3703,8 +3702,8 @@ dtype: object
   </div>
 </div></div>
 </div>
-</section>
-<section id="lidiar-con-datos-nulos">
+</div>
+<div class="section" id="lidiar-con-datos-nulos">
 <h3>Lidiar con datos nulos<a class="headerlink" href="#lidiar-con-datos-nulos" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4032,8 +4031,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   </div>
 </div></div>
 </div>
-</section>
-<section id="transformar-datos">
+</div>
+<div class="section" id="transformar-datos">
 <h3>Transformar datos<a class="headerlink" href="#transformar-datos" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4073,10 +4072,10 @@ dtype: object
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="georeferenciar-los-datos-de-pais-nacionalidad">
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="georeferenciar-los-datos-de-pais-nacionalidad">
 <h1>Georeferenciar los datos de <code class="docutils literal notranslate"><span class="pre">pais_nacionalidad</span></code><a class="headerlink" href="#georeferenciar-los-datos-de-pais-nacionalidad" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4382,7 +4381,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   </div>
 </div></div>
 </div>
-<section id="guardar-a-csv">
+<div class="section" id="guardar-a-csv">
 <h2>Guardar a CSV<a class="headerlink" href="#guardar-a-csv" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4730,8 +4729,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   </div>
 </div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

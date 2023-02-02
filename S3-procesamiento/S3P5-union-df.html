@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Combinar fuentes de datos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P5-union-df.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P5-union-df.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P5-union-df.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P5-union-df.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -758,7 +757,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="combinar-fuentes-de-datos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="combinar-fuentes-de-datos">
 <h1>Combinar fuentes de datos<a class="headerlink" href="#combinar-fuentes-de-datos" title="Permalink to this headline">#</a></h1>
 <p>En las bases de datos relacionales, combinar tablas es una de las tareas más comunes y necesarias. Por lo general, la información se divide para hacerla más fácil de gestionar y por ello al recuperarla necesitamos combinarlas para obtener un resultado coherente en una sola tabla.</p>
 <p>Para este ejercicio necesitaremos dos fuentes de datos, así que aprovecharé el “Catálogo Único de Claves de Áreas Geoestadísticas Estatales, Municipales y Localidades” que proveé el <a class="reference external" href="https://www.inegi.org.mx/app/ageeml/">INEGI</a> para obtener las coordenadas geográficas de los municipios que se anotan en el conjunto de datos por Covid.</p>
@@ -1097,7 +1096,7 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <p>Ahora sí podremos empezar a “jugar” con nuestros datos para lograr un conjunto de datos con la información de geolocalización.</p>
-<section id="inner-merge">
+<div class="section" id="inner-merge">
 <h2>“Inner” merge<a class="headerlink" href="#inner-merge" title="Permalink to this headline">#</a></h2>
 <p>De manera predeterminada, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> combina nuestros datos con una unión “inner”, es decir, que encuentra la información común de ambos conjuntos de datos y excluye la que no está en ambos. Podemos representar lo anterior a través de este diagrama de Venn:</p>
 <img alt="../_images/inner.jpeg" class="align-center" src="../_images/inner.jpeg" />
@@ -1853,21 +1852,21 @@ Por esta razón es <strong>fundamental</strong> asegurarse de que el conjunto de
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nezahualcóyotl         5
-zumpango               2
 chalco                 2
+zumpango               2
+atlautla               1
+huixquilucan           1
+ciudad fernández       1
 naucalpan de juárez    1
 atizapán               1
-atlautla               1
-ciudad fernández       1
 ecatepec de morelos    1
-huixquilucan           1
 Name: municipio_residencia, dtype: int64
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="outer-merge">
+</div>
+<div class="section" id="outer-merge">
 <h2>Outer Merge<a class="headerlink" href="#outer-merge" title="Permalink to this headline">#</a></h2>
 <p>La unión “hacia afuera” es todo lo contrario a un “inner merge”. En este caso, combinamos todos los campos de <code class="docutils literal notranslate"><span class="pre">covid_nacional</span></code> con todos los campos de <code class="docutils literal notranslate"><span class="pre">areas_inegi</span></code>, incluyendo aquellos que no coincidan. Así lo vemos en un diagrama de Venn:</p>
 <img alt="../_images/outer.jpeg" class="align-center" src="../_images/outer.jpeg" />
@@ -2213,16 +2212,16 @@ Name: municipio_residencia, dtype: int64
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="a-modo-de-cierre">
+</div>
+<div class="section" id="a-modo-de-cierre">
 <h2>A modo de cierre<a class="headerlink" href="#a-modo-de-cierre" title="Permalink to this headline">#</a></h2>
 <p>Es necesario que selecciones tu método de unión de acuerdo a la lógica de tus datos. Revisa los resultados de tus combinaciones y ajusta los datos para que lleguen al resultado esperado. En ocasiones esto no es un proceso simple, tienes que reducir los datos y hacerlos manejables para que sea mucho más sencillo llegar a encontrar el error. Todas estas son prácticas que debes tener en cuenta y que no dependen del lenguaje de programación que estes utilizando.</p>
-</section>
-<section id="para-saber-mas">
+</div>
+<div class="section" id="para-saber-mas">
 <h2>Para saber más<a class="headerlink" href="#para-saber-mas" title="Permalink to this headline">#</a></h2>
 <p>Existen otros métodos de unión de conjuntos de datos como el ‘left merge’ y el ‘right merge’, el método ‘join’ o la concatenación (‘concat’). Para no extendernos más, quisiera sugerirles el capítulo 2 del libro de <span id="id1">[<a class="reference internal" href="../references.html#id11" title="Stepanek and Suresh John. Thinking in Pandas. Apress, S.l., 2020. ISBN 978-1-4842-5838-5. OCLC: 1181905701. URL: https://link.springer.com/10.1007/978-1-4842-5839-2 (visited on 2021-03-05).">Stepanek and John, 2020</a>]</span> donde se explica de manera sintética cómo utilizar estos métodos.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

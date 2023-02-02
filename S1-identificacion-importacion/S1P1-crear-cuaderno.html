@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crear un cuaderno para practicar con código &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S1-identificacion-importacion/S1P1-crear-cuaderno.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S1-identificacion-importacion/S1P1-crear-cuaderno.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS1-identificacion-importacion/S1P1-crear-cuaderno.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS1-identificacion-importacion/S1P1-crear-cuaderno.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -802,14 +801,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="crear-un-cuaderno-para-practicar-con-codigo">
+  <div class="tex2jax_ignore mathjax_ignore section" id="crear-un-cuaderno-para-practicar-con-codigo">
 <h1>Crear un cuaderno para practicar con código<a class="headerlink" href="#crear-un-cuaderno-para-practicar-con-codigo" title="Permalink to this headline">#</a></h1>
 <p>Para hacer las cosas más simples poner rápidamente manos a la obra, vamos a crear un cuaderno en Google Colab para importar, procesar y visualizar nuestros datos.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>No necesitaremos instalar ningún programa. El único pre-requisito es tener una cuenta de Google.</p>
 </div>
-<section id="google-colab">
+<div class="section" id="google-colab">
 <h2>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this headline">#</a></h2>
 <p>Google Colab es una herramienta gratuita de Google que permite escribir y ejecutar código directamente en tu navegador.<a class="footnote-reference brackets" href="#jupyter" id="id1">1</a> Este programa nos será de mucha utilidad para trabajar con nuestros datos.</p>
 <p>La creación de nuestro primer cuaderno en Google Colab es muy sencilla.</p>
@@ -820,22 +819,22 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="../_images/nuevo_cuaderno.png"><img alt="../_images/nuevo_cuaderno.png" class="align-center" src="../_images/nuevo_cuaderno.png" style="width: 800px;" /></a>
 <p>Para finalizar, solamente nos resta cambiar el título del cuaderno a nuestra elección.</p>
 <a class="reference internal image-reference" href="../_images/cambiar_nombre.gif"><img alt="../_images/cambiar_nombre.gif" class="align-center" src="../_images/cambiar_nombre.gif" style="width: 800px;" /></a>
-</section>
-<section id="antes-de-empezar-familiaricemonos-con-el-cuaderno-de-google-colab">
+</div>
+<div class="section" id="antes-de-empezar-familiaricemonos-con-el-cuaderno-de-google-colab">
 <h2>Antes de empezar, familiaricémonos con el cuaderno de Google Colab<a class="headerlink" href="#antes-de-empezar-familiaricemonos-con-el-cuaderno-de-google-colab" title="Permalink to this headline">#</a></h2>
 <p>Para poder seguir este curso cómodamente, tenemos que familiarizarnos con algunos elementos del Google Colab:</p>
-<section id="celdas">
+<div class="section" id="celdas">
 <h3>Celdas<a class="headerlink" href="#celdas" title="Permalink to this headline">#</a></h3>
 <p>Las celdas son las partes de nuestro cuaderno que nos permiten escribir código o texto. El texto lo utilizamos para escribir comentarios, explicar los pasos que estamos ejecutando, etc. Es muy similar a lo que presentamos en esta página (que de hecho, está hecha en <a class="reference external" href="https://jupyterbook.org/en/stable/intro.html">JupyterBook</a>). Las celdad de código permiten escribir y ejecutar código. En nuestro caso, usaremos el lenguaje de programación Python <a class="footnote-reference brackets" href="#python" id="id2">2</a>.</p>
 <p>Veámos rápidamente su funcionamiento a través del siguiente video:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/knmpMpFrw94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="menu-principal">
+</div>
+<div class="section" id="menu-principal">
 <h3>Menú principal<a class="headerlink" href="#menu-principal" title="Permalink to this headline">#</a></h3>
 <p>Ahora exploremos el menú principal de Google Colab. Vamos a centrarnos en las funciones principales del menú, las que nos interesan para nuestras actividades, pero siéntete en libertad de explorar todos los elementos del menú para ver cómo funcionan.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6nTrSLLskAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="archivos">
+</div>
+<div class="section" id="archivos">
 <h3>Archivos<a class="headerlink" href="#archivos" title="Permalink to this headline">#</a></h3>
 <p>Una parte importantísima de Google Colab se refiere a la gestión de archivos. En el siguiente video te mostramos su funcionamiento básico. Centrémonos por lo pronto en estos aspectos:</p>
 <ul class="simple">
@@ -843,16 +842,16 @@ title="Print to PDF"
 <li><p>Añadir una unidad de Drive para conservar nuestros archivos y no se pierdan cuando se reinicie el entorno de ejecución.</p></li>
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B_XvWBC35XA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section id="compartir-tu-cuaderno-de-google-colab">
+</div>
+<div class="section" id="compartir-tu-cuaderno-de-google-colab">
 <h3>Compartir tu cuaderno de Google Colab<a class="headerlink" href="#compartir-tu-cuaderno-de-google-colab" title="Permalink to this headline">#</a></h3>
 <p>Finalmente, vamos a compartir nuestro cuaderno de Google Colab. Estos cuadernos funcionan de la misma manera que un documento compartido de Google Drive, por lo que solamente debemos hacer clic en el botón Compartir. En el siguiente video te mostramos como compartir nuestro cuaderno.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mK6NjqGhFEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-</section>
-<section id="comparte-tu-cuaderno">
+</div>
+</div>
+<div class="section" id="comparte-tu-cuaderno">
 <h2>Comparte tu cuaderno<a class="headerlink" href="#comparte-tu-cuaderno" title="Permalink to this headline">#</a></h2>
-<p>Como un ejercicio práctico, comparte en el foro <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=actividades&title=Actividad%20Google%20Colab&body=El%20contenido%20de%20tu%20%20actividad." target="_blank"> Google Colab</a> de la primera semana el cuaderno que has creado. Solamente copia el enlace público (<em>solo lectura</em>) en el foro para que los demás participantes lo puedan consultar.</p>
+<p>Como un ejercicio práctico, comparte en el foro <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/discussions/new?category=actividades&title=Actividad%20Google%20Colab&body=El%20contenido%20de%20tu%20%20actividad." target="_blank"> Google Colab</a> de la primera semana el cuaderno que has creado. Solamente copia el enlace público (<em>solo lectura</em>) en el foro para que los demás participantes lo puedan consultar.</p>
 <p>Solamente unos requisitos básicos:</p>
 <ul class="simple">
 <li><p>incluye al menos una celda de texto</p></li>
@@ -861,8 +860,8 @@ title="Print to PDF"
 <li><p>en una celda, escribe el código que muestre que es posible leer el archivo de texto</p></li>
 </ul>
 <p>Obviamente tu creatividad es el límite, así que si quieres incluir alguna otra maravilla que hayas realizado (subir una imagen en una celda de texto, etc.), no dudes en hacerlo.</p>
-</section>
-<section id="notas">
+</div>
+<div class="section" id="notas">
 <h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -873,8 +872,8 @@ title="Print to PDF"
 <dd><p>Es un lenguaje de programación de alto nivel, que se utiliza para escribir código de programación. <a class="reference external" href="https://es.wikipedia.org/wiki/Python">Ver entrada en Wikipedia</a></p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

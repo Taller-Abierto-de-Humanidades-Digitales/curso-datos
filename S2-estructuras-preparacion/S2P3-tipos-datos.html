@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tipos de datos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S2-estructuras-preparacion/S2P3-tipos-datos.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S2-estructuras-preparacion/S2P3-tipos-datos.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS2-estructuras-preparacion/S2P3-tipos-datos.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS2-estructuras-preparacion/S2P3-tipos-datos.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -738,10 +737,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-datos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="tipos-de-datos">
 <h1>Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permalink to this headline">#</a></h1>
 <p>Lo primero que tenemos que tener en cuenta es que los datos se clasifican en diversos tipos, los cuales determinan lo que podemos hacer con ellos, o mejor, sus escalas de medición.</p>
-<section id="tipos-de-datos-basicos-en-python">
+<div class="section" id="tipos-de-datos-basicos-en-python">
 <h2>Tipos de datos básicos en Python<a class="headerlink" href="#tipos-de-datos-basicos-en-python" title="Permalink to this headline">#</a></h2>
 <p>Los tipos de datos básicos en Python son:</p>
 <ul class="simple">
@@ -835,8 +834,8 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <p>Como verás, el conjunto de datos permite cualquier tipo incorporado en sus columnas. La coherencia de los datos depende de las restricciones que hayan sido impuestas para la creación de los datos. Por ejemplo, si los datos fueron incorporados a través de un modelo de base de datos los tipos de datos seguramente estarán claramente definidos por la arquitectura de la base; pero si los datos fueron volcados manualmente en una hoja de cálculo,pueden ser ambiguos.</p>
-</section>
-<section id="por-que-es-relevante-el-tipo-de-datos">
+</div>
+<div class="section" id="por-que-es-relevante-el-tipo-de-datos">
 <h2>¿Por qué es relevante el tipo de datos?<a class="headerlink" href="#por-que-es-relevante-el-tipo-de-datos" title="Permalink to this headline">#</a></h2>
 <p>Para aclarar más lo anterior. Supongamos que nos encontramos con el siguiente conjunto de datos:</p>
 <div class="cell docutils container">
@@ -902,7 +901,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">6</span><span class="n">z</span><span class="o">/</span><span class="n">cjmzygfj49d6yzn_qgny7hgr0000gp</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_99094</span><span class="o">/</span><span class="mf">2923977663.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">promedio</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ejemplo2</span><span class="o">.</span><span class="n">Edad</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">ejemplo2</span><span class="o">.</span><span class="n">Edad</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
@@ -940,8 +939,8 @@ title="Print to PDF"
 </div>
 </div>
 <p>En este caso, el promedio ya se puede calcular de manera correcta porque el tipo de dato es adecuado: <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

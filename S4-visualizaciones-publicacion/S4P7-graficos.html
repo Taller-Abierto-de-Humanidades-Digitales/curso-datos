@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gráficos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S4-visualizaciones-publicacion/S4P7-graficos.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S4-visualizaciones-publicacion/S4P7-graficos.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P7-graficos.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P7-graficos.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -780,19 +779,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="graficos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="graficos">
 <h1>Gráficos<a class="headerlink" href="#graficos" title="Permalink to this headline">#</a></h1>
 <p>Vamos manos a la obra. En las secciones anteriores vimos algunas de las precauciones que debemos tener en cuenta antes o durante la creación de visualizaciones. Ahora, vamos a hacer algunas. Para ello, nos vamos a apoyar en dos librerías de Python: <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> y <code class="docutils literal notranslate"><span class="pre">plotly</span></code>.</p>
 <p>Vamos a aprovechar los datos que ya procesamos en la sección <a class="reference internal" href="S4P2-claves-visualizacion.html"><span class="doc std std-doc">Bases para la visualización de datos</span></a></p>
-<section id="matplotlib">
+<div class="section" id="matplotlib">
 <h2><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> es una librería de Python que nos permite crear visualizaciones de datos. Es una de las librerías más populares para este propósito. En esta sección vamos a ver cómo crear algunos gráficos con esta librería.</p>
-<section id="grafico-de-barras">
+<div class="section" id="grafico-de-barras">
 <h3>Gráfico de barras<a class="headerlink" href="#grafico-de-barras" title="Permalink to this headline">#</a></h3>
 <p>Vamos a crear un gráfico de barras que nos permita comparar la cantidad de fallecidos diarios en México durante el primer semestre de 2022.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
 </pre></div>
 </div>
 </div>
@@ -821,7 +830,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_4_0.png" src="../_images/S4P7-graficos_4_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># creamos el gráfico</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">],</span> <span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fallecidos_diarios&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fallecidos diarios en México (primer semestre 2022)&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>Vamos a explicar este código con más detalle:</p>
@@ -831,6 +851,16 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
 </pre></div>
 </div>
 </div>
@@ -845,7 +875,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_8_0.png" src="../_images/S4P7-graficos_8_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <ul class="simple">
@@ -858,7 +895,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;BarContainer object of 122 artists&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">],</span> <span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fallecidos_diarios&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;ax&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -875,7 +917,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(3.200000000000003, 0.5, &#39;Fallecidos&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fallecidos diarios en México (primer semestre 2022)&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Fecha&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Fallecidos&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;ax&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -890,11 +939,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.axis.XTick at 0x7fc420eec9a0&gt;,
- &lt;matplotlib.axis.XTick at 0x7fc420eec970&gt;,
- &lt;matplotlib.axis.XTick at 0x7fc420594790&gt;,
- &lt;matplotlib.axis.XTick at 0x7fc420d600d0&gt;,
- &lt;matplotlib.axis.XTick at 0x7fc420f1f3d0&gt;]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">muertes_diarias</span><span class="o">.</span><span class="n">index</span><span class="p">[::</span><span class="mi">30</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;ax&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -908,9 +958,19 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
 </div>
-</section>
-<section id="grafico-de-lineas">
+</div>
+</div>
+</div>
+<div class="section" id="grafico-de-lineas">
 <h3>Gráfico de líneas<a class="headerlink" href="#grafico-de-lineas" title="Permalink to this headline">#</a></h3>
 <p>Para hacer un gráfico de líneas es básicamente el mismo proceso del gráfico de barras, únicamente que utilizamos el método <code class="docutils literal notranslate"><span class="pre">plot</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">bar</span></code>.</p>
 <div class="cell docutils container">
@@ -930,7 +990,17 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_18_0.png" src="../_images/S4P7-graficos_18_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># creamos el gráfico</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">],</span> <span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fallecidos_diarios&#39;</span><span class="p">])</span> <span class="c1"># &lt;-- aquí cambiamos `bar` por `plot`</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fallecidos diarios en México (primer semestre 2022)&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>Y, como mostramos en la sección <a class="reference internal" href="S4P4-visualizacion-malformada.html"><span class="doc std std-doc">sobre el mensaje en la visualización de datos</span></a>, podemos suavizar las líneas para que se vean más agradables. En este caso, usamos la media móvil simple de 7 días.</p>
@@ -1018,11 +1088,21 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_21_0.png" src="../_images/S4P7-graficos_21_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># creamos el gráfico</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">],</span> <span class="n">muertes_diarias</span><span class="p">[</span><span class="s1">&#39;fallecidos_diarios_smooth&#39;</span><span class="p">])</span> <span class="c1"># &lt;-- aquí cambiamos `bar` por `plot`</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fallecidos diarios en México (primer semestre 2022)&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
 </div>
 </div>
-</section>
-<section id="grafico-de-dispersion">
+</div>
+</div>
+<div class="section" id="grafico-de-dispersion">
 <h3>Gráfico de dispersión<a class="headerlink" href="#grafico-de-dispersion" title="Permalink to this headline">#</a></h3>
 <p>Para hacer un gráfico de dispersión es básicamente el mismo proceso del gráfico de barras, únicamente que utilizamos el método <code class="docutils literal notranslate"><span class="pre">scatter</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">bar</span></code>.</p>
 <p>No obstante, este método no es útil para utilizarlo con los datos que usamos en los ejemplos previos. En este caso, necesitamos hallar dos variables que podamos correlacionar, así sea débilmente. En este caso, veremos si existe alguna correlación entre el sexo y la edad de las personas que se contagiaron.</p>
@@ -1091,7 +1171,17 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_25_0.png" src="../_images/S4P7-graficos_25_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># creamos el gráfico</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># color de los puntos por cateogoría &#39;sexo&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;HOMBRE&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;MUJER&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>Notarás que los contagios para mujeres y hombres son muy similares, por lo que comparten la misma tendencia. Es claro que no hay una correlación ya que entre mayor o menor edad no aumenta o disminuye el número de contagios. Lo que sí se observa es una tendencia, tanto en hombre o mujeres, de sufrir contagios principalmente entre los 20 y los 50 años. ¿Sucede lo mismo con los fallecimientos? Es lógico considerar que debe existir una fuerte correlación entre la edad y el número de fallecimientos, pero veamoslo.</p>
@@ -1120,7 +1210,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_27_0.png" src="../_images/S4P7-graficos_27_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 8&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">casos_edad_sexo_muertes</span> <span class="o">=</span> <span class="n">casos_edad_sexo_muertes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;sexo&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># creamos el gráfico</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># color de los puntos por cateogoría &#39;sexo&#39;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;HOMBRE&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;MUJER&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">}</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>Notas que el gráfico es más disperso y que es más complicado cer una tendencia. Esto se debe en parte a que los contagios son mucho mayores que las defunciones, lo que hacer que la dispersión sea mayor. Por otra parte, con los datos que tenemos, es posible encontrar una correlación lineal positiva aunque débil entre la edad y el número de fallecimientos.</p>
@@ -1189,26 +1290,28 @@ count  0.306907  1.000000
 epoc            edad     count
 edad   1.000000  0.364565
 count  0.364565  1.000000
-asma            edad     count
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>asma            edad     count
 edad   1.000000  0.195403
 count  0.195403  1.000000
 inmusupr            edad     count
 edad   1.000000  0.323069
 count  0.323069  1.000000
-hipertension            edad     count
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hipertension            edad     count
 edad   1.000000  0.423814
 count  0.423814  1.000000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cardiovascular            edad     count
+cardiovascular            edad     count
 edad   1.000000  0.438819
 count  0.438819  1.000000
-obesidad            edad     count
-edad   1.000000  0.255072
-count  0.255072  1.000000
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>renal_cronica            edad     count
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>obesidad            edad     count
+edad   1.000000  0.255072
+count  0.255072  1.000000
+renal_cronica            edad     count
 edad   1.000000  0.379559
 count  0.379559  1.000000
 </pre></div>
@@ -1240,14 +1343,25 @@ count  0.403027  1.000000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/S4P7-graficos_34_0.png" src="../_images/S4P7-graficos_34_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [19],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">casos_edad_sexo_muertes</span> <span class="o">=</span> <span class="n">covid_nacional</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">covid_nacional</span><span class="p">[</span><span class="s1">&#39;fecha_def&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span> <span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;cardiovascular&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_def&#39;</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">casos_edad_sexo_muertes</span> <span class="o">=</span> <span class="n">casos_edad_sexo_muertes</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;edad&#39;</span><span class="p">,</span> <span class="s1">&#39;cardiovascular&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;SI&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;NO&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;SE IGNORA&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">}</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">casos_edad_sexo_muertes</span><span class="p">[</span><span class="s1">&#39;edad&#39;</span><span class="p">],</span> <span class="n">casos_edad_sexo_muertes</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">casos_edad_sexo_muertes</span><span class="p">[</span><span class="s1">&#39;cardiovascular&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">colors</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span>
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <p>¡Fantástico! Hemos experimentado con varios tipos de gráficas, intentando encontrar patrones en nuestros datos. Hallamos algunas tendencias, como que durante el segundo semetre de 2020 hubo un pico de mortalidad en el mes de febrero, aunque sin alcanzar a superar los 3o fallecimientos diarios. Por otra parte, los contagios se centraron en las poblaciones con edades entre 20 y 40 años, mientras que los fallecimientos se concentraron en las personas mayores de 60 años. Por último, no encontramos una relación entre las enfermedades y el número de fallecimientos.</p>
 <p>Obviamente todavía podríamos realizar otras operaciones y gráficos, pero pasemos al siguiente tema, donde realizaremos las mismas gráficas pero con la ayuda de la librería Plotly, lo que dará un poco más de dinamismo a nuestras visualizaciones.</p>
-</section>
-</section>
-<section id="notas">
+</div>
+</div>
+<div class="section" id="notas">
 <h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -1255,8 +1369,8 @@ count  0.403027  1.000000
 <dd><p>En aras de la brevedad, en esta sección trataremos correlaciones lineales basados en el coeficiente de correlación de Pearson. Si quisiéramos profundizar más en la distribución de los datos, tendríamos que utilizar otro tipo de coeficientes no-lineales, como el coeficiente de correlación de Spearman o el coeficiente de correlación de Kendall. Si quieres realizar estos análisis con tus datos con Python, puedes explotar la librearía <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html">scipy.stats</a>.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

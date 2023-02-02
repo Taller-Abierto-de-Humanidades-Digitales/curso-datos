@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tipos de datos con pandas &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S2-estructuras-preparacion/S2P4-dtypes.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S2-estructuras-preparacion/S2P4-dtypes.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS2-estructuras-preparacion/S2P4-dtypes.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS2-estructuras-preparacion/S2P4-dtypes.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -802,10 +801,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tipos-de-datos-con-pandas">
+  <div class="tex2jax_ignore mathjax_ignore section" id="tipos-de-datos-con-pandas">
 <h1>Tipos de datos con pandas<a class="headerlink" href="#tipos-de-datos-con-pandas" title="Permalink to this headline">#</a></h1>
 <p>Ya hemos visto los tipos básicos del lenguaje Python <a class="footnote-reference brackets" href="#footnote1" id="id1">1</a>. Ahora bien, la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code> también cuenta con una serie de tipos de datos que debemos tener en cuenta para poder realizar nuestras operaciones de análisis. Para complejizar un poco más lo anterior, los tipos de datos de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> se sobreponen con los de otras librerías como <code class="docutils literal notranslate"><span class="pre">numpy</span></code> y <code class="docutils literal notranslate"><span class="pre">scipy</span></code>.</p>
-<section id="mapa-de-tipos-de-datos-de-pandas">
+<div class="section" id="mapa-de-tipos-de-datos-de-pandas">
 <h2>Mapa de tipos de datos de <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#mapa-de-tipos-de-datos-de-pandas" title="Permalink to this headline">#</a></h2>
 <p>Para entender un poco mejor los tipos de datos en <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, veamos la siguiente tabla:</p>
 <table class="colwidths-auto table">
@@ -843,7 +842,7 @@ title="Print to PDF"
 </tbody>
 </table>
 <p>Los tipos de datos int64 y float64 son préstamos de <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Aunque hay diferecias con los datos <code class="docutils literal notranslate"><span class="pre">int</span></code> y <code class="docutils literal notranslate"><span class="pre">float</span></code> de Python, realmente no afectan el análisis básico de datos que llevaremos a cabo en este curso <a class="footnote-reference brackets" href="#footnote2" id="id2">2</a>. En ese sentido, tenemos tres tipos de datos particulares de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> que detallaremos a continuación.</p>
-<section id="tipo-de-dato-object">
+<div class="section" id="tipo-de-dato-object">
 <h3>Tipo de dato <code class="docutils literal notranslate"><span class="pre">object</span></code><a class="headerlink" href="#tipo-de-dato-object" title="Permalink to this headline">#</a></h3>
 <p>El tipo de dato <code class="docutils literal notranslate"><span class="pre">object</span></code> es un tipo de dato que puede contener valores de texto o valores numéricos. Esto hace que sea uno de los tipos más confusos de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> porque puede ser que comprenda una columna de texto, o una con datos numéricos que no se han declarado como int64 o float64, incluso diccionarios o listas.  Podríamos decir que en <code class="docutils literal notranslate"><span class="pre">pandas</span></code> todos los tipos de datos son <code class="docutils literal notranslate"><span class="pre">object</span></code> hasta que se declaren como uno de los tipos de datos específicos.</p>
 <p>Volvamos a nuestro <code class="docutils literal notranslate"><span class="pre">ejemplo1</span></code> y ahora usemos el módulo <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> para obtener el tipo de dato de cada columna:</p>
@@ -936,8 +935,8 @@ dtype: object
 </div>
 </div>
 <p>Verás que prácticamente todas las columnas son de tipo object. Esto se debe a que en conjuntos de datos grandes, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> ahorra memoria y tiempo al no declarar los tipos de datos de cada columna. Por esa razón, es muy probable que nos encontremos con fuentes de datos de tipo object aunque su tipo en realidad sea entero, decimal o booleano.</p>
-</section>
-<section id="tipo-de-dato-datetime64">
+</div>
+<div class="section" id="tipo-de-dato-datetime64">
 <h3>Tipo de dato datetime64<a class="headerlink" href="#tipo-de-dato-datetime64" title="Permalink to this headline">#</a></h3>
 <p>El tipo de dato <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> es un tipo de dato que representa una fecha y una hora. El tipo de dato <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> es un préstamo de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> y es un tipo de dato que se puede usar para representar una fecha y una hora.</p>
 <p>En nuestro ejemplo de datos por Covid 19, las fechas están representadas con el formato AAAA-MM-DD (por ejemplo: 2022-05-03). Para representar una fecha y una hora, podemos usar el formato <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code>. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> incluye una función para convertir una cadena de texto a un tipo de dato <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code> llamada <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code>. Usémosla en la columna ‘fecha_ingreso’ para ver el resultado</p>
@@ -979,8 +978,8 @@ Name: fecha_ingreso, dtype: datetime64[ns, UTC]
 </div>
 </div>
 <p>En este ejemplo la librería agrega el valor de hora 00:00:00+00:00 al no tener otra referencia para representar la hora. Si hubiese una hora de origen, por ejemplo, la hora de ingreso de un paciente, podría ser relevante hacer esa operación.</p>
-</section>
-<section id="tipo-de-dato-timedelta-ns">
+</div>
+<div class="section" id="tipo-de-dato-timedelta-ns">
 <h3>Tipo de dato timedelta[ns]<a class="headerlink" href="#tipo-de-dato-timedelta-ns" title="Permalink to this headline">#</a></h3>
 <p>El tipo de dato <code class="docutils literal notranslate"><span class="pre">timedelta[ns]</span></code> es un tipo de dato que representa una diferencia de tiempo entre dos valores. Por ejemplo, la diferencia de tiempo en horas, días, minutos o segundos entre dos fechas. Por ejemplo, si queremos saber cuál es la diferencia de tiempo entre los síntomas y el ingreso del paciente a la institución de salud, podemos restar dos valores de <code class="docutils literal notranslate"><span class="pre">datetime</span></code> y obtendremos un valor de <code class="docutils literal notranslate"><span class="pre">timedelta</span></code>.</p>
 <div class="cell docutils container">
@@ -1016,11 +1015,11 @@ Name: diferencia_tiempo, dtype: timedelta64[ns]
 </div>
 </div>
 <p>De manera muy rápida podemos afirmar que la diferencia de tiempo entre los síntomas y el ingreso del paciente es, en promedio, de un día y 19 horas.</p>
-</section>
-</section>
-<section id="actividad">
+</div>
+</div>
+<div class="section" id="actividad">
 <h2>Actividad<a class="headerlink" href="#actividad" title="Permalink to this headline">#</a></h2>
-<p>En el <a class="reference external" href="https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=actividades&amp;title=Actividad%20descripci%C3%B3n%20con%20dtypes&amp;body=El%20contenido%20de%20tu%20%20actividad">foro</a>, describe la forma de la fuente de datos:</p>
+<p>En el <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/discussions/new?category=actividades&amp;title=Actividad%20descripci%C3%B3n%20con%20dtypes&amp;body=El%20contenido%20de%20tu%20%20actividad">foro</a>, describe la forma de la fuente de datos:</p>
 <ul class="simple">
 <li><p>Número de filas</p></li>
 <li><p>Número de columnas</p></li>
@@ -1028,8 +1027,8 @@ Name: diferencia_tiempo, dtype: timedelta64[ns]
 </ul>
 <p>Y, usando el módulo <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> analiza los tipos de datos que tienes en tu DataFrame (int, float, object).</p>
 <p>Comparte con los demás colegas la descripción de la fuente de datos y solamente con estos datos comenta qué posibilidades y retos encuentras con la fuente de información de por lo menos otros dos colegas.</p>
-</section>
-<section id="notas">
+</div>
+<div class="section" id="notas">
 <h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -1040,8 +1039,8 @@ Name: diferencia_tiempo, dtype: timedelta64[ns]
 <dd><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> usa este tipo de datos porque son computacionalmente más precisos que los de Python, lo cual hace más rápido procesar grandes cantidades de datos.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

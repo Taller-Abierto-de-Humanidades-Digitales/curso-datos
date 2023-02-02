@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Georeferenciar &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P15-georeferenciar.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P15-georeferenciar.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P15-georeferenciar.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P15-georeferenciar.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -691,7 +690,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="georeferenciar">
+  <div class="tex2jax_ignore mathjax_ignore section" id="georeferenciar">
 <h1>Georeferenciar<a class="headerlink" href="#georeferenciar" title="Permalink to this headline">#</a></h1>
 <p>Ya vimos en el apartado dedicado a la <a class="reference internal" href="S3P5-union-df.html"><span class="doc std std-doc">unión de dataframes</span></a> como agregar la información de geolocalización de un conjunto de datos a otro. En este sentido, la complejidad radica simplemente en encontrar un listado o conjunto de datos que coincida con los espacios que queremos representar.</p>
 <p>Lo que tenemos que garantizar simplemente es que la clave del nombre coincida con el lugar de geolocalización.</p>
@@ -705,12 +704,29 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycountry in /Users/jairoantonio/opt/anaconda3/lib/python3.9/site-packages (22.3.5)
-Requirement already satisfied: setuptools in /Users/jairoantonio/opt/anaconda3/lib/python3.9/site-packages (from pycountry) (58.0.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pycountry
+  Downloading pycountry-22.3.5.tar.gz (10.1 MB)
+     ---------------------------------------- 10.1/10.1 MB 7.8 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status &#39;done&#39;
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status &#39;done&#39;
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status &#39;done&#39;
+Requirement already satisfied: setuptools in c:\users\jairo\.virtualenvs\temp\lib\site-packages (from pycountry) (54.2.0)
+Building wheels for collected packages: pycountry
+  Building wheel for pycountry (pyproject.toml): started
+  Building wheel for pycountry (pyproject.toml): still running...
+  Building wheel for pycountry (pyproject.toml): finished with status &#39;done&#39;
+  Created wheel for pycountry: filename=pycountry-22.3.5-py2.py3-none-any.whl size=10681895 sha256=1acd3106611024398a7b53adde0eb870e85fa6682d9da45bb86a1b39a7f9635f
+  Stored in directory: c:\users\jairo\appdata\local\pip\cache\wheels\e2\aa\0f\c224e473b464387170b83ca7c66947b4a7e33e8d903a679748
+Successfully built pycountry
+Installing collected packages: pycountry
+Successfully installed pycountry-22.3.5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip available: <span class=" -Color -Color-Red">22.2.2</span> -&gt; <span class=" -Color -Color-Green">22.3</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.2 -&gt; 23.0
+[notice] To update, run: python.exe -m pip install --upgrade pip
 </pre></div>
 </div>
 </div>
@@ -1140,7 +1156,7 @@ Requirement already satisfied: setuptools in /Users/jairoantonio/opt/anaconda3/l
 </div>
 <p>Como verás, las soluciones no siempre vienen dadas de antemano. Ciertas situaciones requerirán de nuestra exploración y creatividad para resolver un problema o alcanzar el objetivo que estamos buscando.</p>
 <p>La gran riqueza de la programación radica, precisamente, en la capacidad creativa que podemos tener con cada lenguaje.</p>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {

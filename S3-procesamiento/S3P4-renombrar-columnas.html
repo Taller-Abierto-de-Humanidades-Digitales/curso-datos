@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Renombrar columnas &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P4-renombrar-columnas.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P4-renombrar-columnas.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P4-renombrar-columnas.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P4-renombrar-columnas.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -728,7 +727,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="renombrar-columnas">
+  <div class="tex2jax_ignore mathjax_ignore section" id="renombrar-columnas">
 <h1>Renombrar columnas<a class="headerlink" href="#renombrar-columnas" title="Permalink to this headline">#</a></h1>
 <p>Un problema común de las fuentes de datos abiertas está relacinado con la forma en la cuales están nombradas las columnas. Es usual recurrir a abreviaturas, pero también es común que las categorías estén marcadas en forma de códigos. En nuestro caso, la mayoría de columnas son lo suficientemente descriptivas para que no sea necesario renombrarlas. Sin embargo, podríamos darles un nombre aún más descriptivo, en particular a las columnas <code class="docutils literal notranslate"><span class="pre">[&quot;entidad_nac&quot;,&quot;entidad_res&quot;,&quot;municipio_res]</span></code>.</p>
 <p>La sintaxis para renombrar una columna es:</p>
@@ -874,12 +873,12 @@ title="Print to PDF"
 <p class="admonition-title">Atención</p>
 <p>Las columnas renombradas solamente se mantendrán con el nuevo nombre durante la ejecución del programa. Es decir, el archivo original no se modificará.</p>
 </div>
-<section id="por-que-modificar-las-columnas-desde-el-programa-en-lugar-de-hacerlo-directamente-en-el-csv">
+<div class="section" id="por-que-modificar-las-columnas-desde-el-programa-en-lugar-de-hacerlo-directamente-en-el-csv">
 <h2>¿Por qué modificar las columnas desde el programa en lugar de hacerlo directamente en el csv?<a class="headerlink" href="#por-que-modificar-las-columnas-desde-el-programa-en-lugar-de-hacerlo-directamente-en-el-csv" title="Permalink to this headline">#</a></h2>
 <p>En primer lugar, porque podemos cometer un error al renombrar el archivo original, por ejemplo, borrar un coma y modificar la separación de las columnas. También, al guardar nuevamente el conjunto de datos podemos cambiar su codificación y perder algunos datos. Además, si la fuente de datos se actualiza aplicamos el código a un nuevo archivo ya no funcionará porque no encontrará correctamente los nombres de las columnas. Y finalmente, porque es mucho más fácil modificar el código que modificar el archivo original; un archivo muy grande puede ser lento para abrir y más para modificar, por eso es mucho más rápido hacerlo directamente desde nuestro programa.</p>
 <p>Otra opción es hacer que el programa guarde una copia del archivo original con las columnas renombradas, pero esta práctica no es recomendable, puesto que puede generar duplicidad e inconsistencia en la información.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

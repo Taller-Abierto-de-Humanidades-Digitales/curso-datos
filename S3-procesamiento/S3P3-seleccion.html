@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selección de datos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P3-seleccion.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S3-procesamiento/S3P3-seleccion.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P3-seleccion.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS3-procesamiento/S3P3-seleccion.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -794,10 +793,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="seleccion-de-datos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="seleccion-de-datos">
 <h1>Selección de datos<a class="headerlink" href="#seleccion-de-datos" title="Permalink to this headline">#</a></h1>
 <p>Una operación fundamental cuando trabajamos con datos consiste en seleccionar los datos que nos interesan. Por ejemplo, en los datos de casos de Covid que hemos utilizados, podremos seleccionar de ellos cuáles corresponden a mujeres y a partir de allí realizar otras operaciones de datos. Es un ejemplo simple, pero es una operación común que vamos a realizar continuamente.</p>
-<section id="el-metodo-loc">
+<div class="section" id="el-metodo-loc">
 <h2>El método <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#el-metodo-loc" title="Permalink to this headline">#</a></h2>
 <p>Este es la forma más intuitiva de realizar una selección en nuestro conjunto de datos. Lo que se consigue con este método es filtrar por coincidencias en una columna a partir de las condiciones que se especifiquen. Por ejemplo:</p>
 <div class="cell docutils container">
@@ -1623,7 +1622,7 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <p>Esta forma de seleccionar información es muy relevante cuando solamente nos interesa una parte de la información del conjunto de datos para analizar. Por ejemplo, si queremos averiguar los casos por un Estado en un conjunto de datos nacional, o las cifras nacionales en uno global.</p>
-<section id="metodo-loc-en-multiples-columnas">
+<div class="section" id="metodo-loc-en-multiples-columnas">
 <h3>Método <code class="docutils literal notranslate"><span class="pre">.loc</span></code> en múltiples columnas<a class="headerlink" href="#metodo-loc-en-multiples-columnas" title="Permalink to this headline">#</a></h3>
 <p>Los casos anteriores son bastante simples, y si te das cuenta, lo que hicimos fue hacer tres grupos para llegar al resultado deseado. <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> nos ofrece la posibilidad de hacer una selección en múltiples columnas. Por ejemplo, si queremos seleccionar los casos de mujeres de 25 años de edad, nacidas en México, y que no sean de CDMX:</p>
 <div class="cell docutils container">
@@ -2131,9 +2130,9 @@ title="Print to PDF"
 <li><p>busca (<code class="docutils literal notranslate"><span class="pre">loc</span></code>) las filas en la columna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> que cumplen con la condición <code class="docutils literal notranslate"><span class="pre">'MUJER'</span></code> y con la condición <code class="docutils literal notranslate"><span class="pre">'SI'</span></code> en la columna <code class="docutils literal notranslate"><span class="pre">migrante</span></code>. Todas las filas que no cumplan con esa condición en ambas columnas serán descartadas.</p></li>
 <li><p>busca las filas de la columnna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> que cumplan con la condición <code class="docutils literal notranslate"><span class="pre">'MUJER'</span></code> o las filas de la columna <code class="docutils literal notranslate"><span class="pre">migrante</span></code> que cumplan con la condición <code class="docutils literal notranslate"><span class="pre">'SI'</span></code>. En este caso, solamente descarta las filas que no cumplan con una de las condiciones. Por esa razón nos devolverá todos los casos donde aparezca <code class="docutils literal notranslate"><span class="pre">'MUJER'</span></code> en la columna <code class="docutils literal notranslate"><span class="pre">sexo</span></code> y todos los casos donde aparezca <code class="docutils literal notranslate"><span class="pre">'SI'</span></code> en la columna <code class="docutils literal notranslate"><span class="pre">migrante</span></code>.</p></li>
 </ul>
-</section>
-</section>
-<section id="el-metodo-iloc">
+</div>
+</div>
+<div class="section" id="el-metodo-iloc">
 <h2>El método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code><a class="headerlink" href="#el-metodo-iloc" title="Permalink to this headline">#</a></h2>
 <p>El método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> permite seleccionar filas y columnas por su índice. Por ejemplo, si quisiera seleccionar las tres primeras filas del conjunto de datos:</p>
 <div class="cell docutils container">
@@ -2323,8 +2322,8 @@ title="Print to PDF"
 </div></div></div>
 </div>
 <p>En información muy bien estructurada, este método permite acceder a información sin preocuparnos por el tipo de dato o la forma en la cual fue escrita la celda. En general, si la información es creada a través de un gestor de base de datos el método <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> puede ser muy útil. Es además más rápido que el método <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, puesto que no tiene que buscar coincidencias sino seleccionar información dentro de una matriz.</p>
-</section>
-<section id="notas">
+</div>
+<div class="section" id="notas">
 <h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -2335,8 +2334,8 @@ title="Print to PDF"
 <dd><p>En este curso no podemos profundizar en lógica y teoría de conjuntos, pero puedo recomendar el primer capítulo del libro de <span id="id3">[<a class="reference internal" href="../references.html#id9" title="Patrick Juola and Stephen Ramsay. Six Septembers: mathematics for the humanist. Zea E-Books, Lincoln, 2017. ISBN 978-1-60962-111-7. OCLC: 1015817392.">Juola and Ramsay, 2017</a>]</span> para una introducción bastante comprensible de la lógica. Para la teoría de conjuntos, el capítulo de <span id="id4">[<a class="reference internal" href="../references.html#id10" title="Fotis Jannidis and Julia Flanders. A gentle introduction to data modeling. In Julia Flanders and Fotis Jannidis, editors, The shape of data in the digital humanities: modeling texts and text-based resources, Digital research in the arts and humanities, pages 26–95. Routledge, Taylor &amp; Francis Group, London ; New York, 2019.">Jannidis and Flanders, 2019</a>]</span> es una introducción sencilla y completa.</p>
 </dd>
 </dl>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

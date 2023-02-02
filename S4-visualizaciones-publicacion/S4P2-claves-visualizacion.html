@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bases para la visualización de datos &#8212; Visualización de datos educativos abiertos</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -525,7 +524,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MOOC-UNAM-Publico/curso-datos/gh-pages?urlpath=tree/S4-visualizaciones-publicacion/S4P2-claves-visualizacion.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso-datos/gh-pages?urlpath=tree/S4-visualizaciones-publicacion/S4P2-claves-visualizacion.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -568,7 +567,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos"
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,7 +584,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MOOC-UNAM-Publico/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P2-claves-visualizacion.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/issues/new?title=Issue%20on%20page%20%2FS4-visualizaciones-publicacion/S4P2-claves-visualizacion.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -758,13 +757,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="bases-para-la-visualizacion-de-datos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="bases-para-la-visualizacion-de-datos">
 <h1>Bases para la visualización de datos<a class="headerlink" href="#bases-para-la-visualizacion-de-datos" title="Permalink to this headline">#</a></h1>
 <p>Como bien subrayan Dougherty e Ilyankou <span id="id1">[<a class="reference internal" href="../references.html#id16" title="Jack Dougherty and Ilya Ilyankou. Hands-on data visualization: interactive storytelling from spreadsheets to code. O'Reilly Media, Inc, Boston, 2021. ISBN 978-1-4920-8600-0. OCLC: on1197722533.">Dougherty and Ilyankou, 2021</a>]</span> la clave de nuestras visualizaciones consiste en comparar dos o más variables. Por ejemplo, cantidad de contagios y tiempo; o defunciones y sexo. Decidir qué variables comparamos es relevante porque nos da la pauta para elegir el tipo de visualización que mejor se adapta a nuestro objetivo.</p>
 <p>Aunque ya tengamos nuestros datos limpios, tendremos que realizar algunas operaciones para poderlos comparar. Esto es, requeriremos sumar, promediar, contar, hacer porcentajes, entre otras operaciones.</p>
 <p>Afortunadamente, al ser acciones tan comunes, la mayoría de programas que trabajan con datos incluyen procesos para hacer esos cálculos. Te mostraremos algunos ejemplos de operaciones que podemos realizar con los datos de la pandemia que hemos limpiado anteriormente.</p>
 <p>Notarás que no son los únicos cálculos posibles y que tal vez podríamos realizar otros si no hubiésemos descartados algunas columnas previamente. Esto es algo común en el análisis de datos. Tendrás que segmentar, ampliar o reducir tus datos, en el camino, tendrás que tomar decisiones que te ayudarán a enfocar tu análisis y no será extraño que regreses al conjunto de datos original para realizar nuevas operaciones.</p>
-<section id="sumar">
+<div class="section" id="sumar">
 <h2>Sumar<a class="headerlink" href="#sumar" title="Permalink to this headline">#</a></h2>
 <p>Esta es una operación aritmética sumamente común. Por ejemplo, podemos querer establecer la cantidad de defunciones por día. Para ello, vamos a necesitar modificar nuestros datos para incluir un valor de 1 en cada fila donde se haya registrado un deceso (fecha_def):</p>
 <div class="cell docutils container">
@@ -837,8 +836,8 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-</section>
-<section id="promedio">
+</div>
+<div class="section" id="promedio">
 <h2>Promedio<a class="headerlink" href="#promedio" title="Permalink to this headline">#</a></h2>
 <p>Por ejemplo, un dato interesante que podríamos querer reconocer es el promedio de edad de las personas contagiadas por Covid-19 en el primer semestre de 2022. Aunque técnicamente podemos hacer este cálculo por nuestra cuenta (sumar todas las edades y dividir por el número de personas), es más fácil que <code class="docutils literal notranslate"><span class="pre">pandas</span></code> lo haga por nosotros.</p>
 <div class="cell docutils container">
@@ -887,8 +886,8 @@ dtype: float64
 </div>
 </div>
 <p>El resultado de la correlación entre edad y sexo es prácticamente cero, muy alejada de cualquier valor que indique una correlación fuerte.</p>
-</section>
-<section id="porcentaje">
+</div>
+<div class="section" id="porcentaje">
 <h2>Porcentaje<a class="headerlink" href="#porcentaje" title="Permalink to this headline">#</a></h2>
 <p>También podríamos calcular el porcentaje de infectados por país de origen (excluyendo México, obviamente):</p>
 <div class="cell docutils container">
@@ -1118,14 +1117,14 @@ dtype: float64
 </div>
 <p>Ahora tenemos un escenario más preciso. Ya no sabemos solamente cuántos contagios tenemos por país de origen, sino tenemos un valor que representa cuál es el porcentaje de cada uno de estas nacionalidad en el conjunto general de extranjeros. Además, podemos contrastar entre aquellos que son migrantes y aquellos que simplemente están de visita, o que no lo especificaron.</p>
 <p>En esta tabla tenemos el dato ordenado por migrantes y solamente incluye el top 10 de países de origen. Pero hay sutilezas que podríamos explorar con mayor detalle, por ejemplo, de cuáles países se contagiaron mayor cantidad de visitantes que de migrantes, cuál es el orden de nacionalidad no especificada, etc. Es aquí donde la visualización de datos puede ayudarnos a entender mejor estas relaciones.</p>
-</section>
-<section id="en-sintesis">
+</div>
+<div class="section" id="en-sintesis">
 <h2>En síntesis<a class="headerlink" href="#en-sintesis" title="Permalink to this headline">#</a></h2>
 <p>Como verás, estas operaciones pueden ser más o menos complejas, dependiendo de los datos que tenemos disponibles y de lo que queremos hacer con ellos. Aunque estas líneas de código pueden ser ilegibles por momentos, es importante tener en cuenta que <code class="docutils literal notranslate"><span class="pre">pandas</span></code> es una herramienta muy poderosa que nos permite hacer análisis de datos de una manera muy sencilla.</p>
 <p>Te recomiendo que intentes replicar algunos de los ejemplos que hemos visto aquí y que te desafíes a hacer tus propios análisis de datos.</p>
 <p>¡Adelante!</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
