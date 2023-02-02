@@ -90,7 +90,7 @@ Como habrás notado, todavía estamos en una fase muy descriptiva. Esto nos perm
 
 ## Actividad
 
-Usando el método `describe()` analiza los datos que seleccionaste y responde en el [foro](https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=actividades&title=Actividad%20descripción%20con%20ddescribe&body=El%20contenido%20de%20tu%20%20actividad) lo siguiente:
+Usando el método `describe()` analiza los datos que seleccionaste y responde en el [foro](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/discussions/new?category=actividades&title=Actividad%20descripción%20con%20ddescribe&body=El%20contenido%20de%20tu%20%20actividad) lo siguiente:
 
 - ¿Qué columnas brindan información significativa para analizar?
 - ¿Qué te gustaría descubrir de tu fuente de datos?

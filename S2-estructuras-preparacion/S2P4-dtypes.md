@@ -114,7 +114,7 @@ De manera muy rápida podemos afirmar que la diferencia de tiempo entre los sín
 
 ## Actividad
 
-En el [foro](https://github.com/MOOC-UNAM-Publico/curso-datos/discussions/new?category=actividades&title=Actividad%20descripción%20con%20dtypes&body=El%20contenido%20de%20tu%20%20actividad), describe la forma de la fuente de datos:
+En el [foro](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso-datos/discussions/new?category=actividades&title=Actividad%20descripción%20con%20dtypes&body=El%20contenido%20de%20tu%20%20actividad), describe la forma de la fuente de datos:
 
 * Número de filas
 * Número de columnas
